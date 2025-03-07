@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Python프로그래밍",
+    "section": "",
+    "text": "본 강의에서는 파이썬을 이용한 프로그래밍 방법을 학습하고, 데이터 분석에 필수적인 몇 가지 패키지를 소개한다.\n또한 클래스와 객체지향적 프로그래밍의 개념을 설명한다."
+  },
+  {
+    "objectID": "index.html#강의-소개",
+    "href": "index.html#강의-소개",
+    "title": "Python프로그래밍",
+    "section": "",
+    "text": "본 강의에서는 파이썬을 이용한 프로그래밍 방법을 학습하고, 데이터 분석에 필수적인 몇 가지 패키지를 소개한다.\n또한 클래스와 객체지향적 프로그래밍의 개념을 설명한다."
+  },
+  {
+    "objectID": "index.html#학습-평가",
+    "href": "index.html#학습-평가",
+    "title": "Python프로그래밍",
+    "section": "학습 평가",
+    "text": "학습 평가\n\n중간 30%, 기말 40%, 출석 10%, 과제 20%\n결석 1회 1점 감점, 지각 3회 1점 감점(1/4 이상 결석하면 F학점)"
+  },
+  {
+    "objectID": "index.html#설문조사",
+    "href": "index.html#설문조사",
+    "title": "Python프로그래밍",
+    "section": "설문조사",
+    "text": "설문조사\n\nPython 프로그래밍에 대한 기초적인 이해도와 경험을 파악하기 위해 설문조사를 실시함\n25-1 Python프로그래밍 사전 설문조사"
+  },
+  {
+    "objectID": "index.html#문의",
+    "href": "index.html#문의",
+    "title": "Python프로그래밍",
+    "section": "문의",
+    "text": "문의\n\nE-mail: stat6503@gmail.com\nLMS는 파일 제출용으로만 사용하니 쪽지 보내지 말 것"
+  }
+]

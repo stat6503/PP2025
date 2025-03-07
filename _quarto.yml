@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Python프로그래밍"
+  bread-crumbs: false
+
+format:
+  html:
+    theme:
+      - flatly
+    css: styles.css
+    toc: true
+    toc-location: right
+    toc-expand: true
+
