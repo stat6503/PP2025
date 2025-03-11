@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#python-소개" id="toc-python-소개" class="nav-link active" data-scroll-target="#python-소개">1.1. Python 소개</a></li>
   <li><a href="#python-설치" id="toc-python-설치" class="nav-link" data-scroll-target="#python-설치">1.2. Python 설치</a>
   <ul class="collapse">
-  <li><a href="#jupyter-lab" id="toc-jupyter-lab" class="nav-link" data-scroll-target="#jupyter-lab">1.2.1. Jupyter Lab</a></li>
+  <li><a href="#jupyter-notebook과-jupyter-lab" id="toc-jupyter-notebook과-jupyter-lab" class="nav-link" data-scroll-target="#jupyter-notebook과-jupyter-lab">1.2.1. Jupyter Notebook과 Jupyter Lab</a></li>
   <li><a href="#google-colab" id="toc-google-colab" class="nav-link" data-scroll-target="#google-colab">1.2.2. Google Colab</a></li>
   </ul></li>
   </ul>
@@ -196,18 +196,60 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="python-설치" class="level2">
 <h2 class="anchored" data-anchor-id="python-설치">1.2. Python 설치</h2>
-<section id="jupyter-lab" class="level3">
-<h3 class="anchored" data-anchor-id="jupyter-lab">1.2.1. Jupyter Lab</h3>
+<section id="jupyter-notebook과-jupyter-lab" class="level3">
+<h3 class="anchored" data-anchor-id="jupyter-notebook과-jupyter-lab">1.2.1. Jupyter Notebook과 Jupyter Lab</h3>
+<ul>
+<li>Jupyter Notebook
+<ul>
+<li>가장 많이 사용되는 Python IDE 중 하나로, 웹 브라우저에서 실행되는 대화형 개발 도구</li>
+<li>코드 작성과 실행을 한 화면에서 쉽게 수행할 수 있으며, 텍스트(markdown), 수식(LaTeX), 그래프(Matplotlib) 등을 함께 포함할 수 있음</li>
+<li>실행 결과가 셀 단위로 저장되어, 데이터 분석 과정을 논리적인 흐름으로 문서화하여 공유하기 용이함</li>
+<li>특히 데이터 과학, 머신러닝, 교육, 연구 분야에서 많이 활용됨</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li>Jupyter Lab
+<ul>
+<li>Jupyter Notebook을 확장한 차세대 인터페이스로, 더욱 유연하고 강력한 기능을 제공하는 개발 환경</li>
+<li>탭(tab) 기반 인터페이스를 지원하여 여러 개의 노트북, 터미널, 텍스트 파일, 콘솔 등을 동시에 열고 작업할 수 있음</li>
+<li>코드 편집, 데이터 분석, 시각화 등 데이터 과학 및 머신러닝 작업에 최적화된 다양한 편의 기능이 포함됨</li>
+<li>파일 브라우저, 터미널, markdown 편집기, 확장 플러그인 지원 등으로 보다 통합적인 워크플로우 제공</li>
+<li>Jupyter Notebook과 호환되며, 확장성을 고려하여 설계되어 다양한 플로그인 추가가 가능함</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li>가상 환경(virtual environment)
+<ul>
+<li>독립적인 작업 공간을 제공하여, 하나의 컴퓨터에서 여러 프로젝트를 각각의 독립된 환경으로 격리하여 실행할 수 있음</li>
+<li>하나의 시스템에서 여러 버전의 Python, 라이브러리 등을 설치하고, 프로젝트마다 서로 다른 버전의 의존성을 관리할 수 있음</li>
+<li>충돌 방지 및 의존성 관리에 유용하며, 특정 프로젝트에 필요한 패키지나 라이브러리만 설치하여 다른 프로젝트에 영향을 주지 않음</li>
+<li>프로젝트 간의 의존성 충돌을 피하고, 재현 가능한 환경을 제공하여 코드의 안정성을 높이고 협업을 용이하게 함</li>
+</ul></li>
+<li>가상 환경을 만든 후, Jupyter Lab 설치 및 실행
+<ol type="1">
+<li><a href="https://www.anaconda.com/download">Anaconda3</a> 설치</li>
+<li>Anaconda Prompt 실행</li>
+<li>가상 환경 생성 : <code>conda create -n myenv python=3.9</code></li>
+<li>가상 환경 리스트 조회 : <code>conda infor --envs</code></li>
+<li><strong>가상 환경 접속(활성화) : <code>conda activate myenv</code></strong></li>
+<li>가상 환경에서 Jupyter Lab 설치 : <code>conda install -c conda-forge jupyterlab</code></li>
+<li><strong>Jupyter Lab 접속 : <code>jupyter lab</code></strong></li>
+</ol></li>
+</ul>
+<p><br></p>
 </section>
 <section id="google-colab" class="level3">
 <h3 class="anchored" data-anchor-id="google-colab">1.2.2. Google Colab</h3>
 <ul>
 <li>Google Colab
 <ul>
-<li>구글에서 제공하는 클라우드 기반의 Jupyter Notebook 개발 환경</li>
-<li>별도의 설치 없이 웹 브라우저 내에서 Python 스크립트 작성 및 실행이 가능함</li>
-<li>다양한 라이브러리가 기본으로 설치되어 있으며, 사용자가 작성한 파일이 구글 드라이브에 저장됨</li>
-<li>여러 사람이 하나의 프로그램을 공유하여 동시에 접속해서 작업할 수 있음</li>
+<li>구글에서 제공하는 클라우드 기반의 Jupyter Notebook 개발 환경으로, 웹 브라우저에서 Python 코드 작성 및 실행이 가능함</li>
+<li>별도의 설치 없이 바로 사용할 수 있으며, 구글 드라이브와 연동하여 작성한 파일을 클라우드에 저장하고 쉽게 관리 가능</li>
+<li>다양한 라이브러리(Numpy, Pandas, Matplotlib 등)가 기본적으로 설치되어 있음</li>
+<li>GPU, TPU 지원을 통해 대규모 데이터 처리와 딥러닝 모델 학습에 유리함</li>
+<li>협업 기능을 제공하여, 여러 사람이 동시에 실시간으로 작업하고 프로그램을 공유할 수 있음</li>
 </ul></li>
 </ul>
 

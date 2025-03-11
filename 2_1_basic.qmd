@@ -166,7 +166,7 @@ print(type(a))
 ```
 
 ```{python}
-# 부동소수점 형시의 문자열 입력
+# 부동소수점 형식의 문자열 입력
 # float() 함수를 이용하여 부동소수점수 형식의 문자열을 부동소수점수로 변환함
 #minute = float(input('분 단위 시간: '))
 #second = minute * 60
