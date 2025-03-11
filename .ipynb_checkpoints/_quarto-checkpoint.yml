@@ -5,6 +5,14 @@ project:
 website:
   title: "Python프로그래밍"
   bread-crumbs: false
+  navbar:
+    left:
+      - href: 1_python.qmd
+        text: Python
+      - text: Basic
+        menu:
+          - href: 2_1_basic.qmd
+            text: (1) 기초 문법
 
 format:
   html:

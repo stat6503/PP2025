@@ -23,3 +23,10 @@ title: "Python프로그래밍"
 ## 문의
 + E-mail: stat6503@gmail.com
 + LMS는 파일 제출용으로만 사용하니 쪽지 보내지 말 것
+
+<br><br>
+
+## 참고문헌
++ 실생활 융합 예제로 배우는 파이썬 마스터 / 김종훈, 김동건 / 2025 / 한빛아카데미
++ website : [점프 투 파이썬](https://wikidocs.net/book/1)
+
