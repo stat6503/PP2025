@@ -13,6 +13,10 @@ website:
         menu:
           - href: 2_1_basic.qmd
             text: (1) 기초 문법
+          - href: 2_2_conditional.qmd
+            text: (2) 조건문
+          - href: 2_3_loop.qmd
+            text: (3) 반복문
 
 format:
   html:

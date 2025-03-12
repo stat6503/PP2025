@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python프로그래밍</title>
+<title>2. Python 기초 – Python프로그래밍</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -127,11 +161,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#강의-소개" id="toc-강의-소개" class="nav-link active" data-scroll-target="#강의-소개">강의 소개</a></li>
-  <li><a href="#학습-평가" id="toc-학습-평가" class="nav-link" data-scroll-target="#학습-평가">학습 평가</a></li>
-  <li><a href="#설문조사" id="toc-설문조사" class="nav-link" data-scroll-target="#설문조사">설문조사</a></li>
-  <li><a href="#문의" id="toc-문의" class="nav-link" data-scroll-target="#문의">문의</a></li>
-  <li><a href="#참고문헌" id="toc-참고문헌" class="nav-link" data-scroll-target="#참고문헌">참고문헌</a></li>
+  <li><a href="#조건문" id="toc-조건문" class="nav-link active" data-scroll-target="#조건문">2.2. 조건문</a>
+  <ul class="collapse">
+  <li><a href="#프로그램-구조" id="toc-프로그램-구조" class="nav-link" data-scroll-target="#프로그램-구조">2.2.1. 프로그램 구조</a></li>
+  <li><a href="#if-문" id="toc-if-문" class="nav-link" data-scroll-target="#if-문">2.2.2. if 문</a></li>
+  <li><a href="#ifelse-문" id="toc-ifelse-문" class="nav-link" data-scroll-target="#ifelse-문">2.2.3. if~else 문</a></li>
+  <li><a href="#ifelifelse문" id="toc-ifelifelse문" class="nav-link" data-scroll-target="#ifelifelse문">2.2.4. if~elif~else문</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -140,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Python프로그래밍</h1>
+<h1 class="title">2. Python 기초</h1>
 </div>
 
 
@@ -157,46 +193,108 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="강의-소개" class="level2">
-<h2 class="anchored" data-anchor-id="강의-소개">강의 소개</h2>
+<section id="조건문" class="level2">
+<h2 class="anchored" data-anchor-id="조건문">2.2. 조건문</h2>
+<section id="프로그램-구조" class="level3">
+<h3 class="anchored" data-anchor-id="프로그램-구조">2.2.1. 프로그램 구조</h3>
 <ul>
-<li>본 강의에서는 파이썬을 이용한 프로그래밍 방법을 학습하고, 데이터 분석에 필수적인 몇 가지 패키지를 소개한다.</li>
-<li>또한 클래스와 객체지향적 프로그래밍의 개념을 설명한다.</li>
+<li>프로그램 구조는 크게 순차 구조, 선택 구조, 반복 구조로 구분됨
+<ul>
+<li>순차 구조 : 위에서부터 아래로 순차적으로 실행되는 구조</li>
+<li>선택 구조 : 조건에 따라 문장을 선택적으로 실행하는 구조로, 조건이 참(True)인지 거짓(False)인지에 따라 실행되는 문장이 달라짐</li>
+<li>반복 구조 : 임의의 문장을 반복해서 실행하는 구조</li>
+</ul></li>
 </ul>
-<p><br><br></p>
+<p><br></p>
+<p><img src="./images/fig2-1.png" class="img-fluid"></p>
+<p><br></p>
 </section>
-<section id="학습-평가" class="level2">
-<h2 class="anchored" data-anchor-id="학습-평가">학습 평가</h2>
+<section id="if-문" class="level3">
+<h3 class="anchored" data-anchor-id="if-문">2.2.2. if 문</h3>
+<blockquote class="blockquote">
+<p>if 조건식: <br> 　　문장</p>
+</blockquote>
 <ul>
-<li>중간 30%, 기말 40%, 출석 10%, 과제 20%</li>
-<li>결석 1회 1점 감점, 지각 3회 1점 감점(1/4 이상 결석하면 F학점)</li>
+<li>조건식이 참이면 문장을 실행하고 거짓이면 문장을 실행하지 않음</li>
+<li>조건식 오른쪽에 <code>:</code>이 위치하고, 참인 경우 실행될 문장은 반드시 <b>들여쓰기(indentation)</b>해야 함</li>
 </ul>
-<p><br><br></p>
+<p><br></p>
+<p><img src="./images/fig2-2.png" class="img-fluid"></p>
+<div id="e4326b4e" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 무작위로 1~100 사이의 두 정수를 생성한 후, 큰 수부터 작은 수 순으로 출력</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">100</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">100</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a<span class="op">&lt;</span>b:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    a, b <span class="op">=</span> b, a</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>86 18</code></pre>
+</div>
+</div>
+<p><br></p>
 </section>
-<section id="설문조사" class="level2">
-<h2 class="anchored" data-anchor-id="설문조사">설문조사</h2>
+<section id="ifelse-문" class="level3">
+<h3 class="anchored" data-anchor-id="ifelse-문">2.2.3. if~else 문</h3>
+<blockquote class="blockquote">
+<p>if 조건식: <br> 　　문장1 <br> else: <br> 　　문장2</p>
+</blockquote>
 <ul>
-<li>Python 프로그래밍에 대한 기초적인 이해도와 경험을 파악하기 위해 설문조사를 실시함</li>
-<li><a href="https://forms.gle/qpUpe297mHE93z8k7">25-1 Python프로그래밍 사전 설문조사</a></li>
+<li>조건식이 참이면 문장1을 실행하고, 거짓이면 문장2를 실행함</li>
+<li>조건식 오른쪽에 <code>:</code>이 위치하고, else 오른쪽에는 조건식 없이 <code>:</code>이 위치함</li>
+<li>문장1과 문장2는 반드시 들여쓰기해야 함</li>
 </ul>
-<p><br><br></p>
+<p><br></p>
+<p><img src="./images/fig2-3.png" class="img-fluid"></p>
+<div id="5fca92bd" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 무작위로 1~100 사이의 정수를 생성한 후, 짝수인지 홀수인지 판단</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">100</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">는 짝수입니다'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">는 홀수입니다'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>50는 짝수입니다</code></pre>
+</div>
+</div>
+<p><br></p>
 </section>
-<section id="문의" class="level2">
-<h2 class="anchored" data-anchor-id="문의">문의</h2>
+<section id="ifelifelse문" class="level3">
+<h3 class="anchored" data-anchor-id="ifelifelse문">2.2.4. if~elif~else문</h3>
+<blockquote class="blockquote">
+<p>if 조건식1: <br> 　　문장1 <br> elif 조건식2: <br> 　　문장2 <br> else: <br> 　　문장3</p>
+</blockquote>
 <ul>
-<li>E-mail: stat6503@gmail.com</li>
-<li>LMS는 파일 제출용으로만 사용하니 쪽지 보내지 말 것</li>
+<li>조건식1이 거짓인 경우에 또 다른 선택구조를 연결하는 구조</li>
+<li>조건식1이 참이면 문장1을 실행하고, 조건식1이 거짓이면서 조건식2가 참이면 문장2를 실행하고, 두 조건식 모두 거짓이면 문장3을 실행함</li>
+<li>조건식1, 조건식2 오른쪽에 <code>:</code>이 위치하고, 문장1, 문장2, 문장3은 반드시 들여쓰기해야 함</li>
 </ul>
-<p><br><br></p>
-</section>
-<section id="참고문헌" class="level2">
-<h2 class="anchored" data-anchor-id="참고문헌">참고문헌</h2>
-<ul>
-<li>실생활 융합 예제로 배우는 파이썬 마스터 / 김종훈, 김동건 / 2025 / 한빛아카데미</li>
-<li>website : <a href="https://wikidocs.net/book/1">점프 투 파이썬</a></li>
-</ul>
+<p><br></p>
+<p><img src="./images/fig2-4.png" class="img-fluid"></p>
+<div id="28ecc137" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 놀이공원 기본 입장료는 5,000원임</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 8세 미만은 기본 입장료 30% 할인, 65세 이상은 기본 입장료 20% 할인 적용함</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 연령이 주어졌을 때, 놀이공원 입장료 산출</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>fee <span class="op">=</span> <span class="dv">5000</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&lt;</span> <span class="dv">8</span>:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'입장료:'</span>, fee<span class="op">*</span><span class="fl">0.7</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> age <span class="op">&lt;</span> <span class="dv">65</span>:</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'입장료:'</span>, fee)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'입장료:'</span>, fee<span class="op">*</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>입장료: 3500.0</code></pre>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
