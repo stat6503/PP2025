@@ -17,6 +17,14 @@ website:
             text: (2) 조건문
           - href: 2_3_loop.qmd
             text: (3) 반복문
+          - href: 2_4_function.qmd
+            text: (4) 함수
+          - href: 2_5_string.qmd
+            text: (5) 문자열
+      - text: Data Structure
+        menu:
+          - href: 3_1_structure.qmd
+            text: (1) 자료구조
 
 format:
   html:

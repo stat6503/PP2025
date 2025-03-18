@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python프로그래밍</title>
+<title>2. Python 기초 – Python프로그래밍</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -146,11 +180,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#강의-소개" id="toc-강의-소개" class="nav-link active" data-scroll-target="#강의-소개">강의 소개</a></li>
-  <li><a href="#학습-평가" id="toc-학습-평가" class="nav-link" data-scroll-target="#학습-평가">학습 평가</a></li>
-  <li><a href="#설문조사" id="toc-설문조사" class="nav-link" data-scroll-target="#설문조사">설문조사</a></li>
-  <li><a href="#문의" id="toc-문의" class="nav-link" data-scroll-target="#문의">문의</a></li>
-  <li><a href="#참고문헌" id="toc-참고문헌" class="nav-link" data-scroll-target="#참고문헌">참고문헌</a></li>
+  <li><a href="#함수" id="toc-함수" class="nav-link active" data-scroll-target="#함수">2.4. 함수</a>
+  <ul class="collapse">
+  <li><a href="#함수의-개념" id="toc-함수의-개념" class="nav-link" data-scroll-target="#함수의-개념">2.4.1. 함수의 개념</a></li>
+  <li><a href="#함수-정의" id="toc-함수-정의" class="nav-link" data-scroll-target="#함수-정의">2.4.2. 함수 정의</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -159,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Python프로그래밍</h1>
+<h1 class="title">2. Python 기초</h1>
 </div>
 
 
@@ -176,48 +210,137 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="강의-소개" class="level2">
-<h2 class="anchored" data-anchor-id="강의-소개">강의 소개</h2>
+<section id="함수" class="level2">
+<h2 class="anchored" data-anchor-id="함수">2.4. 함수</h2>
+<section id="함수의-개념" class="level3">
+<h3 class="anchored" data-anchor-id="함수의-개념">2.4.1. 함수의 개념</h3>
 <ul>
-<li>본 강의에서는 파이썬을 이용한 프로그래밍 방법을 학습하고, 데이터 분석에 필수적인 몇 가지 패키지를 소개한다.</li>
-<li>또한 클래스와 객체지향적 프로그래밍의 개념을 설명한다.</li>
+<li>함수(function)
+<ul>
+<li>특정한 기능을 수행하도록 미리 만들어 놓고, 필요할 때마다 호출하여 사용하는 일련의 코드</li>
+<li>Python에서 기본적으로 제공하는 <strong>내장 함수</strong>와 사용자가 직접 만들어서 사용할 수 있는 <strong>사용자 정의 함수</strong>가 있음</li>
+</ul></li>
 </ul>
-<p><br><br></p>
+<p><br></p>
+<ul>
+<li>함수 장점
+<ul>
+<li>필요할 때마다 호출 가능 : 반복적으로 수행해야 하는 업무를 한 번만 작성해 놓고 필요할 때마다 호출하여 사용할 수 있음</li>
+<li>논리적인 단위로 분할 가능 : (예) 도형 계산 프로그램 - 덧셈 코드, 곱셈 코드, 나눗셈 코드 등으로 나눔</li>
+<li>코드의 캡슐화 가능 : 함수의 인터페이스만 잘 정의하면 다른 사람이 자신의 코드를 쉽게 가져다 사용할 수 있음</li>
+</ul></li>
+</ul>
+<div id="49413792" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 절대값 반환 함수</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">abs</span>(<span class="op">-</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>10</code></pre>
+</div>
+</div>
 </section>
-<section id="학습-평가" class="level2">
-<h2 class="anchored" data-anchor-id="학습-평가">학습 평가</h2>
+<section id="함수-정의" class="level3">
+<h3 class="anchored" data-anchor-id="함수-정의">2.4.2. 함수 정의</h3>
+<blockquote class="blockquote">
+<p>def 함수 이름(매개변수1, 매개변수2, …): <br> 　　문장 <br> 　　return 반환값</p>
+</blockquote>
+<p><br></p>
 <ul>
-<li>중간 30%, 기말 40%, 출석 10%, 과제 20%</li>
-<li>결석 1회 1점 감점, 지각 3회 1점 감점(1/4 이상 결석하면 F학점)</li>
-</ul>
-<p><br><br></p>
-</section>
-<section id="설문조사" class="level2">
-<h2 class="anchored" data-anchor-id="설문조사">설문조사</h2>
+<li>함수 이름 규칙
 <ul>
-<li>Python 프로그래밍에 대한 기초적인 이해도와 경험을 파악하기 위해 설문조사를 실시함</li>
-<li><a href="https://forms.gle/qpUpe297mHE93z8k7">25-1 Python프로그래밍 사전 설문조사</a></li>
+<li>변수 이름 규칙과 동일함</li>
+<li>일반적으로 소문자로 입력</li>
+<li>작업을 나타내기 위해 동사와 명사를 함께 사용하는 경우가 많음 - (예) find_number</li>
+<li>외부에 공개하는 함수일 경우 줄임말을 사용하지 않고 짧고 명료한 이름으로 정함</li>
+</ul></li>
 </ul>
-<p><br><br></p>
-</section>
-<section id="문의" class="level2">
-<h2 class="anchored" data-anchor-id="문의">문의</h2>
+<p><br></p>
 <ul>
-<li>E-mail: stat6503@gmail.com</li>
-<li>LMS는 파일 제출용으로만 사용하니 쪽지 보내지 말 것</li>
-</ul>
-<p><br><br></p>
-</section>
-<section id="참고문헌" class="level2">
-<h2 class="anchored" data-anchor-id="참고문헌">참고문헌</h2>
+<li>매개변수(parameter)
 <ul>
-<li>실생활 융합 예제로 배우는 파이썬 마스터 / 김종훈, 김동건 / 2025 / 한빛아카데미</li>
-<li>데이터 과학을 위한 파이썬 프로그래밍 / 최성철 / 2023 / 한빛아카데미</li>
-<li>혼자 공부하는 파이썬(개정판) / 윤인성 / 2022 / 한빛아카데미</li>
-<li>website : <a href="https://wikidocs.net/book/1">점프 투 파이썬</a></li>
+<li>함수에서 입력값으로 사용하는 변수로, 1개 이상의 값을 적을 수 있음</li>
+</ul></li>
 </ul>
+<p><br></p>
+<ul>
+<li>함수 형태</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 41%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">구분</th>
+<th style="text-align: left;">매개변수 없음</th>
+<th style="text-align: left;">매개변수 있음</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">반환값 없음</td>
+<td style="text-align: left;">함수 내부 명령문만 수행</td>
+<td style="text-align: left;">매개변수를 사용하여 명령문만 수행</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">반환값 있음</td>
+<td style="text-align: left;">매개변수 없이 명령문을 수행한 후 결과값 반환</td>
+<td style="text-align: left;">매개변수를 사용하여 명령문을 수행한 후 결과값 반환</td>
+</tr>
+</tbody>
+</table>
+<div id="766a4bb5" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 매개변수 ×, 반환값 ×</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func():</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'함수입니다.'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'함수 호출 전입니다'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>func()</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'함수 호출 후입니다'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>함수 호출 전입니다
+함수입니다.
+함수 호출 후입니다</code></pre>
+</div>
+</div>
+<div id="be86ebe5" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 매개변수 ○, 반환값 ×</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add1(x, y):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x<span class="op">+</span>y)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>res1 <span class="op">=</span> add1(<span class="dv">10</span>,<span class="dv">20</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>30
+None</code></pre>
+</div>
+</div>
+<div id="e4efec72" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 매개변수 ○, 반환값 ○</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add2(x, y):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">+</span>y</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>res2 <span class="op">=</span> add2(<span class="dv">10</span>,<span class="dv">20</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>30</code></pre>
+</div>
+</div>
+<div id="7b6ca04a" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 섭씨온도를 화씨온도로 변환하는 함수</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (섭씨온도) = (화씨온도 - 32) × 5/9</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_to_c(fahrenheit):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (fahrenheit<span class="op">-</span><span class="dv">32</span>) <span class="op">*</span> <span class="dv">5</span><span class="op">/</span><span class="dv">9</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>f_to_c(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>37.77777777777778</code></pre>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

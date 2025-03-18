@@ -13,5 +13,26 @@
   },
   "2_3_loop.qmd": {
     "2_3_loop.html": "6abba0af"
+  },
+  "2_4_function.qmd": {
+    "2_4_function.html": "40d02e04"
+  },
+  "2_5_string.qmd": {
+    "2_5_string.html": "a24e5b97"
+  },
+  "3_1_structure.qmd": {
+    "3_1_structure.html": "6e2dbe3b"
+  },
+  "3_2_list.ipynb": {
+    "3_2_list.html": "37f78b1e"
+  },
+  "3_3_tuple.ipynb": {
+    "3_3_tuple.html": "8fd497b4"
+  },
+  "3_4_set.ipynb": {
+    "3_4_set.html": "614b9bb9"
+  },
+  "3_5_dictionary.ipynb": {
+    "3_5_dictionary.html": "801ff839"
   }
 }

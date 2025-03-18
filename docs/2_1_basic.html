@@ -143,6 +143,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./2_3_loop.html">
  <span class="dropdown-text">(3) 반복문</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./2_4_function.html">
+ <span class="dropdown-text">(4) 함수</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./2_5_string.html">
+ <span class="dropdown-text">(5) 문자열</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-structure" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Data Structure</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-data-structure">    
+        <li>
+    <a class="dropdown-item" href="./3_1_structure.html">
+ <span class="dropdown-text">(1) 자료구조</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -163,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#기초-문법" id="toc-기초-문법" class="nav-link active" data-scroll-target="#기초-문법">2.1. 기초 문법</a>
   <ul class="collapse">
-  <li><a href="#변수" id="toc-변수" class="nav-link" data-scroll-target="#변수">2.1.1. 변수</a></li>
+  <li><a href="#변수variable" id="toc-변수variable" class="nav-link" data-scroll-target="#변수variable">2.1.1. 변수(variable)</a></li>
   <li><a href="#자료형data-type" id="toc-자료형data-type" class="nav-link" data-scroll-target="#자료형data-type">2.1.2. 자료형(data type)</a></li>
   <li><a href="#입력과-출력" id="toc-입력과-출력" class="nav-link" data-scroll-target="#입력과-출력">2.1.3. 입력과 출력</a></li>
   <li><a href="#연산자" id="toc-연산자" class="nav-link" data-scroll-target="#연산자">2.1.4. 연산자</a></li>
@@ -195,10 +214,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="기초-문법" class="level2">
 <h2 class="anchored" data-anchor-id="기초-문법">2.1. 기초 문법</h2>
-<section id="변수" class="level3">
-<h3 class="anchored" data-anchor-id="변수">2.1.1. 변수</h3>
+<section id="변수variable" class="level3">
+<h3 class="anchored" data-anchor-id="변수variable">2.1.1. 변수(variable)</h3>
 <ul>
-<li>변수(variable)
+<li>변수
 <ul>
 <li>프로그램이 실행되는 동안 값을 저장하는 공간</li>
 <li>하나의 프로그램에서 여러 개의 변수를 만들어 사용할 수 있으며, 각 변수를 구분하기 위해 변수마다 이름을 붙여 관리함</li>
@@ -214,7 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>=</code> 기호 오른쪽의 값을 <code>=</code> 기호 왼쪽의 변수에 저장한다는 의미</li>
 </ul></li>
 </ul>
-<div id="7750af73" class="cell" data-execution_count="1">
+<div id="dafaa670" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 변수에 값을 저장하고 출력</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -222,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>20</code></pre>
 </div>
 </div>
-<div id="19e70eff" class="cell" data-execution_count="2">
+<div id="c1ec3c4d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 변수에 저장된 값 변경</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">21</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -230,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>21</code></pre>
 </div>
 </div>
-<div id="860eea9e" class="cell" data-execution_count="3">
+<div id="2c026616" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 여러 변수에 값 대입</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> b <span class="op">=</span> c <span class="op">=</span> <span class="dv">7</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span>
@@ -242,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 7</code></pre>
 </div>
 </div>
-<div id="1511e90b" class="cell" data-execution_count="4">
+<div id="82181256" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 코드 한 줄에서 여러 개의 변수에 각각 다른 값을 한번에 대입할 수 있음</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>a, b, c <span class="op">=</span> <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">19</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span>
@@ -254,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 19</code></pre>
 </div>
 </div>
-<div id="a95cae03" class="cell" data-execution_count="5">
+<div id="6eef13a1" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 두 변수의 값 교환</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">7</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">11</span></span>
@@ -266,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>11 7</code></pre>
 </div>
 </div>
-<div id="f9ce4ff7" class="cell" data-execution_count="6">
+<div id="106865e0" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python에서는 튜플 패킹과 언패킹(tuple packing &amp; unpacking)을 활용하여 임시변수 없이 두 변수의 값을 쉽게 교환할 수 있음</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">7</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">11</span></span>
@@ -280,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>변수 이름 규칙
 <ul>
 <li>변수가 어떤 용도로 쓰이는지 잘 설명하는 이름으로 만드는 것이 좋음</li>
-<li>첫 번째글자는 문자 또는 밑줄(_)이어야 하고, 나머지 글자는 문자, 숫자, 밑줄(_)이어야 함</li>
+<li>첫 번째글자는 문자 또는 <code>_</code>이어야 하고, 나머지 글자는 문자, 숫자, <code>_</code>이어야 함</li>
 <li>영문 대문자와 소문자를 구분함</li>
 <li>키워드(예약어; keyword)는 변수 이름으로 사용할 수 없음
 <ul>
@@ -288,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul></li>
 </ul>
-<div id="0d2fb9b7" class="cell" data-execution_count="7">
+<div id="902b1242" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> keyword</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(keyword.kwlist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -303,16 +322,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>기본 자료형
 <ul>
 <li>단순한 값을 저장하는 자료형</li>
-<li>(예시) 정수(1,2,3,…), 부동소수점수(1.23, 3.14, …), 복소수(2+3j), 문자열(‘Hi!’), bool(True, False)</li>
+<li>(예) 정수(1,2,3,…), 부동소수점수(1.23, 3.14, …), 복소수(2+3j), 문자열(“Hello”), bool(True, False)</li>
 </ul></li>
 <li>구조적 자료형
 <ul>
 <li>여러 개의 값을 담을 수 있는 자료형</li>
-<li>(예시) 리스트(list), 튜플(tuple), 셋(set), 딕셔너리(dict)</li>
+<li>(예) 리스트(list), 튜플(tuple), 세트(set), 딕셔너리(dictionary)</li>
 </ul></li>
 <li><code>type()</code> 함수를 이용하여 자료형을 확인할 수 있음</li>
 </ul>
-<div id="dbf8199a" class="cell" data-execution_count="8">
+<div id="a810404d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 정수형</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">20</span>                      <span class="co"># 10진수</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="bn">0o34</span>                    <span class="co"># 8진수</span></span>
@@ -325,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 &lt;class 'int'&gt;</code></pre>
 </div>
 </div>
-<div id="b0eedf8c" class="cell" data-execution_count="9">
+<div id="0af0ff68" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 부동소수점수형</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">3.14</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">1.23e5</span>                  <span class="co"># 지수 표현 방식</span></span>
@@ -336,7 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 &lt;class 'float'&gt;</code></pre>
 </div>
 </div>
-<div id="20b62600" class="cell" data-execution_count="10">
+<div id="e7ab7703" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 문자열형</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">'Hello'</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="st">"Python"</span></span>
@@ -347,19 +366,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 &lt;class 'str'&gt;</code></pre>
 </div>
 </div>
-<div id="420d3140" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 문자열 연결</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 문자열 연결 연산자 +로 문자열과 문자열을 연결할 수 있음</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello '</span> <span class="op">+</span> <span class="st">'Python'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello Python</code></pre>
-</div>
-</div>
-<div id="128ca676" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bool형</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span><span class="op">&gt;</span><span class="dv">20</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(a))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="78d4156a" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bool형</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span><span class="op">&gt;</span><span class="dv">20</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(a))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>False
 &lt;class 'bool'&gt;</code></pre>
@@ -379,57 +390,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>출력
 <ul>
 <li>데이터를 출력하기 위해 <code>print()</code> 함수를 이용함</li>
-<li>여러 개의 값을 출력하려면 콤마(,)로 구분한 값을 나열하면 됨</li>
+<li>여러 개의 값을 출력하려면 <code>,</code>로 구분한 값을 나열하면 됨</li>
 </ul></li>
 </ul>
-<div id="f4b5ab35" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 문자열 입력</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#name = input('이름: ')</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">#age = input('나이: ')</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co">#print(name, '나이:', age)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="be8a969e" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 문자열 입력</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#name = input("이름: ")</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">#age = input("나이: ")</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">#print(name, "나이:", age)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="14db3e7f" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 정수 형식의 문자열 입력</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># input 함수를 통해서 입력받은 데이터는 문자열형임</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 따라서 int() 함수를 이용하여 정수 형식의 문자열을 정수로 변환해야 함</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#a = int(input("정수: "))</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co">#b = int(input("정수: "))</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">#print(a-b)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e575a940" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 정수 형식의 문자열 입력</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># input 함수를 통해서 입력받은 데이터는 문자열형임</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 따라서 int() 함수를 이용하여 정수 형식의 문자열을 정수로 변환해야 함</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co">#a = int(input("정수: "))</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">#b = int(input("정수: "))</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co">#print(a-b)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cf78eaf5" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 부동소수점 형식의 문자열 입력</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># float() 함수를 이용하여 부동소수점수 형식의 문자열을 부동소수점수로 변환함</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">#minute = float(input('분 단위 시간: '))</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">#second = minute * 60</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#print(second, '초')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fad0a77e" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 부동소수점 형식의 문자열 입력</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># float() 함수를 이용하여 부동소수점수 형식의 문자열을 부동소수점수로 변환함</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">#minute = float(input("분 단위 시간: "))</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co">#second = minute * 60</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co">#print(second, "초")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2623f7ea" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 문자열 출력</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'반갑습니다.'</span>)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">99</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'성적은'</span>, score, <span class="st">'입니다.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="153aff26" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 문자열 출력</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"반갑습니다."</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"성적은"</span>, score, <span class="st">"입니다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>반갑습니다.
 성적은 99 입니다.</code></pre>
 </div>
 </div>
-<div id="ae2eafdb" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print() 함수가 여러 개일 때는 다음 줄로 넘어가서 값을 출력함</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">25</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d3a2ed67" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print() 함수가 여러 개일 때는 다음 줄로 넘어가서 값을 출력함</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>25
 42</code></pre>
 </div>
 </div>
-<div id="ca28ca53" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print() 함수가 여러 개일 때 다음 줄로 넘어가는 대신 공백이 출력되기를 원하면 end 매개변수를 공백으로 설정함</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">25</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, end<span class="op">=</span><span class="st">' '</span>)</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="72ffaa03" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print() 함수가 여러 개일 때 다음 줄로 넘어가는 대신 공백이 출력되기를 원하면 end 매개변수를 공백으로 설정함</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, end<span class="op">=</span><span class="st">' '</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>25 42</code></pre>
 </div>
@@ -441,38 +452,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>f-문자열을 이용하면 변수 값이 출력되는 형식을 지정할 수 있음</li>
 </ul></li>
 </ul>
-<div id="c1ef1c74" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f-문자열 사용</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">'홍길동'</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'이름은 </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">이고, 나이는 </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss">입니다.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e8677e89" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f-문자열 사용</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"홍길동"</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"이름은 </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">이고, 나이는 </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss">입니다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>이름은 홍길동이고, 나이는 20입니다.</code></pre>
 </div>
 </div>
-<div id="c567d436" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f-문자열 출력 형식 지정</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 변수명 옆에 :을 작성한 다음 형식을 지정함</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">'홍길동'</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>name<span class="sc">:5}</span><span class="ss">, </span><span class="sc">{</span>age<span class="sc">:3}</span><span class="ss">'</span>)</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">3.14159265</span></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'20</span><span class="sc">{</span>c<span class="sc">:02d}</span><span class="ss">'</span>)                        <span class="co"># a 값을 두자리로 출력하되 앞의 빈곳은 0으로 채움</span></span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>a<span class="sc">:.3f}</span><span class="ss">'</span>)                          <span class="co"># c 값을 소수점 이하 세자리로 반올림하여 출력</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8946f700" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f-문자열 출력 형식 지정</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 변수명 옆에 :을 작성한 다음 형식을 지정함</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"홍길동"</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">:5}</span><span class="ss">, </span><span class="sc">{</span>age<span class="sc">:3}</span><span class="ss">"</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">3.14159265</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"20</span><span class="sc">{</span>a<span class="sc">:02d}</span><span class="ss">"</span>)                        <span class="co"># a 값을 두자리로 출력하되 앞의 빈곳은 0으로 채움</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>b<span class="sc">:.3f}</span><span class="ss">"</span>)                          <span class="co"># c 값을 소수점 이하 세자리로 반올림하여 출력</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>홍길동  ,  20
-20161
-4.000</code></pre>
+2004
+3.142</code></pre>
 </div>
 </div>
-<div id="c6a5c44e" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 원의 넓이 구하기</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">#pi = 3.14159265</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co">#radius = int(input('원의 반지름: '))</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co">#area = pi * radius * radius</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co">#print(f'원의 넓이: {area:.3f}')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a9916ec1" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 원의 넓이 구하기</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co">#pi = 3.14159265</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co">#radius = int(input("원의 반지름: "))</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co">#area = pi * radius * radius</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co">#print(f"원의 넓이: {area:.3f}")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 </section>
@@ -768,28 +779,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<div id="44517bde" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 정수 3개의 평균 계산(틀림)</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>avg <span class="op">=</span> <span class="dv">70</span> <span class="op">+</span> <span class="dv">80</span> <span class="op">+</span> <span class="dv">90</span> <span class="op">/</span> <span class="dv">3</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8c61578c" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 정수 3개의 평균 계산(틀림)</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>avg <span class="op">=</span> <span class="dv">70</span> <span class="op">+</span> <span class="dv">80</span> <span class="op">+</span> <span class="dv">90</span> <span class="op">/</span> <span class="dv">3</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>180.0</code></pre>
 </div>
 </div>
-<div id="01ee55d2" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 정수 3개의 평균 계산</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>avg <span class="op">=</span> (<span class="dv">70</span> <span class="op">+</span> <span class="dv">80</span> <span class="op">+</span> <span class="dv">90</span>) <span class="op">/</span> <span class="dv">3</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d5e39fbb" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 정수 3개의 평균 계산</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>avg <span class="op">=</span> (<span class="dv">70</span> <span class="op">+</span> <span class="dv">80</span> <span class="op">+</span> <span class="dv">90</span>) <span class="op">/</span> <span class="dv">3</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>80.0</code></pre>
 </div>
 </div>
-<div id="7989669d" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 길이 단위 변환</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co">#_cm = int(input('센티미터 단위 길이: '))</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co">#m = _cm // 100</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co">#cm = _cm % 100</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co">#print(f'{m}미터 {cm}센티미터')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="88be3caa" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 길이 단위 변환</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co">#_cm = int(input("센티미터 단위 길이: "))</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co">#m = _cm // 100</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co">#cm = _cm % 100</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co">#print(f'{m}미터 {cm}센티미터')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
