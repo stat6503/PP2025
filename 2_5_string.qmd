@@ -100,45 +100,46 @@ print("Hello " * 3)
 
 <br>
 
-![](./images/fig2-6.png){width=70%}
+![](./images/fig2-6.png){width=60%}
 
 ```{python}
 # 문자열 인덱싱1
-str = "안녕하세요"
-print(str[0])
+s = "안녕하세요"
+print(s[0])
 ```
 
 ```{python}
 # 문자열 인덱싱2
-str = "안녕하세요"
-print(str[-1])
+s = "안녕하세요"
+print(s[-1])
 ```
 
 ```{python}
 # 문자열 슬라이싱1
-str = "안녕하세요"
-print(str[0:2])
+s = "안녕하세요"
+print(s[0:2])
 ```
 
 ```{python}
 # 문자열 슬라이싱2
-str = "안녕하세요"
-print(str[:2])
-print(str[2:])
+s = "안녕하세요"
+print(s[:2])
+print(s[2:])
+print(s[::2])
 ```
 
 ```{python}
 # 문자열은 불변형 객체이므로 인덱스를 이용한 수정은 불가함
-#str = "안녕하세요"
-#str[2:5] = "하십니까"
-#print(str)
+#s = "안녕하세요"
+#s[2:5] = "하십니까"
+#print(s)
 ```
 
 ```{python}
 # 문자열을 변경하려면 새로운 문자열을 만들어야 함
-str = "안녕하세요"
-str = str[:2] + "하십니까"
-print(str)
+s = "안녕하세요"
+s = s[:2] + "하십니까"
+print(s)
 ```
 
 ```{python}
@@ -153,8 +154,8 @@ print(my_str[::-1])
 
 ```{python}
 # 문자열 길이
-str = "안녕하세요"
-print(len(str))
+s = "안녕하세요"
+print(len(s))
 ```
 
 #### 2.5.4.2. 대소문자 변환
@@ -166,10 +167,10 @@ print(len(str))
 
 ```{python}
 # 대소문자 변환 : 원본은 변하지 않음
-str = "Hello Python!"
-print(str.lower())
-print(str.upper())
-print(str)
+s = "Hello Python!"
+print(s.lower())
+print(s.upper())
+print(s)
 ```
 
 #### 2.5.4.3. 문자열 찾기
@@ -182,12 +183,12 @@ print(str)
 
 ```{python}
 # 문자열 찾기
-str = "Hello! Python is Python"
-print(str.find("Python"))
-print(str.rfind("Python"))
-print(str.count("Python"))
-print("Hello" in str)
-print("Hi" in str)
+s = "Hello! Python is Python"
+print(s.find("Python"))
+print(s.rfind("Python"))
+print(s.count("Python"))
+print("Hello" in s)
+print("Hi" in s)
 ```
 
 #### 2.5.4.4. 공백 제거 및 문자열 변경
@@ -201,21 +202,135 @@ print("Hi" in str)
 
 ```{python}
 # 공백 제거
-str = "  Hello Python!  "
-print(str)
-print(str.strip())
+s = "  Hello Python!  "
+print(s)
+print(s.strip())
 ```
 
 ```{python}
 # 특정 문자 제거
-str = "##100kg, ##200kg"
-print(str.rstrip("kg"))
-print(str.lstrip("#"))
+s = "##100kg, ##200kg"
+print(s.rstrip("kg"))
+print(s.lstrip("#"))
 ```
 
 ```{python}
 # 문자열 변경
-str = "Hello Python!"
-print(str.replace("Hello", "Hi"))
+s = "Hello Python!"
+print(s.replace("Hello", "Hi"))
+```
+
+#### 2.5.4.5. 문자열 분리 및 결합
+
+|함수|설명|
+|:---:|:------------|
+|split()|- 특정문자를 기준으로 문자열을 분리하고 리스트로 반환|
+|join()|- 여러 문자열을 모아서 하나의 문자열로 만듬 <br>- 문자열을 구분할 구분자를 지정해야 함|
+
+```{python}
+# 문자열 분리
+s = "Hello Python!"
+s.split(" ")
+```
+
+```{python}
+# 문자열 결합
+lst = ["apple", "banana", "cherry"]
+print(", ".join(lst))
+print(" - ".join(lst))
+```
+
+#### 2.5.4.6. 문자열 구성 파악
+
+|함수|설명|
+|:---:|:------------|
+|isdigit()|문자열이 숫자로만 구성되었는지 확인|
+|isalpha()|문자열이 알파벳으로만 구성되었는지 확인|
+|isalnum()|문자열이 알파벳과 숫자로만 구성되었는지 확인|
+|islower()|문자열이 소문자로만 구성되었는지 확인|
+|isupper()|문자열이 대문자로만 구성되었는지 확인|
+|isspace()|문자열이 공백으로만 구성되었는지 확인|
+
+```{python}
+# 문자열 구성 파악
+print("1234".isdigit())
+print("Python".isalpha())
+print("pass123".isalnum())
+print("hello".islower())
+print("HELLO".isupper())
+print("     ".isspace())
+```
+
+#### 2.5.4.7. 형 변환
+
+|함수|설명|
+|:---:|:------------|
+|str()|수를 문자열로 변환|
+|int()|정수 형식의 문자열이나 실수를 정수로 변환|
+|float()|실수 형식의 문자열이나 정수를 실수로 변환|
+
+```{python}
+# 형 변환1
+a = 1234
+#print(a + "kg")
+print(str(a) + "kg")
+```
+
+```{python}
+# 형 변환2
+print(int("1234"))
+print(float("3.14"))
+```
+
+#### 2.5.4.7. format() 함수
+
+> "{자료형}".format(인수)
+
+<br>
+
++ `{}`를 포함한 문자열 뒤에 `.`을 찍고 `format()` 함수를 사용하여 문자열이 출력되는 형식을 지정할 수 있음
+  + 앞쪽에 있는 문자열 안의 `{}` 기호가 `format()` 함수의 매개변수로 차례로 대치되면서 숫자가 문자열이 됨
+  + `{}` 개수와 `format()` 함수의 매개변수 개수는 반드시 같아야 함
++  f-문자열이 `format()` 함수보다 간단하고 직관적이므로, 대부분 f-문자열을 사용함
+
+<br>
+
++ f-문자열보다 `format()` 함수를 사용하는 것이 더 좋은 경우
+  + 문자열 내용이 너무 많을 때 - 어떤 데이터를 출력하는지 모아서 볼 수 있어 더 유용함
+  + 데이터를 리스트에 담아서 사용할 때
+
+```{python}
+# format() 함수1
+print("{}".format(10))
+print("{} {}".format(10, 20))
+print("{} {} {} {} {}".format(10, 20, 30, 40, 50))
+```
+
+```{python}
+# format() 함수2
+name = "홍길동"
+age = 20
+print(f"이름은 {name}이고, 나이는 {age}입니다.")
+print("이름은 {}이고, 나이는 {}입니다.".format(name, age))
+```
+
+```{python}
+# format() 함수3
+a = 4
+b = 3.14159265
+print("20{:02d}".format(a))                # a 값을 두자리로 출력하되 앞의 빈곳은 0으로 채움
+print("{:.3f}".format(b))                  # b 값을 소수점 이하 세자리로 반올림하여 출력
+```
+
+```{python}
+# 데이터를 리스트에 담아서 사용할 때는 format() 함수를 사용하는 것이 더 좋음
+data = ["별", 2, "M", "Yes"]
+
+# f-문자열 사용
+print(f"이름: {data[0]}, 나이: {data[1]}, 성별: {data[2]}, 중성화 여부: {data[3]}")
+
+# format() 함수 사용
+# 전개 연산자 *를 사용하여 리스트 내용을 전개함
+print("이름: {}, 나이: {}, 성별: {}, 중성화 여부: {}".format(*data))
 ```
 
