@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2. Python 기초 – Python프로그래밍</title>
+<title>3. 자료구조 – Python프로그래밍</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -184,10 +150,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#함수" id="toc-함수" class="nav-link active" data-scroll-target="#함수">2.4. 함수</a>
+  <li><a href="#자료구조" id="toc-자료구조" class="nav-link active" data-scroll-target="#자료구조">3.1. 자료구조</a>
   <ul class="collapse">
-  <li><a href="#함수의-개념" id="toc-함수의-개념" class="nav-link" data-scroll-target="#함수의-개념">2.4.1. 함수의 개념</a></li>
-  <li><a href="#함수-정의" id="toc-함수-정의" class="nav-link" data-scroll-target="#함수-정의">2.4.2. 함수 정의</a></li>
+  <li><a href="#자료구조의-중요성" id="toc-자료구조의-중요성" class="nav-link" data-scroll-target="#자료구조의-중요성">3.1.1. 자료구조의 중요성</a></li>
+  <li><a href="#python-자료구조" id="toc-python-자료구조" class="nav-link" data-scroll-target="#python-자료구조">3.1.2. Python 자료구조</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -197,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2. Python 기초</h1>
+<h1 class="title">3. 자료구조</h1>
 </div>
 
 
@@ -214,135 +180,102 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="함수" class="level2">
-<h2 class="anchored" data-anchor-id="함수">2.4. 함수</h2>
-<section id="함수의-개념" class="level3">
-<h3 class="anchored" data-anchor-id="함수의-개념">2.4.1. 함수의 개념</h3>
+<section id="자료구조" class="level2">
+<h2 class="anchored" data-anchor-id="자료구조">3.1. 자료구조</h2>
+<section id="자료구조의-중요성" class="level3">
+<h3 class="anchored" data-anchor-id="자료구조의-중요성">3.1.1. 자료구조의 중요성</h3>
 <ul>
-<li>함수(function)
+<li>자료구조(data structure) : 데이터의 특징을 고려하여 메모리에 효율적으로 저장 및 반환하는 방법으로 데이터를 관리하는 방식</li>
+<li>자료구조의 중요성
 <ul>
-<li>특정한 기능을 수행하도록 미리 만들어 놓고, 필요할 때마다 호출하여 사용하는 일련의 코드</li>
-<li>Python에서 기본적으로 제공하는 <strong>내장 함수</strong>와 사용자가 직접 만들어서 사용할 수 있는 <strong>사용자 정의 함수</strong>가 있음</li>
+<li>데이터 저장과 검색 효율화 : (예) 빠른 검색이 필요한 경우 딕셔너리 사용</li>
+<li>연산 속도 최적화 : (예) 중복을 제거하는 경우 리스트보다 세트가 효율적임</li>
+<li>메모리 사용 절약 : (예) 불변형 객체를 다룰 때는 리스트 대신 튜플 사용</li>
+<li>코드 가독성 및 유지보수성 향상</li>
 </ul></li>
 </ul>
-<p><br></p>
-<ul>
-<li>함수 장점
-<ul>
-<li>필요할 때마다 호출 가능 : 반복적으로 수행해야 하는 업무를 한 번만 작성해 놓고 필요할 때마다 호출하여 사용할 수 있음</li>
-<li>논리적인 단위로 분할 가능 : (예) 도형 계산 프로그램 - 덧셈 코드, 곱셈 코드, 나눗셈 코드 등으로 나눔</li>
-<li>코드의 캡슐화 가능 : 함수의 인터페이스만 잘 정의하면 다른 사람이 자신의 코드를 쉽게 가져다 사용할 수 있음</li>
-</ul></li>
-</ul>
-<div id="12ed6f67" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 절대값 반환 함수</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">abs</span>(<span class="op">-</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>10</code></pre>
-</div>
-</div>
 <p><br></p>
 </section>
-<section id="함수-정의" class="level3">
-<h3 class="anchored" data-anchor-id="함수-정의">2.4.2. 함수 정의</h3>
-<blockquote class="blockquote">
-<p>def 함수 이름(매개변수1, 매개변수2, …): <br> 　　문장 <br> 　　return 반환값</p>
-</blockquote>
-<p><br></p>
+<section id="python-자료구조" class="level3">
+<h3 class="anchored" data-anchor-id="python-자료구조">3.1.2. Python 자료구조</h3>
 <ul>
-<li>함수 이름 규칙
-<ul>
-<li>변수 이름 규칙과 동일함</li>
-<li>일반적으로 소문자로 입력</li>
-<li>작업을 나타내기 위해 동사와 명사를 함께 사용하는 경우가 많음 - (예) find_number</li>
-<li>외부에 공개하는 함수일 경우 줄임말을 사용하지 않고 짧고 명료한 이름으로 정함</li>
-</ul></li>
-</ul>
-<p><br></p>
-<ul>
-<li>매개변수(parameter)
-<ul>
-<li>함수에서 입력값으로 사용하는 변수로, 1개 이상의 값을 적을 수 있음</li>
-</ul></li>
-</ul>
-<p><br></p>
-<ul>
-<li>함수 형태</li>
+<li>Python은 리스트(list), 튜플(tuple), 세트(set), 딕셔너리(dictionary)의 4개 대표적인 자료구조를 제공함</li>
 </ul>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 41%">
-<col style="width: 41%">
+<col style="width: 27%">
+<col style="width: 72%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;">구분</th>
-<th style="text-align: left;">매개변수 없음</th>
-<th style="text-align: left;">매개변수 있음</th>
+<th style="text-align: center;">자료구조</th>
+<th style="text-align: left;">설명</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">반환값 없음</td>
-<td style="text-align: left;">함수 내부 명령문만 수행</td>
-<td style="text-align: left;">매개변수를 사용하여 명령문만 수행</td>
+<td style="text-align: center;">리스트(list)</td>
+<td style="text-align: left;">여러 개의 값을 저장할 수 있는 순차적인 자료구조</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">반환값 있음</td>
-<td style="text-align: left;">매개변수 없이 명령문을 수행한 후 결과값 반환</td>
-<td style="text-align: left;">매개변수를 사용하여 명령문을 수행한 후 결과값 반환</td>
+<td style="text-align: center;">튜플(tuple)</td>
+<td style="text-align: left;">리스트와 같지만 데이터의 변경을 허용하지 않는 자료구조</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">세트(set)</td>
+<td style="text-align: left;">데이터의 중복을 허용하지 않고, 수학의 집합 연산을 지원하는 자료구조</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">딕셔너리(dictionary)</td>
+<td style="text-align: left;">키(key)와 값(value)의 형태로 데이터를 저장하는 자료구조</td>
 </tr>
 </tbody>
 </table>
-<div id="8cab2584" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 매개변수 ×, 반환값 ×</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func():</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'함수입니다.'</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'함수 호출 전입니다'</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>func()</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'함수 호출 후입니다'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>함수 호출 전입니다
-함수입니다.
-함수 호출 후입니다</code></pre>
-</div>
-</div>
-<div id="6d36f7a2" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 매개변수 ○, 반환값 ×</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add1(x, y):</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x<span class="op">+</span>y)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>res1 <span class="op">=</span> add1(<span class="dv">10</span>,<span class="dv">20</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>30
-None</code></pre>
-</div>
-</div>
-<div id="334d120e" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 매개변수 ○, 반환값 ○</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add2(x, y):</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">+</span>y</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>res2 <span class="op">=</span> add2(<span class="dv">10</span>,<span class="dv">20</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>30</code></pre>
-</div>
-</div>
-<div id="355285ef" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 섭씨온도를 화씨온도로 변환하는 함수</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (섭씨온도) = (화씨온도 - 32) × 5/9</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_to_c(fahrenheit):</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (fahrenheit<span class="op">-</span><span class="dv">32</span>) <span class="op">*</span> <span class="dv">5</span><span class="op">/</span><span class="dv">9</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>f_to_c(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>37.77777777777778</code></pre>
-</div>
-</div>
+<p><br></p>
+<ul>
+<li>자료구조 비교</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">자료구조</th>
+<th style="text-align: center;">순서 유지</th>
+<th style="text-align: center;">변경 가능</th>
+<th style="text-align: center;">중복 허용</th>
+<th style="text-align: left;">특징</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">리스트(list)</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: left;">가장 기본적인 자료구조, 인덱스로 접근</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">튜플(tuple)</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: left;">리스트와 유사하지만 불변형(immutable)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">세트(set)</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: left;">중복 제거, 수학적 집합 연산 가능</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">딕셔너리(dictionary)</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">△</td>
+<td style="text-align: left;">키-값(key-value) 형태로 저장</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
