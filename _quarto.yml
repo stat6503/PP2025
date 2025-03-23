@@ -25,6 +25,8 @@ website:
         menu:
           - href: 3_1_structure.qmd
             text: (1) 자료구조
+          - href: 3_2_list.qmd
+            text: (2) 리스트
 
 format:
   html:
