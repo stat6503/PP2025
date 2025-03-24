@@ -58,7 +58,7 @@ print(a, b)
 ```
 
 ```{python}
-# Python에서는 튜플 패킹과 언패킹(tuple packing & unpacking)을 활용하여 임시변수 없이 두 변수의 값을 쉽게 교환할 수 있음
+# Python에서는 패킹과 언패킹을 활용하여 임시변수 없이 두 변수의 값을 쉽게 교환할 수 있음
 a = 7
 b = 11
 a, b = b, a
