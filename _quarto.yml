@@ -27,6 +27,10 @@ website:
             text: (1) 자료구조
           - href: 3_2_list.qmd
             text: (2) 리스트
+          - href: 3_3_tuple.qmd
+            text: (3) 튜플
+          - href: 3_4_set.qmd
+            text: (4) 세트
 
 format:
   html:

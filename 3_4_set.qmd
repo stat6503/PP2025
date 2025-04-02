@@ -1,0 +1,257 @@
+---
+title: 3. 자료구조
+jupyter: python3
+---
+
+## 3.4. 세트
+### 3.3.1. 세트 생성
++ 세트(set)
+  + 여러 개의 값을 저장할 수 있는 컬렉션 자료형(collection data type)
+  + 순서가 없는 집합 자료형(set data type)
+  + 중복을 허용하지 않으며, 순서가 유지되지 않음
+    + 리스트, 튜플과 달리 인덱싱과 슬라이싱이 불가능함
+  + 한 번 생성된 이후에도 수정할 수 있는 가변형(mutable) 객체
+  + 정수형, 부동소수점형, 문자열형, bool형, 튜플 등 해시 가능한(immutable) 자료형을 저장할 수 있는 컨테이너형 객체
+
+<br>
+
++ [참고] 해시(hash)
+  + 데이터를 저장하거나 검색할 때 사용되는 고유한 숫자 값(해시 값)을 사용하는 과정
+  + 세트와 딕셔너리는 내부적으로 해시 값을 사용하여 원소 또는 key에 빠르게 접근함(검색 속도가 빠름)
+  + 해시 값은 변경되지 않아야 하므로, 불변형 객체만 사용할 수 있음
+
+<br>
+
++ 세트 생성
+  + 리터럴 방식(set literal)
+    + `{}`를 사용하여 세트를 직접 정의하는 방법
+    + `{}` 안에 원소(element)를 `,`로 구분하여 나열함
+    + **중복된 원소는 자동으로 제거됨**
+  + 생성자 방식(set constructor)
+    + `set()` 함수를 사용하여 세트를 생성하는 방법
+    + 다른 iterable 객체(리스트, 튜플, 세트, 딕셔너리, 문자열 등)를 인수로 받아 세트를 생성할 때 유용함
+    + 빈 세트를 만들려면 반드시 `set()` 함수를 사용해야 함
+
+
+```{python}
+# 세트 생성1
+st = {1, 2, 3, 1, 1, 4}
+print(st)
+```
+
+```{python}
+# 세트 생성2
+st = set({1, 2, 3, 1, 1, 4})
+print(st)
+```
+
+```{python}
+# 세트 생성3 : 세트는 해시 가능한(immutable) 자료형을 저장할 수 있음
+st = {1, 3.14, "Hello", True, (1, 2, 3), "Hello", 1, 1, 1}
+print(st)
+```
+
+```{python}
+# 세트 생성4: iterable 객체 사용
+st = set("Hello")
+print(st)
+```
+
+```{python}
+# 세트 생성5 : iterable 객체 사용
+st1 = set([1, 2, 3, 1, 1, 4])
+st2 = set((1, 2, 3, 1, 1, 4))
+print(st1)
+print(st2)
+```
+
+<br>
+
+### 3.4.2. 세트 연산 및 메소드
+#### 3.4.2.1. 세트 연산
++ 세트 전개 연산자 `*` : 세트의 개별 원소를 분리하여 다른 세트로 전개 - (예) {*세트}
+
+```{python}
+# 세트 전개
+st = {1, 2, 3, 1, 1, 4}
+print({*st, *st})
+print([11, 12, *st, 20])
+```
+
+<br>
+
+#### 3.4.2.2. 세트 집합 연산 및 메소드
+
+|연산|연산자|함수|
+|:---:|:---:|:------------:|
+|합집합|\||union()|
+|교집합|&|intersection()|
+|차집합|-|difference()|
+|대칭차집합|^|symmetric_difference()|
+|부분집합 여부|<=|issubset()|
+
+<br>
+
+![](./images/fig3-2.png){width=60%}
+
+```{python}
+# 세트 연산1
+A = {1, 2, 3}
+B = {3, 4, 5}
+
+print(A | B)                                                # 합집합
+print(A & B)                                                # 교집합
+print(A - B)                                                # 차집합
+print(A ^ B)                                                # 대칭차집합
+print(A <= B)                                               # 부분집합 여부
+```
+
+```{python}
+# 세트 연산2
+A = {1, 2, 3}
+B = {3, 4, 5}
+
+print(A.union(B))
+print(A.intersection(B))
+print(A.difference(B))
+print(A.symmetric_difference(B))
+print(A.issubset(B))
+```
+
+```{python}
+# 세트 연산3 : 여러 개의 세트를 연쇄적으로 한 번에 연산 가능
+A = {1, 2, 3}
+B = {3, 4, 5}
+C = {5, 6, 7}
+
+# 연산자 사용
+print(A | B | C)
+print(A & B & C)
+
+# 메소드 사용
+print(A.union(B, C))
+print(A.intersection(B, C))
+```
+
+<br>
+
+#### 3.4.2.3. 세트 추가/삭제
+
+|함수|설명|
+|:---:|:------------|
+|add()|- 새로운 값을 세트에 추가|
+|update()|- 여러 개 값을 세트에 추가|
+|pop()|- 임의의 값을 삭제하고 그 값을 반환 <br>- 어떤 값을 삭제할지 예측 불가능|
+|remove()|- 세트에서 일치하는 값을 삭제 <br>- 일치하는 값이 없으면 오류가 발생함|
+|discard()|- 세트에서 일치하는 값을 삭제 <br>- 일치하는 값이 없어도 오류가 발생하지 않음|
+|clear()|- 세트의 모든 원소를 삭제|
+
+```{python}
+# 세트에 한 개의 원소 추가
+st = {1, 2, 3}
+st.add(6)                                  # 실행 결과로 아무것도 출력하지 않음
+print(st)                                  # st 원본 값이 변함
+```
+
+```{python}
+# 세트에 여러 개의 원소 추가
+st = {1, 2, 3}
+st.update([1, 2, 6])                       # 리스트 사용
+print(st)
+
+st.update((1, 7))                          # 튜플 사용
+print(st)
+
+st.update({8, 9})                          # 세트 사용
+print(st)
+```
+
+```{python}
+# 임의의 원소 삭제
+st = {1, 2, 3}
+result = st.pop()                          # 임의의 원소를 삭제 후 반환
+print(st)                                  # st 원본 값이 변함
+print(result)
+```
+
+```{python}
+# 일치하는 값 삭제1
+st = {1, 2, 3}
+st.remove(3)
+print(st)
+```
+
+```{python}
+# 일치하는 값 삭제2 : remove() 함수는 일치하는 값이 없으면 오류가 발생함
+#st = {1, 2, 3}
+#st.remove(4)
+#print(st)
+```
+
+```{python}
+# 일치하는 값 삭제3
+st = {1, 2, 3}
+st.discard(3)
+print(st)
+```
+
+```{python}
+# 일치하는 값 삭제4 : discard() 함수는 일치하는 값이 없어도 오류가 발생하지 않음
+st = {1, 2, 3}
+st.discard(4)
+print(st)
+```
+
+```{python}
+# 세트 모든 원소 삭제
+st = {1, 2, 3}
+st.clear()
+print(st)
+```
+
+<br>
+
+### 3.4.3. 세트 컴프리헨션
+
+> {식 for 변수 in 반복범위 if 조건식}
+
+
++ 리스트 컴프리헨션과 문법이 동일함
++ 자동으로 중복이 제거되므로 빠르고 편리함
+
+```{python}
+# 이메일 리스트에서 '@'가 포함된 유효한 이메일 주소만 필터링
+emails = ["user1@gmail.com", "user2", "test@yahoo.com", "invalid_email", "hello@naver.com"]
+valid_emails = {email for email in emails if "@" in email}
+print(valid_emails)
+```
+
+```{python}
+# 문장에서 알파벳 문자만 추출 (중복 제거)
+sentence = "Python is amazing! 123"
+unique_chars = {char.lower() for char in sentence if char.isalpha()}
+print(unique_chars)
+```
+
+```{python}
+# 주어진 숫자 리스트에서 짝수의 제곱을 저장하는 세트
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_squares = {n**2 for n in numbers if n % 2 == 0}
+print(even_squares) 
+```
+
+```{python}
+# 웹사이트 방문 기록에서 도메인만 추출 (중복 제거)
+urls = ["https://google.com", "http://example.com", "https://google.com", "https://openai.com"]
+domains = {url.split("//")[1] for url in urls}
+print(domains)
+```
+
+```{python}
+# 두 개의 리스트에서 공통된 단어만 저장 (중복 없이)
+words1 = ["apple", "banana", "cherry", "durian"]
+words2 = ["banana", "durian", "fig", "grape"]
+common_words = {word for word in words1 if word in words2}
+print(common_words)  
+```
+
