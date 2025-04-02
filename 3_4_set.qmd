@@ -94,7 +94,6 @@ print([11, 12, *st, 20])
 
 ![](./images/fig3-2.png){width=60%}
 
-<br>
 
 ```{python}
 # 세트 연산1
