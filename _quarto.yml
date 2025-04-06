@@ -31,6 +31,8 @@ website:
             text: (3) 튜플
           - href: 3_4_set.qmd
             text: (4) 세트
+          - href: 3_5_dictionary.qmd
+            text: (5) 딕셔너리
 
 format:
   html:
