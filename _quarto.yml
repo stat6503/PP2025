@@ -33,6 +33,10 @@ website:
             text: (4) 세트
           - href: 3_5_dictionary.qmd
             text: (5) 딕셔너리
+      - text: Library
+        menu:
+          - href: 4_1_numpy.qmd
+            text: (1) NumPy
 
 format:
   html:
