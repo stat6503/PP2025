@@ -123,9 +123,7 @@ print(arr.itemsize)
   + **행렬(matrix)** : 2차원 배열, 1차원 배열을 여러 개 묶은 배열
   + **텐서(tensor)** : 3차원 이상의 배열, 벡터의 집합
 
-<br>
-
-![](./images/fig4-1.jpg){width=80%}
+![](./images/fig4-1.jpg)
 
 ```{python}
 arr0 = np.array(3.14)                        # 0차원 배열(스칼라)
@@ -179,9 +177,7 @@ print(arr.shape)
 |2차원|벡터들이 위아래로 쌓임 → 행렬|axis 0: 위 → 아래(행) <br>axis 1: 왼쪽 → 오른쪽(열)|
 |3차원|행렬들이 앞뒤로 쌓임|axis 0: 앞 → 뒤(면) <br>axis 1: 위 → 아래(행) <br>axis 2: 왼쪽 → 오른쪽(열)|
 
-<br>
-
-![](./images/fig4-2.png){width=80%}
+![](./images/fig4-2.png)
 
 <br>
 
