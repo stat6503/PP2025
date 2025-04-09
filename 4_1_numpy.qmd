@@ -125,7 +125,7 @@ print(arr.itemsize)
 
 <br>
 
-![](./images/fig4-1.jpg){width=50%}
+![](./images/fig4-1.jpg){width=80%}
 
 ```{python}
 arr0 = np.array(3.14)                        # 0차원 배열(스칼라)
@@ -181,7 +181,7 @@ print(arr.shape)
 
 <br>
 
-![](./images/fig4-2.png){width=50%}
+![](./images/fig4-2.png){width=80%}
 
 <br>
 
