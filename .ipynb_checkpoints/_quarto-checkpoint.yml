@@ -37,6 +37,8 @@ website:
         menu:
           - href: 4_1_numpy.qmd
             text: (1) NumPy
+          - href: 4_2_pandas.qmd
+            text: (2) Pandas
 
 format:
   html:
