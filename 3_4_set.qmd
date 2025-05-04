@@ -100,11 +100,11 @@ print([11, 12, *st, 20])
 A = {1, 2, 3}
 B = {3, 4, 5}
 
-print(A | B)                                                # 합집합
-print(A & B)                                                # 교집합
-print(A - B)                                                # 차집합
-print(A ^ B)                                                # 대칭차집합
-print(A <= B)                                               # 부분집합 여부
+print(A | B)                               # 합집합
+print(A & B)                               # 교집합
+print(A - B)                               # 차집합
+print(A ^ B)                               # 대칭차집합
+print(A <= B)                              # 부분집합 여부
 ```
 
 ```{python}
@@ -231,7 +231,7 @@ print(6 in st)
 ```{python}
 # 이메일 리스트에서 '@'가 포함된 유효한 이메일 주소만 추출
 emails = ["user1@gmail.com", "user2", "test@yahoo.com", "invalid_email", "hello@naver.com"]
-valid_emails = {e for e in emails if "@" in emails}
+valid_emails = {e for e in emails if "@" in e}
 print(valid_emails)
 ```
 

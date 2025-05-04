@@ -8,7 +8,7 @@ jupyter: python3
 + 문자열(string)
   + 문자(character)들이 나열된 시퀀스 자료형(sequence data type)
   + 한 번 생성된 이후에는 수정할 수 없는 불변형(immutable) 객체
-  + 큰 따옴표 `"` 또는 작은 따옴표`'`로 감싸서 문자열을 생성함
+  + 큰 따옴표 또는 작은 따옴표로 감싸서 문자열을 생성함
 
 <br>
 
