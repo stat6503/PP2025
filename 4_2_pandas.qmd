@@ -17,7 +17,7 @@ jupyter: python3
 |객체|설명|
 |:---:|:------------|
 |Series|- 1차원 레이블이 붙은 배열로, 각 데이터에 고유한 인덱스가 있음 <br>- 모든 원소가 동일한 자료형으로 저장되며, 숫자, 문자열, bool 등 다양한 자료형을 지원|
-|DataFrame|- 2차원 표 형태의 데이터 구조로, 행(row)과 열(column)로 구성됨 <br>- 각 열은 Series로 구성되어 있으며, 각 열이 서로 다른 자료형을 가질 수 있음 <br>- DataFrame은 정렬(같은 인덱스를 공유)된 Series 객체의 연속으로 볼 수 있음|
+|DataFrame|- 2차원 표 형태의 데이터 구조로, 행(row)과 열(column)로 구성됨 <br>- 각 열은 Series로 구성되어 있으며, 각 열이 서로 다른 자료형을 가질 수 있음 <br>- DataFrame은 정렬(같은 인덱스 공유)된 Series 객체의 연속으로 볼 수 있음|
 |Index|- 데이터에 레이블을 부여하는 객체로, 행 또는 열에 사용됨 <br>- 데이터 정렬, 선택, 결합 등을 효율적으로 할 수 있도록 지원|
 
 
@@ -39,47 +39,47 @@ import pandas as pd
 ```{python}
 # Series 생성1 : 리스트 사용
 sr = pd.Series([1, 2, 3, 4, 5])
-sr
+print(sr)
 ```
 
 ```{python}
 # Series 생성2 : 넘파이 배열 사용
 sr = pd.Series(np.array([1, 2, 3, 4, 5]))
-sr
+print(sr)
 ```
 
 ```{python}
 # Series 생성3 : 딕셔너리 사용
 # 딕셔너리 키는 인덱스로 자동 지정됨
 sr = pd.Series({'a': 10, 'b': 20, 'c': 30})
-sr
+print(sr)
 ```
 
 ```{python}
 # Series 생성4 : 인덱스 지정
 sr = pd.Series([1, 2, 3], index = ['a', 'b', 'c'])
-sr
+print(sr)
 ```
 
 ```{python}
 # DataFrame 생성1 : Series 사용
 sr = pd.Series([1, 2, 3], index = ['a', 'b', 'c'])
 df = pd.DataFrame(sr, columns = ['value'])
-df
+print(df)
 ```
 
 ```{python}
 # DataFrame 생성2 : 리스트 사용
 lst = [['Alice', 22], ['Bob', 20], ['Charlie', 27]]
 df = pd.DataFrame(lst, columns=['Name', 'Age'])
-df
+print(df)
 ```
 
 ```{python}
 # DataFrame 생성3 : 넘파이 배열 사용
 arr = np.array([['Alice', 22], ['Bob', 20], ['Charlie', 27]])
 df = pd.DataFrame(arr, columns=['Name', 'Age'])
-df
+print(df)
 ```
 
 ```{python}
@@ -87,14 +87,14 @@ df
 # 딕셔너리 키는 열 이름으로 자동 지정됨
 dct = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [22, 20, 27]}
 df = pd.DataFrame(dct)
-df
+print(df)
 ```
 
 ```{python}
 # DataFrame 생성5 : 딕셔너리 + 리스트 컴프리헨션 사용
 dct = [{'a': i, 'b': 2*i} for i in range(3)]
 df = pd.DataFrame(dct)
-df
+print(df)
 ```
 
 ```{python}
@@ -104,7 +104,7 @@ df
 sr1 = pd.Series([1, 2, 3], index = ['a', 'b', 'c'])
 sr2 = pd.Series([4, 5, 6], index = ['a', 'c', 'd'])
 df = pd.DataFrame({'x': sr1, 'y': sr2})
-df
+print(df)
 ```
 
 ```{python}
@@ -113,7 +113,7 @@ data = [[101, 22], [102, 20], [103, 27]]
 columns = ['ID', 'Age']
 index = ['Alice', 'Bob', 'Charlie']
 df = pd.DataFrame(data, columns=columns, index=index)
-df
+print(df)
 ```
 
 ```{python}
@@ -123,7 +123,7 @@ idx
 ```
 
 ```{python}
-# Index 생성1 : range() 사용
+# Index 생성2 : range() 사용
 idx = pd.Index(range(1, 6))
 idx
 ```
@@ -156,13 +156,13 @@ print(df.dtypes)
 ```{python}
 # 행 인덱스 변경
 df.index = ['a', 'b', 'c', 'd', 'e']
-df
+print(df)
 ```
 
 ```{python}
 # 열 이름 변경
 df.columns = ['Student Name', 'Student Age', 'Exam Score']
-df
+print(df)
 ```
 
 <br>
@@ -185,17 +185,17 @@ df = pd.DataFrame({
 
 ```{python}
 # 기본 정보
-df.info()
+print(df.info())
 ```
 
 ```{python}
 # 상위 5개 행
-df.head()
+print(df.head())
 ```
 
 ```{python}
 # 요약 통계량
-df.describe()
+print(df.describe())
 ```
 
 <br>
@@ -316,7 +316,7 @@ df[0:1]                                      # 암묵적 인덱스(integer) 사�
 ```{python}
 # 단항 연산1 : Series
 sr = pd.Series([1, 2, 3, 4, 5])
-sr + 2
+print(sr + 2)
 ```
 
 ```{python}
@@ -325,7 +325,7 @@ df = pd.DataFrame({
     'x': [1, 2, 3, 4, 5],
     'y': [11, 12, 13, 14, 15] 
 })
-np.log(df)
+print(np.log(df))
 ```
 
 ```{python}
@@ -333,7 +333,7 @@ np.log(df)
 # 두 시리즈에 존재하는 모든 행 인덱스를 포함한 결과 생성 (합집합처럼 동작)
 math = pd.Series({'Alice': 85, 'Bob': 90, 'Charlie': 78})
 english = pd.Series({'Alice': 95, 'Charlie': 80, 'David': 88})
-math + english
+print(math + english)
 ```
 
 ```{python}
@@ -348,7 +348,7 @@ final = pd.DataFrame({
     'english': [95, 80, 88]
 }, index=['Alice', 'Charlie', 'David'])
 
-midterm + final
+print(midterm + final)
 ```
 
 <br>
@@ -371,13 +371,13 @@ midterm + final
 ```{python}
 # 연산자 메소드1
 # midterm + final과 동일한 결과
-midterm.add(final)
+print(midterm.add(final))
 ```
 
 ```{python}
 # 연산자 메소드2
 # 하나의 데이터프레임에만 값이 있는 경우 0으로 처리하고, 둘 다 값이 없으면 NaN 반환
-midterm.add(final, fill_value = 0)
+print(midterm.add(final, fill_value = 0))
 ```
 
 <br>
@@ -396,33 +396,33 @@ df = pd.DataFrame({
     'price': [100, 200, 150, 300, 250],
     'quantity': [10, 5, 3, 7, 6]
 })
-df
+print(df)
 ```
 
 ```{python}
 # 새로운 열 생성1: 기본 할당
 # 기본 할당은 데이터를 직접 수정하므로, 권장하지 않음
 df['total_price'] = df['price'] * df['quantity']
-df
+print(df)
 ```
 
 ```{python}
 # 새로운 열 생성2: assign() 사용
-df.assign(total_price = df['price'] * df['quantity'])
+print(df.assign(total_price = df['price'] * df['quantity']))
 ```
 
 ```{python}
 # 새로운 열 생성3: eval() 사용
 # inplace=True: 기존 데이터프레임에 직접 적용(새 객체를 반환하지 않음)
 df.eval('total_price = price * quantity', inplace=True)
-df
+print(df)
 ```
 
 ```{python}
 # 새로운 열 생성4: where() 사용
 # 가격이 200 이상이면 'Expensive', 아니면 'Affordable'로 구분
 df['price_category'] = np.where(df['price'] >= 200, 'Expensive', 'Affordable')
-df
+print(df)
 ```
 
 <br>
@@ -445,7 +445,7 @@ df
 |cumsum(), cumprod()|누적 합계, 누적 곱|
 
 ```{python}
-#  실습 데이터 : tips 데이터셋
+## 실습 데이터 : tips 데이터셋
 import seaborn as sns
 tips = sns.load_dataset('tips')
 ```
@@ -458,55 +458,55 @@ tips = sns.load_dataset('tips')
 # day: 요일
 # time: 식사 시간(Lunch, Dinner)
 # size: 식사 인원 수
-tips.info()
+print(tips.info())
 ```
 
 ```{python}
-tips.head()
+print(tips.head())
 ```
 
 ```{python}
-tips.describe()
+print(tips.describe())
 ```
 
 ```{python}
 # 각 열의 유효한 데이터 수 (NaN 제외)
-tips.count()
+print(tips.count())
 ```
 
 ```{python}
 # 식사 시간별 주문 수
-tips.value_counts('time')
+print(tips.value_counts('time'))
 ```
 
 ```{python}
 # 전체(합계) 식사 금액, 팁 금액, 식사 인원 수
-tips[['total_bill', 'tip', 'size']].sum()
+print(tips[['total_bill', 'tip', 'size']].sum())
 ```
 
 ```{python}
 # 고객 1인당 평균 식사 금액
-(tips['total_bill'] / tips['size']).mean()
+print((tips['total_bill'] / tips['size']).mean())
 ```
 
 ```{python}
 # 고객 1인당 평균 팁 금액
-(tips['tip'] / tips['size']).mean()
+print((tips['tip'] / tips['size']).mean())
 ```
 
 ```{python}
 # 전체 식사 금액에서 팁이 차지하는 비율
-tips['tip'] / tips['total_bill']
+print(tips['tip'] / tips['total_bill'])
 ```
 
 ```{python}
 # 전체 식사 금액에서 팁이 차지하는 비율에 대한 요약 통계량
-(tips['tip'] / tips['total_bill']).describe()
+print((tips['tip'] / tips['total_bill']).describe())
 ```
 
 ```{python}
 # 전체 식사 금액에서 팁이 차지하는 비율이 50% 이상인 경우
-tips[tips['tip'] / tips['total_bill'] >= 0.5]
+print(tips[tips['tip'] / tips['total_bill'] >= 0.5])
 ```
 
 <br>
@@ -531,23 +531,22 @@ tips = sns.load_dataset('tips')
 ```{python}
 # 요일별 평균 식사 금액
 # observed=False: 모든 범주 포함, 실제 데이터가 없으면 NaN
-tips.groupby('day', observed=False)['total_bill'].mean()
+print(tips.groupby('day', observed=False)['total_bill'].mean())
 ```
 
 ```{python}
 # 식사 시간별 식사 금액, 팁 금액의 평균 및 표준편차
-tips.groupby('time', observed=False)[['total_bill', 'tip']].agg(['mean', 'std'])
+print(tips.groupby('time', observed=False)[['total_bill', 'tip']].agg(['mean', 'std']))
 ```
 
 ```{python}
 # 식사 시간별 식사 금액의 최대값, 팁 금액의 최소값: 딕셔너리 사용
-tips.groupby('time', observed=False).agg({'total_bill': 'max', 'tip': 'min'}).reset_index()
+print(tips.groupby('time', observed=False).agg({'total_bill': 'max', 'tip': 'min'}).reset_index())
 ```
 
 ```{python}
 # 식사 시간별 식사 금액의 최대값, 팁 금액의 최소값: 튜플 사용, named aggregation 문법
-tips.groupby('time', observed=False).agg(total_bill_max = ('total_bill', 'max'),
-                                         tip_min = ('tip', 'min')).reset_index()
+print(tips.groupby('time', observed=False).agg(total_bill_max = ('total_bill', 'max'), tip_min = ('tip', 'min')).reset_index())
 ```
 
 
@@ -576,18 +575,18 @@ f(1, 4)
 def filter_tip_avg(x):
     return x['tip'].mean() >= 3
 
-tips.groupby('day', observed=False).filter(filter_tip_avg)
+print(tips.groupby('day', observed=False).filter(filter_tip_avg))
 ```
 
 ```{python}
 # 팀 금액 평균이 3달러 이상인 요일 데이터 필터링: 람다 함수 사용
-tips.groupby('day', observed=False).filter(lambda x: x['tip'].mean() >= 3)
+print(tips.groupby('day', observed=False).filter(lambda x: x['tip'].mean() >= 3))
 ```
 
 ```{python}
 # 성별 팁 금액의 편차
 tips['tip_dev'] = tips.groupby('sex', observed=False)['tip'].transform(lambda x: x - x.mean())
-tips[['sex', 'tip', 'tip_dev']].head()
+print(tips[['sex', 'tip', 'tip_dev']].head())
 ```
 
 ```{python}
@@ -595,18 +594,18 @@ tips[['sex', 'tip', 'tip_dev']].head()
 def iqr(x):
     return x.quantile(0.75) - x.quantile(0.25)
 
-tips.groupby('time', observed=False)['tip'].apply(iqr)
+print(tips.groupby('time', observed=False)['tip'].apply(iqr))
 ```
 
 ```{python}
 # 식사 시간별 팁 금액의 사분위수범위: 람다 함수 사용
-tips.groupby('time', observed=False)['tip'].apply(lambda x: x.quantile(0.75) - x.quantile(0.25))
+print(tips.groupby('time', observed=False)['tip'].apply(lambda x: x.quantile(0.75) - x.quantile(0.25)))
 ```
 
 <br>
 
-#### 4.2.5.2. 수식 및 조건식 기반 데이터 처리
-+ eval(), query() 메소드를 사용하면 문자열 형태의 표현식을 통해 데이터를 보다 직관적으로 처리할 수 있음
+#### 4.2.4.2. 수식 및 조건식 기반 데이터 처리
++ eval(), query() 메소드를 사용하면 문자열 형태의 표현식을 통해 데이터를 보다 직관적으로 처리 가능
 + 복잡한 연산이나 조건 필터링을 간결하게 표현할 수 있어 가독성과 성능 모두에 유리함
   + 데이터프레임의 열 이름을 따옴표 없이 사용 가능
   + 외부 변수는 `@` 기호를 사용하여 표현식에 표현 가능
@@ -614,8 +613,8 @@ tips.groupby('time', observed=False)['tip'].apply(lambda x: x.quantile(0.75) - x
 
 |함수|설명|
 |:---:|:------------|
-|eval()|- 문자열로 작성한 수식(expression)을 이용하여 기존 열을 연산하거나 새로운 열을 생성 <br>- Python 표현식을 그대로 사용할 수 있어 가독성이 높음|
-|query()|- 문자열로 작성한 조건식(condition)을 이용하여 행을 필터링<br>- 복잡한 불리언 인덱싱보다 간결하고 직관적인 문법 제공 <br>- 논리 연산자는 &(and), \|(or), ~(not)의 사용을 권장하며, 각 조건은 괄호 ()로 감싸야 함|
+|eval()|- 문자열로 작성한 수식을 이용하여 기존 열을 연산하거나 새로운 열을 생성 <br>- Python 표현식을 그대로 사용할 수 있어 가독성이 높음|
+|query()|- 문자열로 작성한 조건식을 이용하여 행을 필터링<br>- 복잡한 불리언 인덱싱보다 간결하고 직관적인 문법 제공 <br>- 논리 연산자는 `&`, `\|`, `~`의 사용을 권장하며, 각 조건은 괄호 ()로 감싸야 함|
 
 ```{python}
 #  실습 데이터 : tips 데이터셋
@@ -624,50 +623,308 @@ tips = sns.load_dataset('tips')
 
 ```{python}
 # 기존 열 연산: 식사 금액에서 세금 10%를 제외한 실수령 금액
-tips.eval('total_bill = total_bill * 0.9')
+print(tips.eval('total_bill = total_bill * 0.9'))
 ```
 
 ```{python}
 # 새로운 열 생성: 전체 식사 금액 대비 팁 금액 비율
 # inplace=True: 기존 데이터프레임에 직접 적용(새 객체를 반환하지 않음)
 tips.eval('tip_rate = tip / total_bill', inplace=True)
-tips
+print(tips)
 ```
 
 ```{python}
 # 외부 변수 사용: 전체 식사 금액에 따른 기본(최소) 팁 금액
 tip_percentage = 0.15
 tips.eval('min_tip = total_bill * @tip_percentage', inplace = True)
-tips
+print(tips)
 ```
 
 ```{python}
 # 기본(최소) 팁 금액보다 적게 준 경우 'Below', 많거나 같은 경우 'Above'로 구분
 # 기본(최소) 팁 금액보다 적게 준 경우는 108팀임
 tips['tip_group'] = np.where(tips['tip'] < tips['min_tip'], 'Below', 'Above')
-tips['tip_group'].value_counts()
+print(tips['tip_group'].value_counts())
 ```
 
 ```{python}
 # 단일 조건 필터링: 식사 금액이 20달러 이상인 경우
-tips.query('total_bill >= 20')
+print(tips.query('total_bill >= 20'))
 ```
 
 ```{python}
 # 다중 조건 필터링: 식사 인원 수가 3명 이상이고, 목요일에 방문한 경우
-tips.query('size >= 3 and day == "Thur"')                   # 권장하지 않음, 조건이 복잡할 경우 오류가 발생할 수 있음
-tips.query('(size >= 3) & (day == "Thur")')                 # 권장 방식: 괄호로 각 조건을 명확히 구분
+#print(tips.query('size >= 3 and day == "Thur"'))           # 권장하지 않음, 조건이 복잡할 경우 오류가 발생할 수 있음
+print(tips.query('(size >= 3) & (day == "Thur")'))          # 권장 방식: 괄호로 각 조건을 명확히 구분
 ```
 
 ```{python}
 # 외부 변수 사용: 기준 팁 금액 미만인 경우
 min_tip_required = 5
-tips.query('tip < @min_tip_required')
+print(tips.query('tip < @min_tip_required'))
 ```
 
 ```{python}
 # 기준 팁 금액보다 적게 준 경우는 216팀임
-tips.query('tip < @min_tip_required').shape[0]
-len(tips.query('tip < @min_tip_required'))
+print(tips.query('tip < @min_tip_required').shape[0])
+print(len(tips.query('tip < @min_tip_required')))
+```
+
+<br>
+
+### 4.2.5. 시계열 데이터 처리
+#### 4.2.5.1. 시계열 데이터(time series data)
++ 일정한 시간 간격으로 관측된 연속적인 데이터
++ Pandas에서는 시계열 데이터를 처리하기 위한 다양한 날짜/시간 관련 객체를 제공함
+
+<br>
+
+|구분|설명|예|Pandas 객체|
+|:---:|:------------|:------|:---------|
+|타임스탬프(timestampe)|특정 시점|2025-03-02 09:00|`pd.TimeStamp`, `DatetimeIndex`|
+|시간 기간(period)|일정한 시간 구간(시작~종료)|2025년 3월 (월간)|`pd.Period`, `PeriodIndex`|
+|시간 델타(time delta)|두 시점 사이의 시간 간격|2일, 5시간|`pd.Timedelta`, `TimedeltaIndex`|
+
+```{python}
+print(pd.Timestamp('2025-03-02 09:00'))      # 타임스탬프
+print(pd.Period('2025-03', freq='M'))        # 시간 기간
+print(pd.Timedelta(days=2, hours=5))         # 시간 델타
+```
+
+<br>
+
+#### 4.2.5.2. 시계열 데이터 형식 변환
++ `pd.to_datetime()` 함수
+  + 문자열이나 정수 등 다양한 형태의 데이터를 시계열 데이터(datetime 형식)로 변환
+  + `format` 인자를 사용하여 날짜 형식을 명시적으로 지정 가능
+  + `errors='coerce'` 인자를 사용하면 오류 발생 시 NaT(Not a Time)으로 처리
+  + 시계열 인덱스를 설정하거나 변환할 때도 자주 사용됨
+
+<br>
+
+|코드|설명|예|
+|:---:|:------------|:---:|
+|%Y|전체 연도|2025|
+|%B|전체 월 이름|March|
+|%m|0으로 시작하는 월|03|
+|%d|0으로 시작하는 일|02|
+|%H|0으로 시작하는 시간(24시간제)|14|
+|%I|0으로 시작하는 시간(12시간제)|09|
+|%p|AM 또는 PM|AM|
+|%M|0으로 시작하는 분|00|
+|%S|0으로 시작하는 초|00|
+
+```{python}
+# Timestampe1: 문자열 리스트 사용
+pd.to_datetime(['2025-03-02', '2025-03-03', '2025-03-04'])
+```
+
+```{python}
+# Timestampe2: 명시적 형식 지정
+pd.to_datetime(['March 2, 2025', 'March 3, 2025', 'March 4, 2025'], format='%B %d, %Y')
+```
+
+```{python}
+# Timestampe3: 오류 발생 시 NaT 처리
+pd.to_datetime(["2025-03-02", "not a date"], errors="coerce")
+```
+
+```{python}
+# Timestampe4: 정수 데이터프레임 사용(각 행을 날짜로 변환)
+df = pd.DataFrame({
+    "year": [2025, 2025],
+    "month": [3, 4],
+    "day": [2, 15]
+})
+pd.to_datetime(df)
+```
+
+```{python}
+# Period: 2025년 3월 1일 ~ 31일(한 달)
+pd.to_datetime('2025-03', format='%Y-%m').to_period('M')
+```
+
+```{python}
+# Timedelta
+pd.to_datetime('2025-05-13') - pd.to_datetime('2025-03-02')
+```
+
+<br>
+
++ 정규 날짜 시퀀스 생성
+  + Pandas는 일정 간격의 날짜/시간 데이터를 생성하는 기능을 제공함
+  + `pd.date_range()`, `pd.period_range()`, `pd.timedelta_range()` 함수
+    + `freq` 인자를 통해 날짜 간격의 빈도(frequency) 지정 가능
+
+<br>
+
+|코드|설명|
+|:---:|:------------|
+|D|일(day)|
+|W|주(week)|
+|ME|월말(month end)|
+|QE|분기말(quarer end)|
+|YE|연말(year end)|
+|h|시간(hour)|
+|min|분(minute)|
+|s|초(second)|
+
+```{python}
+# pd.date_range(): 하루씩 증가하는 날짜 시퀀스
+pd.date_range('2025-03-02', periods=5, freq='D')
+```
+
+```{python}
+# pd.date_range(): 일주일씩 증가하는 날짜 시퀀스(일요일 기준)
+pd.date_range('2025-05-13', periods=5, freq='W')
+```
+
+```{python}
+# pd.period_range(): 2025년 3월부터 시작하여 3개월 동안의 기간
+pd.period_range('2025-03', periods=3, freq='M')
+```
+
+```{python}
+# pd.timedelta_range(): 1시간 간격의 시간 델타 시퀀스
+pd.timedelta_range(start='0s', periods=5, freq='h')
+```
+
+<br>
+
+#### 4.2.5.3. 시계열 데이터 인덱스와 필터링
++ 시계열 데이터를 인덱스로 설정하면, 시간 기반으로 데이터를 쉽게 필터링할 수 있음
+  + 문자열 형태의 날짜를 인덱스 슬라이싱에 사용 가능
+  + 예: 연도('2025'), 연월('2025-01'), 연월일('2025-01-07') 등
++ DatetimeIndex 객체는 다음과 같은 속성을 제공
+  + `.year`, `.month`, `.day`, `.hour`, `.minute`, `.second`
+  + `.month_name()`, `.day_name()`, `.dayofweek`(0=월요일)
++ `sort_index()` 메소드를 통해 날짜 인덱스를 기준으로 정렬 가능
+
+```{python}
+# 시계열 데이터 인덱스 설정
+date_rng = pd.date_range(start='2024-12-20', end='2025-01-10', freq='D')
+df = pd.DataFrame({'value': np.random.randint(0, 100, size=len(date_rng))}, index=date_rng)
+print(df)
+```
+
+```{python}
+# 날짜 기반 필터링1: 특정 연도 데이터
+print(df.loc['2025'])
+```
+
+```{python}
+# 날짜 기반 필터링2: 특정 날짜 이후 데이터
+print(df.loc['2025-01-07':])
+```
+
+```{python}
+# 날짜 기반 필터링2: 특정 날짜 범위 데이터
+print(df.loc['2024-12-24':'2024-12-31'])
+```
+
+```{python}
+# DatetimeIndex 속성1: 월(month)
+print(df.index.month)
+```
+
+```{python}
+# DatetimeIndex 속성2: 요일 이름
+print(df.index.day_name())
+```
+
+```{python}
+# 날짜 인덱스 정렬: 내림차순
+print(df.sort_index(ascending=False))
+```
+
+<br>
+
+#### 4.2.5.4. 시계열 데이터 처리 및 시각화
++ 리샘플링(resampling) : 시계열 데이터의 빈도를 변경하는 방법(예 : 월별 데이터 → 연간 데이터)
++ 시간 이동(time-shift) : 시계열 데이터를 시간 축을 기준으로 이동시키는 방법으로, 이전 시점의 데이터와 비교할 때 유용함
++ 롤링 윈도우(rolling windows): 일정한 기간을 기준으로 이동 평균 등을 방법으로, 주기적인 변동성을 관할할 때 유용함
+
+```{python}
+## 실습 데이터 : flights 데이터셋
+flights = sns.load_dataset("flights")
+```
+
+```{python}
+print(flights.info())
+```
+
+```{python}
+print(flights.head())
+```
+
+```{python}
+# 시계열 데이터 인덱스 설정
+flights['date'] = pd.to_datetime(flights['year'].astype(str) + '-' + flights['month'].astype(str), format='%Y-%b')
+flights.set_index('date', inplace=True)
+flights.drop(['year', 'month'], axis=1, inplace=True)
+print(flights.head())
+```
+
+```{python}
+# 리샘플링: 월별 데이터 → 연간 데이터(연도별 총합)
+annual_passengers = flights.resample('YE').sum()
+print(annual_passengers)
+```
+
+```{python}
+import matplotlib.pyplot as plt
+```
+
+```{python}
+# 리샘플링: 연간 데이터 시각화
+plt.figure(figsize=(5, 3))
+annual_passengers['passengers'].plot()
+plt.title('Annual Total Passengers')
+plt.xlabel('Year')
+plt.ylabel('Number of Passengers')
+plt.grid(True)
+plt.show()
+```
+
+```{python}
+# 시간 이동: 직전 분기 대비 승객 수 증감률(%)
+quarterly = flights['passengers'].resample('QE').sum()
+previous_quarter = quarterly.shift(1)
+change_rate = (quarterly - previous_quarter) / previous_quarter * 100
+
+quarterly_df = pd.DataFrame({
+    'quarterly_passengers': quarterly,
+    'change_rate': change_rate
+})
+print(quarterly_df)
+```
+
+```{python}
+# 시프팅: 직전 분기 대비 승객 수 증감률(%) 시각화
+plt.figure(figsize=(5, 3))
+plt.plot(quarterly_df['change_rate'])
+plt.title('Quarter-over-Quarter Change in Airline Passengers (%)')
+plt.xlabel('Quarter')
+plt.ylabel('Change Rate (%)')
+plt.grid(True)
+plt.show()
+```
+
+```{python}
+# 롤링 윈도우: 12개월 단순이동평균
+flights['moving_avg_12months'] = flights['passengers'].rolling(window=12).mean()
+print(flights)
+```
+
+```{python}
+# 롤링 윈도우: 12개월 단순이동평균 시각화
+plt.figure(figsize=(5, 3))
+plt.plot(flights['passengers'], label='Original Data')
+plt.plot(flights['moving_avg_12months'], label='12-Month Moving Average', color='orange')
+plt.title('Airline Passenger Trend with 12-Month Moving Average')
+plt.xlabel('Date')
+plt.ylabel('Number of Passengers')
+plt.legend()
+plt.show()
 ```
 

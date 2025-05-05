@@ -99,9 +99,9 @@ print(info)
 
 |함수|설명|
 |:---:|:------------|
-|keys()|딕셔너리의 모든 키를 반환(dict_keys 객체)|
-|values()|딕셔너리의 모든 값을 반환(dict_values 객체)|
-|items()|(키, 값) 쌍을 튜플 형태로 반환(dict_items 객체)|
+|keys()|딕셔너리의 모든 키를 반환(`dict_keys` 객체)|
+|values()|딕셔너리의 모든 값을 반환(`dict_values` 객체)|
+|items()|(키, 값) 쌍을 튜플 형태로 반환(`dict_items` 객체)|
 |get()|지정한 키의 값을 반환하며, 없으면 None 반환|
 |in 연산자|특정 키가 딕셔너리에 있다면 True, 없다면 False 반환|
 
