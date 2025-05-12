@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -159,6 +193,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./4_2_pandas.html">
  <span class="dropdown-text">(2) Pandas</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./4_3_matplotlib.html">
+ <span class="dropdown-text">(2) Matplotlib</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -179,8 +217,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#matplotlib-라이브러리" id="toc-matplotlib-라이브러리" class="nav-link active" data-scroll-target="#matplotlib-라이브러리">4.3. MatplotLib 라이브러리</a>
   <ul class="collapse">
-  <li><a href="#판다스-객체" id="toc-판다스-객체" class="nav-link" data-scroll-target="#판다스-객체">4.2.1. 판다스 객체</a></li>
-  <li><a href="#시계열-데이터-처리" id="toc-시계열-데이터-처리" class="nav-link" data-scroll-target="#시계열-데이터-처리">4.2.5. 시계열 데이터 처리</a></li>
+  <li><a href="#데이터-시각화" id="toc-데이터-시각화" class="nav-link" data-scroll-target="#데이터-시각화">4.3.1 데이터 시각화</a></li>
+  <li><a href="#데이터-시각화-유형" id="toc-데이터-시각화-유형" class="nav-link" data-scroll-target="#데이터-시각화-유형">4.3.2 데이터 시각화 유형</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -209,20 +247,28 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="matplotlib-라이브러리" class="level2">
 <h2 class="anchored" data-anchor-id="matplotlib-라이브러리">4.3. MatplotLib 라이브러리</h2>
-<section id="판다스-객체" class="level3">
-<h3 class="anchored" data-anchor-id="판다스-객체">4.2.1. 판다스 객체</h3>
-<section id="판다스-객체-소개" class="level4">
-<h4 class="anchored" data-anchor-id="판다스-객체-소개">4.2.1.1. 판다스 객체 소개</h4>
+<section id="데이터-시각화" class="level3">
+<h3 class="anchored" data-anchor-id="데이터-시각화">4.3.1 데이터 시각화</h3>
 <ul>
-<li>Pandas
+<li>데이터 시각화(data visualization)
 <ul>
-<li>NumPy를 기반으로 만들어진 데이터 분석용 라이브러리</li>
-<li>레이블(label)로 식별되는 데이터를 쉽게 다룰 수 있도록 지원</li>
-<li>고성능 데이터 조작, 탐색, 전처리, 변환, 요약, 통계 연산 기능 제공</li>
-<li>주요 객체로는 Series(1차원), DataFrame(2차원), Index(레이블 관리 구조)가 있음</li>
+<li>데이터 분석 결과를 쉽게 이해할 수 있도록 표현하고 전달되는 과정</li>
+<li>복잡한 정보를 한 눈에 파악하고, 숨겨진 패턴이나 관계를 드러냄</li>
+<li>탐색적 자료 분석(EDA), 결과 해석, 의사결정 등에 폭넓게 활용</li>
 </ul></li>
 </ul>
 <p><br></p>
+<ul>
+<li>MatplotLib
+<ul>
+<li>넘파이 배열을 기반으로 만들어진 다중 플랫폼 데이터 시각화 라이브러리</li>
+<li>다양한 운영체제와 그래픽 백엔드에서 안정적으로 작동</li>
+</ul></li>
+</ul>
+<p><br></p>
+</section>
+<section id="데이터-시각화-유형" class="level3">
+<h3 class="anchored" data-anchor-id="데이터-시각화-유형">4.3.2 데이터 시각화 유형</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 27%">
@@ -230,54 +276,313 @@ ul.task-list li input[type="checkbox"] {
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;">객체</th>
+<th style="text-align: center;">유형</th>
 <th style="text-align: left;">설명</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">Series</td>
-<td style="text-align: left;">- 1차원 레이블이 붙은 배열로, 각 데이터에 고유한 인덱스가 있음 <br>- 모든 원소가 동일한 자료형으로 저장되며, 숫자, 문자열, bool 등 다양한 자료형을 지원</td>
+<td style="text-align: center;">선 그래프 (line plot)</td>
+<td style="text-align: left;">- 시계열 데이터의 추세 표현 <br>- 색상(<code>color</code>), 선 종류(<code>linestyle</code>), 마커(<code>marker</code>) 등</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">DataFrame</td>
-<td style="text-align: left;">- 2차원 표 형태의 데이터 구조로, 행(row)과 열(column)로 구성됨 <br>- 각 열은 Series로 구성되어 있으며, 각 열이 서로 다른 자료형을 가질 수 있음 <br>- DataFrame은 정렬(같은 인덱스를 공유)된 Series 객체의 연속으로 볼 수 있음</td>
+<td style="text-align: center;">막대 그래프 (bar plot)</td>
+<td style="text-align: left;">- 범주형 데이터의 값 비교 <br>- 색상(<code>color</code>), 너비(<code>width</code>), 정렬(<code>align</code>) 등</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">Index</td>
-<td style="text-align: left;">- 데이터에 레이블을 부여하는 객체로, 행 또는 열에 사용됨 <br>- 데이터 정렬, 선택, 결합 등을 효율적으로 할 수 있도록 지원</td>
+<td style="text-align: center;">히스토그램 (histogram)</td>
+<td style="text-align: left;">- 연속형 데이터의 분포 파악 <br>- 색상(<code>color</code>), 구간 수(<code>bins</code>), 누적 여부(<code>cumulative</code>) 등</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">산점도 (scatter plot)</td>
+<td style="text-align: left;">- 두 연속형 변수 사이의 관계 표현 <br>- 색상(<code>c</code>), 점 크기(<code>s</code>), 투명도(<code>alpha</code>) 등</td>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="시계열-데이터-처리" class="level3">
-<h3 class="anchored" data-anchor-id="시계열-데이터-처리">4.2.5. 시계열 데이터 처리</h3>
-<section id="시계열-데이터time-series-data" class="level4">
-<h4 class="anchored" data-anchor-id="시계열-데이터time-series-data">4.2.5.1. 시계열 데이터(time series data)</h4>
-<ul>
-<li>동일한 데이터를 일정한 간격으로 반복적으로 수집한 데이터</li>
-<li>날짜/시간 데이터
-<ul>
-<li>타임스탬프(time stampe) : 특정 시점</li>
-<li>시간 간격과 기간(period) : 특정 시작점과 종료점 사이의 시간의 길이</li>
-<li>시간 델타(time delta) : 정확한 시간 길이</li>
-</ul></li>
-</ul>
-</section>
-<section id="날짜시간-데이터-변환" class="level4">
-<h4 class="anchored" data-anchor-id="날짜시간-데이터-변환">4.2.5.2.날짜/시간 데이터 변환</h4>
-<p>–&gt; pd.to_datetime()</p>
-</section>
-<section id="시계열-인덱스와-기간-필터링" class="level4">
-<h4 class="anchored" data-anchor-id="시계열-인덱스와-기간-필터링">4.2.5.3. 시계열 인덱스와 기간 필터링</h4>
-</section>
-<section id="리샘플링-시프팅-윈도잉-이름-바꾸고-싶다" class="level4">
-<h4 class="anchored" data-anchor-id="리샘플링-시프팅-윈도잉-이름-바꾸고-싶다">4.2.5.4. 리샘플링, 시프팅, 윈도잉 –&gt; 이름 바꾸고 싶다</h4>
-<p>–&gt; 여기에 시각화 내용 들어가기!</p>
+<div id="6d175382" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="8e298a25" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 실습 데이터 : air_quality 데이터셋</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>air_quality <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/air_quality_no2_long.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="050a7e78" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># city: 측정 도시</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># country: 측정 국가</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># date.utc: 측정 일시(UTC)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># location: 측정 위치</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># parameter: 측정 항목</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># value: 측정 값</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># unit: 측정 단위</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(air_quality.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 2068 entries, 0 to 2067
+Data columns (total 7 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   city       2068 non-null   object 
+ 1   country    2068 non-null   object 
+ 2   date.utc   2068 non-null   object 
+ 3   location   2068 non-null   object 
+ 4   parameter  2068 non-null   object 
+ 5   value      2068 non-null   float64
+ 6   unit       2068 non-null   object 
+dtypes: float64(1), object(6)
+memory usage: 113.2+ KB
+None</code></pre>
+</div>
+</div>
+<div id="3f22f29f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(air_quality.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    city country                   date.utc location parameter  value   unit
+0  Paris      FR  2019-06-21 00:00:00+00:00  FR04014       no2   20.0  µg/m³
+1  Paris      FR  2019-06-20 23:00:00+00:00  FR04014       no2   21.8  µg/m³
+2  Paris      FR  2019-06-20 22:00:00+00:00  FR04014       no2   26.5  µg/m³
+3  Paris      FR  2019-06-20 21:00:00+00:00  FR04014       no2   24.9  µg/m³
+4  Paris      FR  2019-06-20 20:00:00+00:00  FR04014       no2   21.4  µg/m³</code></pre>
+</div>
+</div>
+<div id="a16b109b" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>air_quality[<span class="st">'city'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>city
+Paris        1004
+London        969
+Antwerpen      95
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<div id="33b1fddf" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>air_quality[<span class="st">'parameter'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>parameter
+no2    2068
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<div id="3c248e79" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># date.utc 열을 datetime 형식으로 변환</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>air_quality[<span class="st">'date.utc'</span>] <span class="op">=</span> pd.to_datetime(air_quality[<span class="st">'date.utc'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="21e008f5" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(air_quality.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 2068 entries, 0 to 2067
+Data columns (total 7 columns):
+ #   Column     Non-Null Count  Dtype              
+---  ------     --------------  -----              
+ 0   city       2068 non-null   object             
+ 1   country    2068 non-null   object             
+ 2   date.utc   2068 non-null   datetime64[ns, UTC]
+ 3   location   2068 non-null   object             
+ 4   parameter  2068 non-null   object             
+ 5   value      2068 non-null   float64            
+ 6   unit       2068 non-null   object             
+dtypes: datetime64[ns, UTC](1), float64(1), object(5)
+memory usage: 113.2+ KB
+None</code></pre>
+</div>
+</div>
+<div id="4abcbb25" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(air_quality.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    city country                  date.utc location parameter  value   unit
+0  Paris      FR 2019-06-21 00:00:00+00:00  FR04014       no2   20.0  µg/m³
+1  Paris      FR 2019-06-20 23:00:00+00:00  FR04014       no2   21.8  µg/m³
+2  Paris      FR 2019-06-20 22:00:00+00:00  FR04014       no2   26.5  µg/m³
+3  Paris      FR 2019-06-20 21:00:00+00:00  FR04014       no2   24.9  µg/m³
+4  Paris      FR 2019-06-20 20:00:00+00:00  FR04014       no2   21.4  µg/m³</code></pre>
+</div>
+</div>
+<div id="4ce9a829" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 선 그래프</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Paris의 NO2 농도 변화: 기본 선 그래프</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>paris_data <span class="op">=</span> air_quality[air_quality[<span class="st">"city"</span>] <span class="op">==</span> <span class="st">"Paris"</span>]</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>plt.plot(paris_data[<span class="st">"date.utc"</span>], paris_data[<span class="st">"value"</span>])</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"NO₂ levels in Paris"</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Date"</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"NO₂ (µg/m³)"</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4_3_matplotlib_files/figure-html/cell-11-output-1.png" width="756" height="276" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="ced5ed7c" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 선 그래프</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Paris의 NO2 농도 변화: 리샘플링(1시간 → 일간), 커스터마이징(색상, 선 종류, 마커)</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 색상: r, g, b, c, m, y, k, w</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 선 종류: -, --, -., :</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 마커: o, +, D, s, ^, v, .</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>value_day <span class="op">=</span> paris_data.set_index(<span class="st">'date.utc'</span>)[<span class="st">'value'</span>].resample(<span class="st">'D'</span>).mean()</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.plot(value_day.index, value_day, color="green", linestyle="--", marker="o")</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>plt.plot(value_day.index, value_day, <span class="st">"g--o"</span>)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"NO₂ levels in Paris"</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Date"</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"NO₂ (µg/m³)"</span>)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4_3_matplotlib_files/figure-html/cell-12-output-1.png" width="756" height="276" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="ff13f9f2" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 선 그래프</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) 세 도시의 NO2 농도 변화</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>cities <span class="op">=</span> [<span class="st">'Paris'</span>, <span class="st">'London'</span>, <span class="st">'Antwerpen'</span>]</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'steelblue'</span>, <span class="st">'green'</span>, <span class="st">'indianred'</span>]</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, city <span class="kw">in</span> <span class="bu">enumerate</span>(cities):</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    city_data <span class="op">=</span> air_quality[air_quality[<span class="st">"city"</span>] <span class="op">==</span> city]</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    plt.plot(city_data[<span class="st">'date.utc'</span>], city_data[<span class="st">'value'</span>],</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>             label<span class="op">=</span>city, color<span class="op">=</span>colors[i],</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>             linewidth<span class="op">=</span><span class="dv">1</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"NO₂ levels in Paris, London, and Antwerpen"</span>)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Date"</span>)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"NO₂ (µg/m³)"</span>)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>plt.legend(loc <span class="op">=</span> <span class="st">'upper right'</span>, fontsize<span class="op">=</span><span class="dv">7</span>)</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4_3_matplotlib_files/figure-html/cell-13-output-1.png" width="756" height="276" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="c3dd732d" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 막대 그래프</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) 도시의 측정 빈도</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>city_counts <span class="op">=</span> air_quality[<span class="st">'city'</span>].value_counts()</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">3</span>))</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>plt.bar(city_counts.index, city_counts.values, color<span class="op">=</span>[<span class="st">'steelblue'</span>, <span class="st">'seagreen'</span>, <span class="st">'indianred'</span>])</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Frequency of Measurements by City"</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"City"</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4_3_matplotlib_files/figure-html/cell-14-output-1.png" width="469" height="276" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="c298d623" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 막대 그래프</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) 도시별 평균 NO₂ 농도</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>city_avg <span class="op">=</span> air_quality.groupby(<span class="st">'city'</span>)[<span class="st">'value'</span>].mean()</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">3</span>))</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>plt.bar(city_avg.index, city_avg.values, color<span class="op">=</span>[<span class="st">'steelblue'</span>, <span class="st">'seagreen'</span>, <span class="st">'indianred'</span>])</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Average NO₂ Levels by City"</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"City"</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Average NO₂ (µg/m³)"</span>)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4_3_matplotlib_files/figure-html/cell-15-output-1.png" width="469" height="276" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="9498b9fa" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 히스토그램</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Paris의 NO2 농도 분포</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>paris_data <span class="op">=</span> air_quality[air_quality[<span class="st">"city"</span>] <span class="op">==</span> <span class="st">"Paris"</span>]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">3</span>))</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>plt.hist(paris_data[<span class="st">"value"</span>], bins<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Distribution of NO₂ in Paris"</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"NO₂ (µg/m³)"</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4_3_matplotlib_files/figure-html/cell-16-output-1.png" width="469" height="276" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="b692a3e6" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 히스토그램, 다중 그래프</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) 세 도시의 NO2 농도 분포</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>cities <span class="op">=</span> [<span class="st">'Paris'</span>, <span class="st">'London'</span>, <span class="st">'Antwerpen'</span>]</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'steelblue'</span>, <span class="st">'green'</span>, <span class="st">'indianred'</span>]</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">3</span>))</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, city <span class="kw">in</span> <span class="bu">enumerate</span>(cities):</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    city_data <span class="op">=</span> air_quality[air_quality[<span class="st">"city"</span>] <span class="op">==</span> city]</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">1</span>, <span class="dv">3</span>, i<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    plt.hist(city_data[<span class="st">'value'</span>],</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>             label<span class="op">=</span>city, color<span class="op">=</span>colors[i])</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"NO₂ (µg/m³)"</span>)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    plt.legend(loc <span class="op">=</span> <span class="st">'upper right'</span>)</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>    plt.xlim(<span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4_3_matplotlib_files/figure-html/cell-17-output-1.png" width="1429" height="276" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="af4a3eb6" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 산점도</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 전체 금액과 팁 금액 관계</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">5</span>))</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(tips[<span class="st">'total_bill'</span>], tips[<span class="st">'tip'</span>],</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>           c<span class="op">=</span>tips[<span class="st">'time'</span>].<span class="bu">map</span>({<span class="st">'Lunch'</span>: <span class="st">'orange'</span>, <span class="st">'Dinner'</span>: <span class="st">'gray'</span>}), alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Scatter Plot of Total Bill vs Tip'</span>)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Total Bill'</span>)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Tip'</span>)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4_3_matplotlib_files/figure-html/cell-18-output-1.png" width="469" height="468" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
-</section>
 </section>
 </section>
 

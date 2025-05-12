@@ -39,6 +39,8 @@ website:
             text: (1) NumPy
           - href: 4_2_pandas.qmd
             text: (2) Pandas
+          - href: 4_3_matplotlib.qmd
+            text: (2) Matplotlib
 
 format:
   html:

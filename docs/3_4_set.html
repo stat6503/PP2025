@@ -193,6 +193,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./4_2_pandas.html">
  <span class="dropdown-text">(2) Pandas</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./4_3_matplotlib.html">
+ <span class="dropdown-text">(2) Matplotlib</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -286,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul></li>
 </ul>
-<div id="e3d32879" class="cell" data-execution_count="1">
+<div id="625ccb39" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 세트 생성1</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>}</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(st)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -294,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>{1, 2, 3, 4}</code></pre>
 </div>
 </div>
-<div id="6eabacf6" class="cell" data-execution_count="2">
+<div id="40a67daf" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 세트 생성2</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> <span class="bu">set</span>({<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>})</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(st)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -302,23 +306,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>{1, 2, 3, 4}</code></pre>
 </div>
 </div>
-<div id="3b74299a" class="cell" data-execution_count="3">
+<div id="984738f4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 세트 생성3 : 세트는 해시 가능한(immutable) 자료형을 저장할 수 있음</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> {<span class="dv">1</span>, <span class="fl">3.14</span>, <span class="st">"Hello"</span>, <span class="va">True</span>, (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="st">"Hello"</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>}</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(st)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{1, 'Hello', 3.14, (1, 2, 3)}</code></pre>
+<pre><code>{1, 3.14, 'Hello', (1, 2, 3)}</code></pre>
 </div>
 </div>
-<div id="9dedeb85" class="cell" data-execution_count="4">
+<div id="dacba3cb" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 세트 생성4: iterable 객체 사용</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> <span class="bu">set</span>(<span class="st">"Hello"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(st)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{'e', 'H', 'l', 'o'}</code></pre>
+<pre><code>{'o', 'e', 'H', 'l'}</code></pre>
 </div>
 </div>
-<div id="13669882" class="cell" data-execution_count="5">
+<div id="6ee7d5fa" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 세트 생성5 : iterable 객체 사용</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>st1 <span class="op">=</span> <span class="bu">set</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>])</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>st2 <span class="op">=</span> <span class="bu">set</span>((<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>))</span>
@@ -338,7 +342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>세트 전개 연산자 <code>*</code> : 세트의 개별 원소를 분리하여 다른 세트로 전개 - (예) {*세트}</li>
 </ul>
-<div id="dcf9a223" class="cell" data-execution_count="6">
+<div id="c8119900" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 세트 전개</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>}</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>({<span class="op">*</span>st, <span class="op">*</span>st})</span>
@@ -390,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p><br></p>
 <p><img src="./images/fig3-2.png" class="img-fluid" style="width:60.0%"></p>
-<div id="00327950" class="cell" data-execution_count="7">
+<div id="6292a2b0" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 세트 연산1</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> {<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>}</span>
@@ -408,7 +412,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 False</code></pre>
 </div>
 </div>
-<div id="3ab7984d" class="cell" data-execution_count="8">
+<div id="4caf54a9" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 세트 연산2</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> {<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>}</span>
@@ -426,7 +430,7 @@ False</code></pre>
 False</code></pre>
 </div>
 </div>
-<div id="61f9f75a" class="cell" data-execution_count="9">
+<div id="72c23146" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 세트 연산3 : 여러 개의 세트를 연쇄적으로 한 번에 연산 가능</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> {<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>}</span>
@@ -492,7 +496,7 @@ set()</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="ff654918" class="cell" data-execution_count="10">
+<div id="56e1f1e2" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 세트에 한 개의 원소 추가</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>st.add(<span class="dv">6</span>)                                  <span class="co"># 실행 결과로 아무것도 출력하지 않음</span></span>
@@ -501,7 +505,7 @@ set()</code></pre>
 <pre><code>{1, 2, 3, 6}</code></pre>
 </div>
 </div>
-<div id="1725db4b" class="cell" data-execution_count="11">
+<div id="dbe4b4f8" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 세트에 여러 개의 원소 추가</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>st.update([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">6</span>])                       <span class="co"># 리스트 사용</span></span>
@@ -518,7 +522,7 @@ set()</code></pre>
 {1, 2, 3, 6, 7, 8, 9}</code></pre>
 </div>
 </div>
-<div id="958f94f0" class="cell" data-execution_count="12">
+<div id="ddfda624" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 임의의 원소 삭제</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> st.pop()                          <span class="co"># 임의의 원소를 삭제 후 반환</span></span>
@@ -529,7 +533,7 @@ set()</code></pre>
 1</code></pre>
 </div>
 </div>
-<div id="5896bda7" class="cell" data-execution_count="13">
+<div id="8daae1ee" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 일치하는 값 삭제1</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>st.remove(<span class="dv">3</span>)</span>
@@ -538,13 +542,13 @@ set()</code></pre>
 <pre><code>{1, 2}</code></pre>
 </div>
 </div>
-<div id="4db2ba37" class="cell" data-execution_count="14">
+<div id="582889ab" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 일치하는 값 삭제2 : remove() 함수는 일치하는 값이 없으면 오류가 발생함</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#st = {1, 2, 3}</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">#st.remove(4)</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">#print(st)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="bcc7d717" class="cell" data-execution_count="15">
+<div id="8ee17ffc" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 일치하는 값 삭제3</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>st.discard(<span class="dv">3</span>)</span>
@@ -553,7 +557,7 @@ set()</code></pre>
 <pre><code>{1, 2}</code></pre>
 </div>
 </div>
-<div id="5ca7432e" class="cell" data-execution_count="16">
+<div id="d9008187" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 일치하는 값 삭제4 : discard() 함수는 일치하는 값이 없어도 오류가 발생하지 않음</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>st.discard(<span class="dv">4</span>)</span>
@@ -562,7 +566,7 @@ set()</code></pre>
 <pre><code>{1, 2, 3}</code></pre>
 </div>
 </div>
-<div id="54819b32" class="cell" data-execution_count="17">
+<div id="b562e494" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 세트 모든 원소 삭제</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>st.clear()</span>
@@ -571,7 +575,7 @@ set()</code></pre>
 <pre><code>set()</code></pre>
 </div>
 </div>
-<div id="109136dc" class="cell" data-execution_count="18">
+<div id="8d6c77bd" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 특정값 찾기</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="kw">in</span> st)</span>
@@ -593,25 +597,25 @@ False</code></pre>
 <li>리스트 컴프리헨션과 문법이 동일함</li>
 <li>자동으로 중복이 제거되므로 빠르고 편리함</li>
 </ul>
-<div id="0375318c" class="cell" data-execution_count="19">
+<div id="57f0646b" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 이메일 리스트에서 '@'가 포함된 유효한 이메일 주소만 추출</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>emails <span class="op">=</span> [<span class="st">"user1@gmail.com"</span>, <span class="st">"user2"</span>, <span class="st">"test@yahoo.com"</span>, <span class="st">"invalid_email"</span>, <span class="st">"hello@naver.com"</span>]</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>valid_emails <span class="op">=</span> {e <span class="cf">for</span> e <span class="kw">in</span> emails <span class="cf">if</span> <span class="st">"@"</span> <span class="kw">in</span> e}</span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid_emails)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{'test@yahoo.com', 'user1@gmail.com', 'hello@naver.com'}</code></pre>
+<pre><code>{'test@yahoo.com', 'hello@naver.com', 'user1@gmail.com'}</code></pre>
 </div>
 </div>
-<div id="36a58d81" class="cell" data-execution_count="20">
+<div id="edca5004" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 문장에서 알파벳 문자만 추출 (중복 제거)</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"Python is amazing! 123"</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>unique_chars <span class="op">=</span> {char.lower() <span class="cf">for</span> char <span class="kw">in</span> sentence <span class="cf">if</span> char.isalpha()}</span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(unique_chars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{'o', 'm', 'i', 'a', 'g', 's', 'n', 'y', 't', 'h', 'p', 'z'}</code></pre>
+<pre><code>{'i', 'g', 't', 'p', 's', 'y', 'm', 'n', 'a', 'z', 'o', 'h'}</code></pre>
 </div>
 </div>
-<div id="4e66fcca" class="cell" data-execution_count="21">
+<div id="2bf4be81" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 주어진 숫자 리스트에서 짝수의 제곱을 저장하는 세트</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>even_squares <span class="op">=</span> {n<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> n <span class="kw">in</span> numbers <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>}</span>
@@ -620,7 +624,7 @@ False</code></pre>
 <pre><code>{64, 100, 4, 36, 16}</code></pre>
 </div>
 </div>
-<div id="b53c82d0" class="cell" data-execution_count="22">
+<div id="ff592b05" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 웹사이트 방문 기록에서 도메인만 추출 (중복 제거)</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>urls <span class="op">=</span> [<span class="st">"https://google.com"</span>, <span class="st">"http://example.com"</span>, <span class="st">"https://google.com"</span>, <span class="st">"https://openai.com"</span>]</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>domains <span class="op">=</span> {url.split(<span class="st">"//"</span>)[<span class="dv">1</span>] <span class="cf">for</span> url <span class="kw">in</span> urls}</span>
@@ -629,14 +633,14 @@ False</code></pre>
 <pre><code>{'example.com', 'google.com', 'openai.com'}</code></pre>
 </div>
 </div>
-<div id="d0229401" class="cell" data-execution_count="23">
+<div id="607528d3" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 두 개의 리스트에서 공통된 단어만 저장 (중복 없이)</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>words1 <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"durian"</span>]</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>words2 <span class="op">=</span> [<span class="st">"banana"</span>, <span class="st">"durian"</span>, <span class="st">"fig"</span>, <span class="st">"grape"</span>]</span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>common_words <span class="op">=</span> {word <span class="cf">for</span> word <span class="kw">in</span> words1 <span class="cf">if</span> word <span class="kw">in</span> words2}</span>
 <span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(common_words)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{'banana', 'durian'}</code></pre>
+<pre><code>{'durian', 'banana'}</code></pre>
 </div>
 </div>
 
