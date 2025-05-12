@@ -81,7 +81,7 @@ print(air_quality.head())
 # 1) Paris의 NO2 농도 변화: 기본 선 그래프
 paris_data = air_quality[air_quality["city"] == "Paris"]
 
-plt.figure(figsize=(9, 3))
+plt.figure(figsize=(8.5, 3))
 plt.plot(paris_data["date.utc"], paris_data["value"])
 plt.title("NO₂ levels in Paris")
 plt.xlabel("Date")
@@ -98,7 +98,7 @@ plt.show()
 # 마커: o, +, D, s, ^, v, .
 value_day = paris_data.set_index('date.utc')['value'].resample('D').mean()
 
-plt.figure(figsize=(9, 3))
+plt.figure(figsize=(8.5, 3))
 #plt.plot(value_day.index, value_day, color="green", linestyle="--", marker="o")
 plt.plot(value_day.index, value_day, "g--o")
 plt.title("NO₂ levels in Paris")
@@ -114,7 +114,7 @@ plt.show()
 cities = ['Paris', 'London', 'Antwerpen']
 colors = ['steelblue', 'green', 'indianred']
 
-plt.figure(figsize=(9, 3))
+plt.figure(figsize=(8.5, 3))
 
 for i, city in enumerate(cities):
     city_data = air_quality[air_quality["city"] == city]
@@ -178,7 +178,7 @@ plt.show()
 cities = ['Paris', 'London', 'Antwerpen']
 colors = ['steelblue', 'green', 'indianred']
 
-plt.figure(figsize=(9, 3))
+plt.figure(figsize=(8.5, 3))
 
 for i, city in enumerate(cities):
     city_data = air_quality[air_quality["city"] == city]
@@ -201,7 +201,7 @@ plt.show()
 import seaborn as sns
 tips = sns.load_dataset("tips")
 
-plt.figure(figsize=(5, 5))
+plt.figure(figsize=(4, 4))
 plt.scatter(tips['total_bill'], tips['tip'],
            c=tips['time'].map({'Lunch': 'orange', 'Dinner': 'gray'}), alpha=0.7)
 plt.title('Scatter Plot of Total Bill vs Tip')
