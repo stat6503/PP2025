@@ -81,7 +81,7 @@ print(air_quality.head())
 # 1) Paris의 NO2 농도 변화: 기본 선 그래프
 paris_data = air_quality[air_quality["city"] == "Paris"]
 
-plt.figure(figsize=(8.5, 3))
+plt.figure(figsize=(8, 3))
 plt.plot(paris_data["date.utc"], paris_data["value"])
 plt.title("NO₂ levels in Paris")
 plt.xlabel("Date")
@@ -98,7 +98,7 @@ plt.show()
 # 마커: o, +, D, s, ^, v, .
 value_day = paris_data.set_index('date.utc')['value'].resample('D').mean()
 
-plt.figure(figsize=(8.5, 3))
+plt.figure(figsize=(8, 3))
 #plt.plot(value_day.index, value_day, color="green", linestyle="--", marker="o")
 plt.plot(value_day.index, value_day, "g--o")
 plt.title("NO₂ levels in Paris")
@@ -114,7 +114,7 @@ plt.show()
 cities = ['Paris', 'London', 'Antwerpen']
 colors = ['steelblue', 'green', 'indianred']
 
-plt.figure(figsize=(8.5, 3))
+plt.figure(figsize=(8, 3))
 
 for i, city in enumerate(cities):
     city_data = air_quality[air_quality["city"] == city]
@@ -178,7 +178,7 @@ plt.show()
 cities = ['Paris', 'London', 'Antwerpen']
 colors = ['steelblue', 'green', 'indianred']
 
-plt.figure(figsize=(8.5, 3))
+plt.figure(figsize=(8, 3))
 
 for i, city in enumerate(cities):
     city_data = air_quality[air_quality["city"] == city]
@@ -208,5 +208,163 @@ plt.title('Scatter Plot of Total Bill vs Tip')
 plt.xlabel('Total Bill')
 plt.ylabel('Tip')
 plt.tight_layout()
+```
+
+<br>
+
+### 4.3.3 이미지 데이터 처리
+#### 4.3.3.1. 이미지 불러오기
++ 이미지(image)
+  + 디지털 이미지는 수 많은 픽셀(pixel)로 이루어져 있으며, 각 픽셀은 숫자 하나 또는 세개(R, G, B)의 값을 가짐
+    + 흑백 이미지 : 2차원 배열 → 행(높이), 열(너비)
+    + 컬러 이미지(RGB) : 3차원 배열 → 행(높이), 열(너비), 채널
+  + 이미지는 곧 숫자로 이루어진 배열이며, 넘파이 배열로 변환하여 수치 연산 가능
+  + 이미지 데이터는 수치적으로 처리하거나 분석할 수 있으며, 머신러닝/딥러닝 모델에 입력하기 위해 배열 형태로 변환하는 것이 일반적임
+
+<br>
+
++ 색의 3요소 RGB
+  + 컬러 이미지는 보통 RGB 색상 모델을 따름
+  + 각 픽셀은 R, G, B 세 가지 값(0~255)을 조합하여 하나의 색을 표현함 → 이 세 개의 값을 각각 하나의 채널(channel)이라 함
+  + RGB 이미지는 관례적으로 (height, width, channel) 구조를 따름
+    + 3차원 배열(높이, 너비, 3)에서 배열의 세 번째 축(axis=2)이 채널 방향임
+    + `array[:, :, 0]` : R 채널
+    + `array[:, :, 1]` : G 채널
+    + `array[:, :, 2]` : B 채널
+
+<br>
+
++ PIL 라이브러리
+  + 다양한 이미지 파일 형식을 지원하는 이미지 처리 라이브러리(Pillow)
+  + 이미지 불러오기, 배열 변환, 크기 조절, 회전, 흑백 전환 등 다양한 처리 가능
+
+```{python}
+from PIL import Image
+```
+
++ 예제 이미지 : <a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EB%AC%B4%EC%84%B1%ED%95%9C-%EB%85%B9%EC%83%89-%EB%93%A4%ED%8C%90%EC%9D%84-%EA%B0%80%EB%A1%9C%EC%A7%88%EB%9F%AC-%EB%8B%AC%EB%A6%AC%EB%8A%94-%EC%9E%91%EC%9D%80-%EA%B0%9C-Uv1G3yfL2Gg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>의 <a href="https://unsplash.com/ko/@stefanusfandhy12?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">stefanus fandhy</a>
+
+```{python}
+# 이미지 불러오기 및 시각화
+img = Image.open('./images/puppy.jpg')
+plt.imshow(img)
+plt.axis('off')
+plt.show()
+```
+
+```{python}
+# 넘파이 배열로 변환
+img_array = np.array(img)
+print("이미지 배열 형태: ", img_array.shape)
+```
+
+```{python}
+# 각 채널 이미지 시각화
+color_maps = ['Reds', 'Greens', 'Blues']
+
+plt.figure(figsize=(8, 5))
+
+for i, cmap in enumerate(color_maps):
+    plt.subplot(1, 3, i+1)
+    plt.imshow(img_array[:, :, i], cmap=cmap)
+    plt.title(f'{cmap} Channel')
+    plt.axis('off')
+
+plt.tight_layout()
+plt.show()
+```
+
+```{python}
+# 흑백 이미지 시각화 : 단순 평균(simple average) 방식
+gray_img = img_array.mean(axis=2)
+
+plt.figure(figsize=(4, 4))
+plt.imshow(gray_img, cmap='gray')
+plt.title('Grayscale Image')
+plt.axis('off')
+plt.show()
+```
+
+```{python}
+# 흑백 이미지 시각화 : 가중 평균(weighted average) 방식
+r = img_array[:, :, 0]
+g = img_array[:, :, 1]
+b = img_array[:, :, 2]
+gray_img_weighted = r * 0.2989 + g * 0.5870 + b * 0.1140
+
+plt.figure(figsize=(4, 4))
+plt.imshow(gray_img_weighted, cmap='gray')
+plt.title('Grayscale Image')
+plt.axis('off')
+plt.show()
+```
+
+<br>
+
+#### 4.3.3.3. 이미지 변형
++ 디지털 이미지의 크기, 방향, 위치 등을 변경하는 작업
++ 머신러닝/딥러닝에서 입력 이미지를 정해진 크기로 맞추거나, 데이터 증강(data augmentation)을 위해 변형을 적용함
++ PIL(Pillow) 라이브러리를 이용하면 다양한 변형 작업을 간단히 수행할 수 있음|
+
+<br>
+
+|구분|설명|
+|:---:|:------------|
+|크기 조절<br>(resize)|  - 이미지의 너비(width)와 높이(height)를 원하는 크기로 변경 <br>- 학습 모델에 입력되는 이미지 크기가 고정되어 있는 경우에 필수적인 전처리 작업 <br>- 보간법(interpolation)에 따라 이미지 품질에 차이가 발생할 수 있음|
+|회전 및 뒤집기<br>(rotate & flip)|- 회전(rotation) : 이미지를 특정 각도만큼 회전 <br>- 좌우/상하 뒤집기(flip) : 이미지를 반전시켜 대칭 구조로 만듦 <br>- 데이터 다양성을 높이기 위한 증강 기법으로 자주 사용됨|
+|잘라내기<br>(crop)|- 이미지의 일부분만 선택하여 잘라냄 <br>- 관심 영역(Region of Interest, ROI)만 추출할 때 유용 <br>- 정사각형으로 자르거나 특정 좌표를 기준으로 crop 가능|
+
+```{python}
+# 크기 조절 : 너비 200px, 높이 100px
+resized_img = img.resize((200, 100))
+
+plt.imshow(resized_img)
+plt.title('Resized Image')
+plt.axis('off')
+plt.show()
+```
+
+```{python}
+# 45도 회전
+rotated_img = img.rotate(45)
+
+plt.imshow(rotated_img)
+plt.title('Rotated(45°) Image')
+plt.axis('off')
+plt.show()
+```
+
+```{python}
+# 좌우 반전 뒤집기
+flipped_img1 = img.transpose(Image.FLIP_LEFT_RIGHT)
+
+plt.imshow(flipped_img1)
+plt.title("Flipped (Left ↔ Right) Image")
+plt.axis('off')
+plt.show()
+```
+
+```{python}
+# 상하 반전 뒤집기
+flipped_img2 = img.transpose(Image.FLIP_TOP_BOTTOM)
+
+plt.imshow(flipped_img2)
+plt.title("Flipped (Top ↔ Bottom) Image")
+plt.axis('off')
+plt.show()
+```
+
+```{python}
+np.array(img).shape
+```
+
+```{python}
+# 잘라내기 : (left, top, right, bottom)
+cropped_img = img.crop((2200, 1500, 3000, 2000))
+
+plt.imshow(cropped_img)
+plt.title("Croppeed Image")
+plt.axis('off')
+plt.show()
 ```
 

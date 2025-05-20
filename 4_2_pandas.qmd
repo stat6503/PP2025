@@ -872,7 +872,7 @@ import matplotlib.pyplot as plt
 ```{python}
 # 리샘플링: 연간 데이터 시각화
 plt.figure(figsize=(5, 3))
-annual_passengers['passengers'].plot()
+plt.plot(annual_passengers['passengers'])
 plt.title('Annual Total Passengers')
 plt.xlabel('Year')
 plt.ylabel('Number of Passengers')
@@ -920,5 +920,32 @@ plt.xlabel('Date')
 plt.ylabel('Number of Passengers')
 plt.legend()
 plt.show()
+```
+
+<br>
+
+**(과제)** 시계열 데이터 처리 실습
++ `air_quality_no2_long.csv` 데이터셋은 Pandas 공식 문서에서 제공하는 유럽 도시 대기 중 이산화질소(NO2) 농도 측정 자료이다.
+  + 문제1. 날짜 정보(`date.utc`) 열을 datetime 형식으로 변환하고, 이를 인덱스로 설정하라.
+  + 문제2. 2019년 5월에 속하는 데이터 중 월요일에 해당하는 데이터만 추출하라.
+  + 문제3. 이산화질소 농도(`value`)의 주(week)별 최대값을 계산하라.
+
+---
+
++ `yfinance` 라이브러리를 통해 2023년 1월 1일부터 12월 31일까지의 Apple(AAPL) 일별 주가 데이터를 다운로드할 수 있다.
+  + 문제4. 전일 종가(`Close`) 대비 당일 시가(`Open`)의 변동률이 3% 이상인 데이터를 추출하라.
+  + 문제5. 종가(`Close`)에 대해 5일 이동평균과 10일 이동평균을 각각 계산한 후 시각화하라.
+
+```{python}
+# air_quality_no2_long.csv
+air = pd.read_csv("https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/air_quality_no2_long.csv")
+```
+
+```{python}
+# 2023년 Apple 일별 주가 데이터
+# !pip install yfinance
+# import yfinance as yf
+# stock = yf.download("AAPL", start="2023-01-01", end="2023-12-31")
+# stock.columns = stock.columns.droplevel("Ticker")
 ```
 
