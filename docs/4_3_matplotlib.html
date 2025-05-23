@@ -300,16 +300,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<div id="7a34fd7c" class="cell" data-execution_count="1">
+<div id="43c0c3d0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="e3c0e1e7" class="cell" data-execution_count="2">
+<div id="9df55e2a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 실습 데이터 : air_quality 데이터셋</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>air_quality <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/air_quality_no2_long.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="9add5ede" class="cell" data-execution_count="3">
+<div id="8a134607" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># city: 측정 도시</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># country: 측정 국가</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># date.utc: 측정 일시(UTC)</span></span>
@@ -336,7 +336,7 @@ memory usage: 113.2+ KB
 None</code></pre>
 </div>
 </div>
-<div id="20983312" class="cell" data-execution_count="4">
+<div id="5493f01b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(air_quality.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    city country                   date.utc location parameter  value   unit
@@ -347,7 +347,7 @@ None</code></pre>
 4  Paris      FR  2019-06-20 20:00:00+00:00  FR04014       no2   21.4  µg/m³</code></pre>
 </div>
 </div>
-<div id="d1e81f00" class="cell" data-execution_count="5">
+<div id="4a7dc4e5" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>air_quality[<span class="st">'city'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>city
@@ -357,7 +357,7 @@ Antwerpen      95
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="6e666d4f" class="cell" data-execution_count="6">
+<div id="e09a784a" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>air_quality[<span class="st">'parameter'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>parameter
@@ -365,11 +365,11 @@ no2    2068
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="f373f511" class="cell" data-execution_count="7">
+<div id="4d29e7f9" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># date.utc 열을 datetime 형식으로 변환</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>air_quality[<span class="st">'date.utc'</span>] <span class="op">=</span> pd.to_datetime(air_quality[<span class="st">'date.utc'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="37a858ac" class="cell" data-execution_count="8">
+<div id="476dce1c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(air_quality.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -389,7 +389,7 @@ memory usage: 113.2+ KB
 None</code></pre>
 </div>
 </div>
-<div id="3dc121ab" class="cell" data-execution_count="9">
+<div id="013c3264" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(air_quality.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    city country                  date.utc location parameter  value   unit
@@ -400,7 +400,7 @@ None</code></pre>
 4  Paris      FR 2019-06-20 20:00:00+00:00  FR04014       no2   21.4  µg/m³</code></pre>
 </div>
 </div>
-<div id="e0be75a1" class="cell" data-execution_count="10">
+<div id="855491ba" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 선 그래프</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Paris의 NO2 농도 변화: 기본 선 그래프</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>paris_data <span class="op">=</span> air_quality[air_quality[<span class="st">"city"</span>] <span class="op">==</span> <span class="st">"Paris"</span>]</span>
@@ -420,7 +420,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="57dcf5f0" class="cell" data-execution_count="11">
+<div id="78d00605" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 선 그래프</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Paris의 NO2 농도 변화: 리샘플링(1시간 → 일간), 커스터마이징(색상, 선 종류, 마커)</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 색상: r, g, b, c, m, y, k, w</span></span>
@@ -444,7 +444,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="6d0349bc" class="cell" data-execution_count="12">
+<div id="3a376f4a" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 선 그래프</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) 세 도시의 NO2 농도 변화</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>cities <span class="op">=</span> [<span class="st">'Paris'</span>, <span class="st">'London'</span>, <span class="st">'Antwerpen'</span>]</span>
@@ -472,7 +472,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="e3dcfda7" class="cell" data-execution_count="13">
+<div id="c941e3a2" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 막대 그래프</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) 도시의 측정 빈도</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>city_counts <span class="op">=</span> air_quality[<span class="st">'city'</span>].value_counts()</span>
@@ -492,7 +492,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="1f4dc18f" class="cell" data-execution_count="14">
+<div id="aee40552" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 막대 그래프</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) 도시별 평균 NO₂ 농도</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>city_avg <span class="op">=</span> air_quality.groupby(<span class="st">'city'</span>)[<span class="st">'value'</span>].mean()</span>
@@ -512,7 +512,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="2728ac06" class="cell" data-execution_count="15">
+<div id="8289be29" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 히스토그램</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Paris의 NO2 농도 분포</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>paris_data <span class="op">=</span> air_quality[air_quality[<span class="st">"city"</span>] <span class="op">==</span> <span class="st">"Paris"</span>]</span>
@@ -532,7 +532,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="d4cd8694" class="cell" data-execution_count="16">
+<div id="48e599a6" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 히스토그램, 다중 그래프</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) 세 도시의 NO2 농도 분포</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>cities <span class="op">=</span> [<span class="st">'Paris'</span>, <span class="st">'London'</span>, <span class="st">'Antwerpen'</span>]</span>
@@ -561,7 +561,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="d68e976b" class="cell" data-execution_count="17">
+<div id="e62a18b9" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 산점도</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 전체 금액과 팁 금액 관계</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -591,22 +591,18 @@ None</code></pre>
 <ul>
 <li>이미지(image)
 <ul>
-<li>디지털 이미지는 수 많은 픽셀(pixel)로 이루어져 있으며, 각 픽셀은 숫자 하나 또는 세 개(R, G, B)의 값을 가짐
+<li>디지털 이미지는 수 많은 픽셀(pixel)로 이루어져 있으며, 각 픽셀은 하나의 색상을 나타냄</li>
+<li>픽셀들이 모여 하나의 이미지를 구성하며, 전체적으로 모자이크 구조와 비슷함</li>
+<li>각 픽셀은 하나의 숫자 값(흑백) 또는 세 개의 값(R, G, B)을 가지며, 이를 통해 색상을 표현함
 <ul>
 <li>흑백 이미지 : 2차원 배열 → 행(높이), 열(너비)</li>
 <li>컬러 이미지(RGB) : 3차원 배열 → 행(높이), 열(너비), 채널</li>
 </ul></li>
-<li>이미지는 곧 숫자로 이루어진 배열이며, 넘파이 배열로 변환하여 수치 연산 가능</li>
-<li>이미지 데이터는 수치적으로 처리하거나 분석할 수 있으며, 머신러닝/딥러닝 모델에 입력하기 위해 배열 형태로 변환하는 것이 일반적임</li>
-</ul></li>
-</ul>
-<p><br></p>
-<ul>
 <li>색의 3요소 RGB
 <ul>
 <li>컬러 이미지는 보통 RGB 색상 모델을 따름</li>
-<li>각 픽셀은 R, G, B 세 가지 값(0~255)을 조합하여 하나의 색을 표현함 → 이 세 개의아니… 값을 각각 하나의 채널(channel)이라 함</li>
-<li>RGB 이미지는 관례적으로 (height, width, channel) 구조를 따름
+<li>각 픽셀은 R, G, B 세 가지 값(0~255)을 조합하여 색상을 나타내며, 각각의 값을 채널(channel)이라 함</li>
+<li>RGB 이미지는 관례적으로 (height, width, channel) 형태의 배열 구조를 가짐
 <ul>
 <li>3차원 배열(높이, 너비, 3)에서 배열의 세 번째 축(axis=2)이 채널 방향임</li>
 <li><code>array[:, :, 0]</code> : R 채널</li>
@@ -614,7 +610,12 @@ None</code></pre>
 <li><code>array[:, :, 2]</code> : B 채널</li>
 </ul></li>
 </ul></li>
+<li>이미지는 결국 숫자로 이루어진 배열이며, 넘파이 배열로 변환하여 수치 연산이 가능함</li>
+<li>이미지 데이터는 수치적으로 처리하거나 분석할 수 있으며, 머신러닝/딥러닝 모델에 입력하기 위해 배열 형태로 변환하는 것이 일반적임</li>
+</ul></li>
 </ul>
+<p><br></p>
+<p><img src="./images/fig4-4.png" class="img-fluid"> <img src="./images/fig4-5.png" class="img-fluid" style="width:40.0%"></p>
 <p><br></p>
 <ul>
 <li>PIL 라이브러리
@@ -623,13 +624,13 @@ None</code></pre>
 <li>이미지 불러오기, 배열 변환, 크기 조절, 회전, 흑백 전환 등 다양한 처리 가능</li>
 </ul></li>
 </ul>
-<div id="f2c999e0" class="cell" data-execution_count="18">
+<div id="0577c102" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>예제 이미지 : <a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EB%AC%B4%EC%84%B1%ED%95%9C-%EB%85%B9%EC%83%89-%EB%93%A4%ED%8C%90%EC%9D%84-%EA%B0%80%EB%A1%9C%EC%A7%88%EB%9F%AC-%EB%8B%AC%EB%A6%AC%EB%8A%94-%EC%9E%91%EC%9D%80-%EA%B0%9C-Uv1G3yfL2Gg?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a>의 <a href="https://unsplash.com/ko/@stefanusfandhy12?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">stefanus fandhy</a></li>
 </ul>
-<div id="e1012113" class="cell" data-execution_count="19">
+<div id="8e2a8145" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 이미지 불러오기 및 시각화</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> Image.<span class="bu">open</span>(<span class="st">'./images/puppy.jpg'</span>)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>plt.imshow(img)</span>
@@ -643,7 +644,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="faf58461" class="cell" data-execution_count="20">
+<div id="d37b1dc4" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 넘파이 배열로 변환</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>img_array <span class="op">=</span> np.array(img)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"이미지 배열 형태: "</span>, img_array.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -664,13 +665,13 @@ None</code></pre>
 </ul></li>
 <li>조건문과 불리언 인덱싱(마스킹)을 이용하여 원하는 영역만 선택하거나 조작할 수 있음</li>
 </ul>
-<div id="1e622d97" class="cell" data-execution_count="21">
+<div id="f869440d" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 채널 분리</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> img_array[:, :, <span class="dv">0</span>]</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> img_array[:, :, <span class="dv">1</span>]</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> img_array[:, :, <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fcf4686c" class="cell" data-execution_count="22">
+<div id="55037ba3" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 단일 채널만 유지</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>r_img <span class="op">=</span> img_array.copy()</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>g_img <span class="op">=</span> img_array.copy()</span>
@@ -696,7 +697,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="94c4cc98" class="cell" data-execution_count="23">
+<div id="12753e25" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 흑백 변환 : 채널 평균으로 밝기 계산(simple average)</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>gray_img <span class="op">=</span> img_array.mean(axis<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -713,7 +714,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="b4b27773" class="cell" data-execution_count="24">
+<div id="00ffb51b" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 흑백 변환 : 가중 평균으로 밝기 계산(weighted average)</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>gray_img_weighted <span class="op">=</span> r <span class="op">*</span> <span class="fl">0.2989</span> <span class="op">+</span> g <span class="op">*</span> <span class="fl">0.5870</span> <span class="op">+</span> b <span class="op">*</span> <span class="fl">0.1140</span>    <span class="co"># ITU-R BT.601 표준 가중치</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -730,7 +731,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="f2d98f6d" class="cell" data-execution_count="25">
+<div id="79708224" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 정규화 : 픽셀 값을 0~1 사이의 실수로 변환</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 일반적으로 머신러닝/딥러닝 모델 입력 시 이미지를 정규화하여 사용함</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 학습 안정성과 성능 향상을 위한 필수적인 전처리 과정</span></span>
@@ -749,7 +750,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="b9b037fc" class="cell" data-execution_count="26">
+<div id="c9d5d7ec" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 특정 채널만 교체하고, 나머지 채널은 0으로 만드는 함수</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isolate_channel(img_array, channel_idx, channel_array):</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
@@ -771,10 +772,10 @@ None</code></pre>
 <span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> img_copy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c7c7b38a" class="cell" data-execution_count="27">
+<div id="080ef8b7" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>?isolate_channel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="dc42fa6e" class="cell" data-execution_count="28">
+<div id="f80b1431" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 특정 채널 강조 : Red Channel</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># np.clip() : 넘파이 배열의 값들을 지정한 최소값, 최대값 사이로 제한하는 함수</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>r_enhanced <span class="op">=</span> np.clip(r <span class="op">*</span> <span class="fl">1.5</span>, <span class="dv">0</span>, <span class="dv">255</span>).astype(np.uint8)</span>
@@ -801,7 +802,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="042c0bad" class="cell" data-execution_count="29">
+<div id="eb2aadc7" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 채널 합성</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># np.stack() : 여러 배열을 새로운 축(axis)을 추가하여 쌓아 3차원 이상의 배열을 만드는 함수</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>modified_img <span class="op">=</span> np.stack([r_enhanced, g, b], axis<span class="op">=</span><span class="dv">2</span>)</span>
@@ -819,7 +820,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="39731f89" class="cell" data-execution_count="30">
+<div id="6d5ff805" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 색상 반전</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>inverted <span class="op">=</span> <span class="dv">255</span> <span class="op">-</span> img_array</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -836,7 +837,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="f307a870" class="cell" data-execution_count="31">
+<div id="87c385d1" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 밝은 영역만 추출 : 조건문과 마스킹 사용</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 마스킹(masking) : 불리언 배열로 조건에 맞는 데이터만 선택하거나 조작하는 방법</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>gray <span class="op">=</span> img_array.mean(axis<span class="op">=</span><span class="dv">2</span>)</span>
@@ -894,7 +895,7 @@ None</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="ba802f5b" class="cell" data-execution_count="32">
+<div id="16743c9f" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 크기 조절 : 너비 200px, 높이 100px</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>resized_img <span class="op">=</span> img.resize((<span class="dv">200</span>, <span class="dv">100</span>))</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -910,7 +911,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="d58ed840" class="cell" data-execution_count="33">
+<div id="d4779d28" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 45도 회전</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>rotated_img <span class="op">=</span> img.rotate(<span class="dv">45</span>)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -927,7 +928,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="1a02eabd" class="cell" data-execution_count="34">
+<div id="787c2aec" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 좌우 반전 뒤집기</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>flipped_img1 <span class="op">=</span> img.transpose(Image.FLIP_LEFT_RIGHT)</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -944,7 +945,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="b3a4a8fe" class="cell" data-execution_count="35">
+<div id="117ee578" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 상하 반전 뒤집기</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>flipped_img2 <span class="op">=</span> img.transpose(Image.FLIP_TOP_BOTTOM)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -961,7 +962,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="49aba2ba" class="cell" data-execution_count="36">
+<div id="e7a40357" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(img)</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -972,7 +973,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="48ad5b31" class="cell" data-execution_count="37">
+<div id="a9488392" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 잘라내기 : (left, top, right, bottom)</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>cropped_img <span class="op">=</span> img.crop((<span class="dv">2200</span>, <span class="dv">1500</span>, <span class="dv">3000</span>, <span class="dv">2000</span>))</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.imshow(img_array[1500:2000, 2200:3000, ])</span></span>
@@ -998,7 +999,7 @@ None</code></pre>
 <li>히스토그램을 이용하면 각 채널의 밝기 분포를 시각적으로 확인하고, 특정 색이 어느 정도로 포함되어 있는지 쉽게 이해할 수 있음</li>
 <li>이는 이미지 분류, 전처리, 피처(feature) 추출 등에 유용하게 활용됨</li>
 </ul>
-<div id="e6ed2ad7" class="cell" data-execution_count="38">
+<div id="9b9e2a2f" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 각 채널의 평균</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 평균이 가장 높은 초록색 계열이 이미지에 가장 많이 포함되어 있음</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 다음으로는 빨간색 계열, 파란색 계열 순임</span></span>
@@ -1008,7 +1009,7 @@ None</code></pre>
 <pre><code>[162.37 200.03 129.56]</code></pre>
 </div>
 </div>
-<div id="ff451ccc" class="cell" data-execution_count="39">
+<div id="d2ceaa80" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 각 채널의 표준편차</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 표준편차가 가장 큰 파란색 계열이 밝기 면에서 가장 다양하게 분포하고 있음</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># → 밝고 어두운 부분에 걸쳐 넓게 처져 있어 이미지 내에서 변동이 큼</span></span>
@@ -1019,7 +1020,7 @@ None</code></pre>
 <pre><code>[70.62 45.88 84.55]</code></pre>
 </div>
 </div>
-<div id="8a62e102" class="cell" data-execution_count="40">
+<div id="2a5547f6" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 각 채널의 히스토그램</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> (<span class="st">'red'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>)</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1046,7 +1047,7 @@ None</code></pre>
 </div>
 </div>
 </div>
-<div id="aa2a4dab" class="cell" data-execution_count="41">
+<div id="7f90e02a" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [빨간색 계열]은 중간 밝기 구간에 은은하게 퍼져있고, 밝은 영역도 일부 포함됨</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="co"># → 색감이 다양하지만 극단적인 밝기 변화는 아님(표준편차 중간 수준)</span></span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
