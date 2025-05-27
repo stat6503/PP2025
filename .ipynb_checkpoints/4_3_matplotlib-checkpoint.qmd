@@ -4,7 +4,7 @@ jupyter: python3
 ---
 
 ## 4.3. MatplotLib 라이브러리
-### 4.3.1. 데이터 시각화
+### 4.3.1 데이터 시각화
 + 데이터 시각화(data visualization)
   + 데이터 분석 결과를 쉽게 이해할 수 있도록 표현하고 전달되는 과정
   + 복잡한 정보를 한 눈에 파악하고, 숨겨진 패턴이나 관계를 드러냄
@@ -20,7 +20,7 @@ jupyter: python3
 
 <br>
 
-### 4.3.2. 데이터 시각화 유형
+### 4.3.2 데이터 시각화 유형
 
 |유형|설명|
 |:---:|:------------|
@@ -183,14 +183,13 @@ plt.figure(figsize=(8, 3))
 for i, city in enumerate(cities):
     city_data = air_quality[air_quality["city"] == city]
     plt.subplot(1, 3, i+1)
-    plt.hist(city_data['value'], density=True,
+    plt.hist(city_data['value'],
              label=city, color=colors[i])
     
     plt.xlabel("NO₂ (µg/m³)")
     plt.ylabel("Frequency")
     plt.legend(loc = 'upper right')
     plt.xlim(0, 100)
-    plt.ylim(0, 0.05)
 
 plt.tight_layout()
 plt.show()
@@ -213,7 +212,7 @@ plt.tight_layout()
 
 <br>
 
-### 4.3.3. 이미지 데이터 처리
+### 4.3.3 이미지 데이터 처리
 #### 4.3.3.1. 이미지 불러오기
 + 이미지(image)
   + 디지털 이미지는 수 많은 픽셀(pixel)로 이루어져 있으며, 각 픽셀은 하나의 색상을 나타냄
@@ -235,7 +234,7 @@ plt.tight_layout()
 <br>
 
 ![](./images/fig4-4.png)
-![](./images/fig4-5.png){width=45%}
+![](./images/fig4-5.png){width=40%}
 
 <br>
 
@@ -246,8 +245,6 @@ plt.tight_layout()
 ```{python}
 from PIL import Image
 ```
-
-<br>
 
 + 예제 이미지 : <a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EB%AC%B4%EC%84%B1%ED%95%9C-%EB%85%B9%EC%83%89-%EB%93%A4%ED%8C%90%EC%9D%84-%EA%B0%80%EB%A1%9C%EC%A7%88%EB%9F%AC-%EB%8B%AC%EB%A6%AC%EB%8A%94-%EC%9E%91%EC%9D%80-%EA%B0%9C-Uv1G3yfL2Gg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>의 <a href="https://unsplash.com/ko/@stefanusfandhy12?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">stefanus fandhy</a>
 
@@ -262,7 +259,7 @@ plt.show()
 ```{python}
 # 넘파이 배열로 변환
 img_array = np.array(img)
-img_array.shape
+print("이미지 배열 형태: ", img_array.shape)
 ```
 
 <br>
@@ -564,19 +561,4 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 ```
-
-<br>
-
-**(과제)** 이미지 데이터 처리 실습
-
-+ `air_quality_no2_long.csv` 데이터셋은 Pandas 공식 문서에서 제공하는 유럽 도시 대기 중 이산화질소(NO2) 농도 측정 자료이다.
-  + 문제1. 날짜 정보(`date.utc`) 열을 datetime 형식으로 변환하고, 이를 인덱스로 설정하라.
-  + 문제2. 2019년 5월에 속하는 데이터 중 월요일에 해당하는 데이터만 추출하라.
-  + 문제3. 이산화질소 농도(`value`)의 주(week)별 최대값을 계산하라.
-
----
-
-+ `yfinance` 라이브러리를 통해 2023년 1월 1일부터 12월 31일까지의 Apple(AAPL) 일별 주가 데이터를 다운로드할 수 있다.
-  + 문제4. 전일 종가(`Close`) 대비 당일 시가(`Open`)의 변동률이 3% 이상인 데이터를 추출하라.
-  + 문제5. 종가(`Close`)에 대해 5일 이동평균과 10일 이동평균을 각각 계산한 후 시각화하라.
 

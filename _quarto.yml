@@ -41,7 +41,9 @@ website:
             text: (2) Pandas
           - href: 4_3_matplotlib.qmd
             text: (3) Matplotlib
-
+      - href: 5_python.qmd
+        text: Class
+      
 format:
   html:
     theme:
