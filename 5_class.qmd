@@ -65,12 +65,12 @@ class Account:
     def __init__(self):                      # 첫 번째 매개변수는 반드시 self여야 함
         self.balance = 0                     # (속성) 잔액, 인스턴스마다 독립적
 
-    # (메소드) 입금 기능
+    # (메소드) 입금
     def deposit(self, amount):               # 첫 번째 매개변수는 반드시 self여야 함
         self.balance += amount               # 인스턴스 변수에 접근하기 위해 self.balance 사용
         return self.balance
 
-    # (메소드) 출금 기능
+    # (메소드) 출금
     def withdraw(self, amount):
         self.balance -= amount
         return self.balance
@@ -82,22 +82,22 @@ my_acc = Account()
 ```
 
 ```{python}
-# 인스턴스 속성 확인
+# 인스턴스 속성 확인: 잔액
 print(my_acc.balance)
 ```
 
 ```{python}
-# 인스턴스 메소드 사용1
+# 인스턴스 메소드 사용1: 입금
 print(my_acc.deposit(10000))
 ```
 
 ```{python}
-# 인스턴스 메소드 사용2
+# 인스턴스 메소드 사용2: 출금
 print(my_acc.withdraw(3000))
 ```
 
 ```{python}
-# 인스턴스 속성 확인
+# 인스턴스 속성 확인: 잔액
 print(my_acc.balance)
 ```
 
@@ -109,11 +109,11 @@ class Account:
     def __init__(self, amount=0):
         self.balance = amount                # (속성) 잔액
 
-    def deposit(self, amount):               # (메소드) 입금 기능
+    def deposit(self, amount):               # (메소드) 입금
         self.balance += amount
         return self.balance
         
-    def withdraw(self, amount):              # (메소드) 출금 기능
+    def withdraw(self, amount):              # (메소드) 출금
         self.balance -= amount
         return self.balance
 ```
@@ -138,7 +138,7 @@ print(my_acc.balance)
 
 <br>
 
-### 5.3.2. 문자열 표현 메소드 `__str__()`, `__repr__()`
+### 5.3.2. 문자열 표현 메소드
 + `__str__()` 메소드
   + 인스턴스를 `print()`하거나 `str()`로 변환할 때 자동으로 호출되는 메소드
   + 인스턴스의 상태를 사람이 읽기 쉬운 문자열 형태로 반환함
@@ -204,7 +204,7 @@ print(new_book)
 
 <br>
 
-### 5.3.3. 시퀀스 동작 메소드 `__len__()`, `__getitem__()`, `__iter__()`
+### 5.3.3. 시퀀스 동작 메소드
 + 리스트, 튜플처럼 순서가 존재하는 자료형(sequence data type)에서 동작하는 매직 메소드
 + 사용자 정의 클래스에 시퀀스 특성을 부여하며, `len()`, 인덱싱, 반복문 등과 자연스럽게 연동됨
 
@@ -212,7 +212,7 @@ print(new_book)
 
 |유형|설명|
 |:---:|:------------|
-|__len__() 메소드|- 인스턴스를 `len()`로 변환할 때 자동으로 호출되는 메소드 <br>- 객체가 포함하고 있는 요소의 개수를 정수형으로 반환함|
+|__len__() 메소드|- 인스턴스를 `len()`로 변환할 때 자동으로 호출되는 메소드 <br>- 인스턴스가 포함하고 있는 원소의 개수를 정수형으로 반환함|
 |__getitem__() 메소드|- 인스턴스를 인덱싱(`인스턴스[index]`)할 때 자동으로 호출되는 메소드 <br>- 특정 위치의 값을 반환하며, 슬라이싱 처리도 가능하게 만들 수 있음|
 |__iter__() 메소드|- for 문에서 사용할 수 있는 iterable 객체를 반환하는 메소드 <br>- 일반적으로 `return iter(내부_시퀀스)` 형태로 구현함|
 
@@ -226,14 +226,150 @@ class Playlist:
     def add_song(self, song):                # (메소드) 노래 추가
         self.songs.append(song)
 
+    def __str__(self):
+        return f"Playlist '{self.name}' with {len(self)} songs"
+
+    def __repr__(self):
+        return f"Playlist('{self.name}', {self.songs})"
+
+    # 포함된 원소의 개수 반환
     def __len__(self):
         return len(self.songs)
 
+    # 특정 위치의 원소를 반환 (인덱싱 가능)
     def __getitem__(self, index):
         return self.songs[index]
 
+    # iterable 객체 반환 (for 문 등에서 사용 가능)
     def __iter__(self):
         return iter(self.songs)
+```
+
+```{python}
+# 인스턴스 생성
+my_playlist = Playlist("My Favorites", ["Hype Boy", "APT.", "Mantra"])
+```
+
+```{python}
+# 원소의 개수: __len__() 메소드 자동 호출
+len(my_playlist)
+```
+
+```{python}
+# 인덱싱: __getitem__() 메소드 자동 호출
+my_playlist[1]
+```
+
+```{python}
+# for 문에서 iterable 객체 사용: __iter__() 메소드 자동 호출
+for song in my_playlist:
+    print(song)
+```
+
+```{python}
+# 인스턴스 메소드 사용: 노래 추가
+my_playlist.add_song("Ditto")
+my_playlist
+```
+
+<br>
+
+### 5.3.4. 호출 동작 메소드
++ `__call__()` 메소드
+  + 인스턴스를 함수처럼 호출할 때 자동으로 실행되는 메소드
+  + `인스턴스()` 형태로 호출되며, 내부에서 필요한 로직을 자유롭게 구현 가능
+  + 사용자 정의 클래스에 유연하고 직관적인 기능을 부여할 때 유용함
+    + (예) 파라미터를 받아 계산 수행, 누적 처리, 조건 평가 등
+
+```{python}
+## 함수 정의1: 누적 처리
+def add_count(count, step=1):
+    count += step
+    return count
+
+# 누적값은 함수 외부에서 직접 관리해야 함
+# → 함수는 상태를 기억하지 않으므로, 매번 결과를 외부 변수에 저장해야 함
+c = 0
+c = add_count(c)                             # 1
+c = add_count(c, 2)                          # 3
+c = add_count(c)                             # 4
+print(c)
+```
+
+```{python}
+## 클래스 정의1: 누적 처리
+# 클래스는 인스턴스 변수를 통해 상태(state)를 내부에 저장함
+# → 상태를 직접 조작하지 않아도 내부에서 자동으로 관리됨
+#   인스턴스마다 독립적인 값을 유지하므로, 여러 개의 상태를 동시에 관리하기 편함
+class Counter:
+    def __init__(self):
+        self.count = 0                       # (속성) 현재값(누적값)
+
+    # 인스턴스를 함수처럼 호출 가능하게 함
+    def __call__(self, step=1):
+        self.count += step
+        return self.count
+```
+
+```{python}
+# 인스턴스 생성
+c1 = Counter()
+c2 = Counter()
+```
+
+```{python}
+# 인스턴스를 함수처럼 호출1: __call__() 메소드 자동 호출
+c1()
+```
+
+```{python}
+# 인스턴스를 함수처럼 호출2: __call__() 메소드 자동 호출
+c1(5)
+```
+
+```{python}
+# 인스턴스를 함수처럼 호출3: __call__() 메소드 자동 호출
+# 인스턴스마다 독립적인 값 유지
+c2()
+```
+
+```{python}
+## 클래스 정의2: 조건 평가
+# 클래스는 인스턴스 변수를 통해 상태(state)를 내부에 저장하고,
+# 관련 기능을 하나의 객체에 통합하여 확장성과 재사용성을 높일 수 있음
+class PassCounter:
+    def __init__(self, threshold):
+        self.threshold = threshold           # (속성) 기준값
+        self.count = 0                       # (속성) 조건 통과 횟수
+
+    def __call__(self, value):
+        # 값이 기준을 넘으면 count 누적
+        if value >= self.threshold:
+            self.count += 1
+            return True
+        return False
+
+    def reset(self):                         # (메소드) 조건 통과 횟수 초기화
+        self.count = 0
+```
+
+```{python}
+# 기준값이 70인 인스턴스 생성
+pc = PassCounter(70)
+```
+
+```{python}
+# 인스턴스를 함수처럼 호출: __call__() 메소드 자동 호출
+pc(85)                                       # True
+pc(60)                                       # False
+pc(75)                                       # True
+pc.count
+```
+
+```{python}
+# 인스턴스 메소드 사용
+pc.reset()
+pc.count
 ```
 
 <br>
@@ -242,47 +378,155 @@ class Playlist:
 + 여러 개의 인스턴스를 관리하기 위해 리스트를 사용하면 효율적임
   + 인덱스를 사용하여 특정 인스턴스에 접근 가능
   + 반복문을 통해 리스트 내 모든 인스턴스에 접근하여 메소드를 호출하거나 속성을 조회할 수 있음
++ 같은 클래스를 기반으로 다양한 인스턴스를 생성하고, 이를 리스트로 묶으면 프로그램 구조가 더 유연하고 확장 가능해짐
 
 ```{python}
 # 클래스 정의: 은행계좌
 class Account:
-    def __init__(self, owner, amount=0):
+    def __init__(self, account_number, owner, amount=0):
+        self.account_number = account_number # (속성) 계좌 번호
         self.owner = owner                   # (속성) 계좌 소유주
         self.balance = amount                # (속성) 잔액
+        self.history = []                    # (속성) 거래 내역
 
-    def deposit(self, amount):               # 입금 메소드
+    def deposit(self, amount):               # (메소드) 입금
         self.balance += amount
+        self.history.append(f"입금: {amount}")
         return self.balance
 
-    def withdraw(self, amount):              # 출금 메소드
+    def withdraw(self, amount):              # (메소드) 출금
         self.balance -= amount
+        self.history.append(f"출금: {amount}")
         return self.balance
 
+    
+    # 매직 메서드 ----------------------------------------
     def __str__(self):
-        return f"Account(owner: '{self.owner}', balance: {self.balance})"
+        return f"현재 잔액은 {self.balance}원입니다."
 
     def __repr__(self):
-        return f"Account(owner='{self.owner}', balance={self.balance})"
+        return f"Account(balance={self.balance})"
+    
+    def __len__(self):
+        return len(self.history)             # 거래 횟수 확인
+
+    def __getitem__(self, index):
+        return self.history[index]           # 인덱스 활용 → 거래 내역 접근
+
+    def __iter__(self):
+        return iter(self.history)            # 거래 내역 반복 가능
+
+    def __call__(self, amount):              # 함수처럼 호출 → 자동 입금 처리
+        return self.deposit(amount)
 ```
 
 ```{python}
-# 여러 인스턴스를 리스트에 저장
+# 여러 계좌를 리스트로 관리
 accounts = [
-    Account("Kim", 10000),
-    Account("Lee", 20000),
-    Account("Park", 15000)
+    Account("123-01", "Kim", 12000),
+    Account("123-02", "Lee", 45000),
+    Account("123-03", "Park", 33000),
+    Account("123-04", "Park", 70000)
 ]
 ```
 
 ```{python}
-# 모든 계좌에 일괄적으로 입금 처리
+# 전체 계좌 잔액 출력
+for acc in accounts:
+    print(f"{acc.owner}님의 {acc.account_number} 계좌 → {acc}")
+```
+
+```{python}
+# 모든 계좌에 5,000원 입금
 for acc in accounts:
     acc.deposit(5000)
 ```
 
 ```{python}
-# 계좌 정보 출력
+# 모든 계좌의 최종 잔액 출력
+print("입금 후 잔액:")
 for acc in accounts:
-    print(acc)
+    print(f"{acc.owner}님의 계좌 → {acc}")
+```
+
+```{python}
+# 특정 인덱스로 접근하여 사용
+print("가장 첫 번째 계좌 소유주:", accounts[0].owner)
+```
+
+```{python}
+# 계좌 번호가 123-03인 계좌 리스트
+my_acc = [acc for acc in accounts if acc.account_number == "123-01"]
+my_acc
+```
+
+```{python}
+# 잔액이 5만원 이상인 계좌 리스트
+vip_acc = [acc for acc in accounts if acc.balance >= 50000]
+vip_names = [acc.owner for acc in vip_acc]
+vip_names
+```
+
+```{python}
+# 리스트 내 모든 계좌의 잔액 합계
+total_balance = sum(acc.balance for acc in accounts)
+print(f"전체 잔액 합계: {total_balance}원")
+```
+
+<br>
+
+**(과제)** 클래스와 리스트 실습
+
++ `Playlist` 클래스 인스턴스들이 담긴 리스트 `mylists`를 활용하여 다음 문제를 해결하라.
+  + 문제1. playlists 리스트에서 플레이리스트 이름이 "Pop Hits"인 인스턴스를 찾아서 출력하라.
+  + 문제2. 모든 플레이리스트의 총 노래 개수를 출력하라.
+  + 문제3. "Jazz Vibes" 플레이리스트에 "Autumn Leaves" 노래를 추가하고, 노래 목록을 출력하라.
+  + 문제4. 노래 개수가 3개 이상인 플레이리스트만 별도의 리스트로 만들어 출력하라.
+  + 문제5. 모든 플레이리스트의 첫 번째 노래 제목만 모아서 리스트로 만들어 출력하라.
+
+```{python}
+## 클래스 정의: 음악 플레이리스트
+class Playlist:
+    def __init__(self, name, songs=None):
+        self.name = name                     # (속성) 플레이리스트 이름
+        self.songs = songs if songs else []  # (속성) 노래 목록 (리스트)
+        
+    def add_song(self, song):                # (메소드) 노래 추가
+        self.songs.append(song)
+
+    def remove_song(self, song):             # (메소드) 노래 삭제 (있으면)
+        if song in self.songs:
+            self.songs.remove(song)
+
+    def clear(self):                         # (메소드) 플레이리스트 초기화
+        self.songs.clear()
+
+    def __str__(self):
+        return f"Playlist '{self.name}' with {len(self)} songs"
+
+    def __repr__(self):
+        return f"Playlist('{self.name}', {self.songs})"
+
+    def __len__(self):
+        return len(self.songs)
+
+    def __getitem__(self, index):
+        return self.songs[index]
+
+    def __iter__(self):
+        return iter(self.songs)
+
+    def __call__(self):                      # 함수처럼 호출 → 노래 제목 리스트 반환
+        return [song for song in self.songs]
+```
+
+```{python}
+# Playlist 인스턴스 3개 생성
+playlist1 = Playlist("Rock Classics", ["Bohemian Rhapsody", "Stairway to Heaven", "Hotel California"])
+playlist2 = Playlist("Pop Hits", ["Bad Guy", "Shape of You", "Blinding Lights"])
+playlist3 = Playlist("Jazz Vibes", ["So What", "Take Five", "Blue in Green"])
+
+# Playlist 인스턴스 리스트
+mylists = [playlist1, playlist2, playlist3]
 ```
 
