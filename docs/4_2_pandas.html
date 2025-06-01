@@ -323,11 +323,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<div id="6a3a79ec" class="cell" data-execution_count="1">
+<div id="7568287d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="e1441239" class="cell" data-execution_count="2">
+<div id="11e39a22" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Series 생성1 : 리스트 사용</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sr <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -340,7 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="811ff807" class="cell" data-execution_count="3">
+<div id="943de653" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Series 생성2 : 넘파이 배열 사용</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sr <span class="op">=</span> pd.Series(np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -353,7 +353,7 @@ dtype: int64</code></pre>
 dtype: int32</code></pre>
 </div>
 </div>
-<div id="c59e4386" class="cell" data-execution_count="4">
+<div id="15b3fcf6" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Series 생성3 : 딕셔너리 사용</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 딕셔너리 키는 인덱스로 자동 지정됨</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sr <span class="op">=</span> pd.Series({<span class="st">'a'</span>: <span class="dv">10</span>, <span class="st">'b'</span>: <span class="dv">20</span>, <span class="st">'c'</span>: <span class="dv">30</span>})</span>
@@ -365,7 +365,7 @@ c    30
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="5751658d" class="cell" data-execution_count="5">
+<div id="d43c45db" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Series 생성4 : 인덱스 지정</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sr <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>])</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -376,7 +376,7 @@ c    3
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="c529de67" class="cell" data-execution_count="6">
+<div id="85e54ab3" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DataFrame 생성1 : Series 사용</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sr <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], index <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>])</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(sr, columns <span class="op">=</span> [<span class="st">'value'</span>])</span>
@@ -388,7 +388,7 @@ b      2
 c      3</code></pre>
 </div>
 </div>
-<div id="276db4d1" class="cell" data-execution_count="7">
+<div id="41b677c6" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DataFrame 생성2 : 리스트 사용</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [[<span class="st">'Alice'</span>, <span class="dv">22</span>], [<span class="st">'Bob'</span>, <span class="dv">20</span>], [<span class="st">'Charlie'</span>, <span class="dv">27</span>]]</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(lst, columns<span class="op">=</span>[<span class="st">'Name'</span>, <span class="st">'Age'</span>])</span>
@@ -400,7 +400,7 @@ c      3</code></pre>
 2  Charlie   27</code></pre>
 </div>
 </div>
-<div id="99c79b5c" class="cell" data-execution_count="8">
+<div id="3b552332" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DataFrame 생성3 : 넘파이 배열 사용</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([[<span class="st">'Alice'</span>, <span class="dv">22</span>], [<span class="st">'Bob'</span>, <span class="dv">20</span>], [<span class="st">'Charlie'</span>, <span class="dv">27</span>]])</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(arr, columns<span class="op">=</span>[<span class="st">'Name'</span>, <span class="st">'Age'</span>])</span>
@@ -412,7 +412,7 @@ c      3</code></pre>
 2  Charlie  27</code></pre>
 </div>
 </div>
-<div id="47382099" class="cell" data-execution_count="9">
+<div id="a47f55b8" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DataFrame 생성4 : 딕셔너리 사용</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 딕셔너리 키는 열 이름으로 자동 지정됨</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>dct <span class="op">=</span> {<span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>], <span class="st">'Age'</span>: [<span class="dv">22</span>, <span class="dv">20</span>, <span class="dv">27</span>]}</span>
@@ -425,7 +425,7 @@ c      3</code></pre>
 2  Charlie   27</code></pre>
 </div>
 </div>
-<div id="f7006a69" class="cell" data-execution_count="10">
+<div id="f5bc8365" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DataFrame 생성5 : 딕셔너리 + 리스트 컴프리헨션 사용</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>dct <span class="op">=</span> [{<span class="st">'a'</span>: i, <span class="st">'b'</span>: <span class="dv">2</span><span class="op">*</span>i} <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>)]</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(dct)</span>
@@ -437,7 +437,7 @@ c      3</code></pre>
 2  2  4</code></pre>
 </div>
 </div>
-<div id="e2c94813" class="cell" data-execution_count="11">
+<div id="44a305b3" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DataFrame 생성6 : Series 사용</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 서로 다른 인덱스를 가진 Series로 DataFrame을 생성하면</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 공통된 인덱스를 기준으로 맞춰지고, 누락된 값은 NaN(Not a Number)으로 채워짐</span></span>
@@ -453,7 +453,7 @@ c  3.0  5.0
 d  NaN  6.0</code></pre>
 </div>
 </div>
-<div id="c00f4d92" class="cell" data-execution_count="12">
+<div id="a5b7bff8" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DataFrame 생성7 : 인덱스 및 열 이름 지정</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [[<span class="dv">101</span>, <span class="dv">22</span>], [<span class="dv">102</span>, <span class="dv">20</span>], [<span class="dv">103</span>, <span class="dv">27</span>]]</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> [<span class="st">'ID'</span>, <span class="st">'Age'</span>]</span>
@@ -467,7 +467,7 @@ Bob      102   20
 Charlie  103   27</code></pre>
 </div>
 </div>
-<div id="f0a62c08" class="cell" data-execution_count="13">
+<div id="aec67b0e" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Index 생성1 : 리스트 사용</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>idx <span class="op">=</span> pd.Index([<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>])</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>idx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -475,7 +475,7 @@ Charlie  103   27</code></pre>
 <pre><code>Index(['a', 'b', 'c', 'd'], dtype='object')</code></pre>
 </div>
 </div>
-<div id="1ebdad72" class="cell" data-execution_count="14">
+<div id="791b2888" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Index 생성2 : range() 사용</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>idx <span class="op">=</span> pd.Index(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>))</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>idx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -513,7 +513,7 @@ Charlie  103   27</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="c2894893" class="cell" data-execution_count="15">
+<div id="26e936c9" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 데이터프레임 속성</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>, <span class="st">'David'</span>, <span class="st">'Eva'</span>],</span>
@@ -535,7 +535,7 @@ Score    float64
 dtype: object</code></pre>
 </div>
 </div>
-<div id="3237600c" class="cell" data-execution_count="16">
+<div id="a6cf2402" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 행 인덱스 변경</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>df.index <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>]</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -548,7 +548,7 @@ d    David   40   88.9
 e      Eva   28   92.5</code></pre>
 </div>
 </div>
-<div id="23d48fbb" class="cell" data-execution_count="17">
+<div id="30feb226" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 열 이름 변경</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">'Student Name'</span>, <span class="st">'Student Age'</span>, <span class="st">'Exam Score'</span>]</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -587,14 +587,14 @@ e          Eva           28        92.5</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="dc65a1c2" class="cell" data-execution_count="18">
+<div id="43df79ed" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>, <span class="st">'David'</span>, <span class="st">'Eva'</span>],</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Age'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">28</span>],</span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Score'</span>: [<span class="fl">85.5</span>, <span class="fl">90.3</span>, <span class="fl">78.2</span>, <span class="fl">88.9</span>, <span class="fl">92.5</span>]</span>
 <span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a9911e68" class="cell" data-execution_count="19">
+<div id="63bb8930" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 기본 정보</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -611,7 +611,7 @@ memory usage: 252.0+ bytes
 None</code></pre>
 </div>
 </div>
-<div id="e730fa77" class="cell" data-execution_count="20">
+<div id="d162b2d6" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 상위 5개 행</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -623,7 +623,7 @@ None</code></pre>
 4      Eva   28   92.5</code></pre>
 </div>
 </div>
-<div id="a7b00b86" class="cell" data-execution_count="21">
+<div id="7e8e711c" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 요약 통계량</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -653,7 +653,7 @@ max    40.00000  92.500000</code></pre>
 <li><code>loc[:, ]</code> : 레이블(label) 기반 접근 방식</li>
 <li><code>iloc[:, ]</code> : 정수(integer) 기반 접근 방식</li>
 </ul>
-<div id="d586a85f" class="cell" data-execution_count="22">
+<div id="cd60622d" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'B'</span>: [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>],</span>
@@ -661,7 +661,7 @@ max    40.00000  92.500000</code></pre>
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'D'</span>: [<span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>]</span>
 <span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>}, index<span class="op">=</span>[<span class="st">'x'</span>, <span class="st">'y'</span>, <span class="st">'z'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a763ab40" class="cell" data-execution_count="23">
+<div id="031715af" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 열 인덱싱과 슬라이싱1 : 열 이름 사용</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'A'</span>]                                      <span class="co"># 열 이름</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'A'</span>, <span class="st">'C'</span>]]                               <span class="co"># 열 이름 리스트</span></span>
@@ -700,7 +700,7 @@ max    40.00000  92.500000</code></pre>
 </div>
 </div>
 </div>
-<div id="09388c28" class="cell" data-execution_count="24">
+<div id="0fabd6ff" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 열 인덱싱과 슬라이싱2 : 레이블 기반 접근</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>df.loc[:, <span class="st">'A'</span>]                               <span class="co"># 열 이름</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>df.loc[:, [<span class="st">'A'</span>, <span class="st">'C'</span>]]                        <span class="co"># 열 이름 리스트</span></span>
@@ -745,7 +745,7 @@ max    40.00000  92.500000</code></pre>
 </div>
 </div>
 </div>
-<div id="275ba40b" class="cell" data-execution_count="25">
+<div id="abe241f2" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 열 인덱싱과 슬라이싱3 : 정수 기반 접근</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>df.iloc[:, <span class="dv">0</span>]                                <span class="co"># 정수</span></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>df.iloc[:, [<span class="dv">0</span>, <span class="dv">3</span>]]                           <span class="co"># 정수 리스트</span></span>
@@ -794,7 +794,7 @@ max    40.00000  92.500000</code></pre>
 <li><code>loc[, :]</code> : 레이블(label) 기반 접근 방식</li>
 <li><code>iloc[, :]</code> : 정수(integer) 기반 접근 방식</li>
 </ul>
-<div id="95a7bf4b" class="cell" data-execution_count="26">
+<div id="191d9943" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 행 인덱싱과 슬라이싱1 : 레이블 기반 접근</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="st">'x'</span>, ]                                <span class="co"># 인덱스 이름</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>df.loc[[<span class="st">'x'</span>, <span class="st">'y'</span>], :]                        <span class="co"># 인덱스 이름 리스트</span></span>
@@ -838,7 +838,7 @@ max    40.00000  92.500000</code></pre>
 </div>
 </div>
 </div>
-<div id="9e51f3e9" class="cell" data-execution_count="27">
+<div id="da62b818" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 행 인덱싱과 슬라이싱2 : 정수 기반 접근</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">0</span>, :]                                <span class="co"># 정수</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>df.iloc[[<span class="dv">0</span>, <span class="dv">2</span>], :]                           <span class="co"># 정수 리스트</span></span>
@@ -883,7 +883,7 @@ max    40.00000  92.500000</code></pre>
 </div>
 </div>
 </div>
-<div id="03e1982c" class="cell" data-execution_count="28">
+<div id="b818fcde" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 행 인덱싱과 슬라이싱3 : 정수 기반 접근</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">0</span>]                                   <span class="co"># 정수</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>df.iloc[[<span class="dv">0</span>, <span class="dv">2</span>]]                              <span class="co"># 정수 리스트</span></span>
@@ -928,7 +928,7 @@ max    40.00000  92.500000</code></pre>
 </div>
 </div>
 </div>
-<div id="38bd6ee8" class="cell" data-execution_count="29">
+<div id="43c262e4" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 행 인덱싱과 슬라이싱4</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 인덱싱은 열을 참조하는 반면, 슬라이싱은 행을 참조함</span></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="co">#df[0]                                       # Error!</span></span>
@@ -970,7 +970,7 @@ max    40.00000  92.500000</code></pre>
 </div>
 </div>
 </div>
-<div id="d3deb12e" class="cell" data-execution_count="30">
+<div id="3d1d1056" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 행 인덱싱과 슬라이싱5</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
@@ -1024,7 +1024,7 @@ max    40.00000  92.500000</code></pre>
 <li>위치가 아닌 동일한 레이블끼리 연산하며, 일치하지 않는 항목은 <code>NaN</code>으로 처리</li>
 </ul></li>
 </ul>
-<div id="c15fae74" class="cell" data-execution_count="31">
+<div id="998643ca" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 단항 연산1 : Series</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>sr <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sr <span class="op">+</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1037,7 +1037,7 @@ max    40.00000  92.500000</code></pre>
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="bb1f61f3" class="cell" data-execution_count="32">
+<div id="e12d431c" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 단항 연산2 : DataFrame</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'x'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
@@ -1053,7 +1053,7 @@ dtype: int64</code></pre>
 4  1.609438  2.708050</code></pre>
 </div>
 </div>
-<div id="a1071e96" class="cell" data-execution_count="33">
+<div id="9b01e886" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 이항 연산1 : Series</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 두 시리즈에 존재하는 모든 행 인덱스를 포함한 결과 생성 (합집합처럼 동작)</span></span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>math <span class="op">=</span> pd.Series({<span class="st">'Alice'</span>: <span class="dv">85</span>, <span class="st">'Bob'</span>: <span class="dv">90</span>, <span class="st">'Charlie'</span>: <span class="dv">78</span>})</span>
@@ -1067,7 +1067,7 @@ David        NaN
 dtype: float64</code></pre>
 </div>
 </div>
-<div id="500bbeef" class="cell" data-execution_count="34">
+<div id="f66f49c8" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 이항 연산2: DataFrame</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>midterm <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'math'</span>: [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>],</span>
@@ -1137,7 +1137,7 @@ David        NaN    NaN      NaN</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="db8ab7af" class="cell" data-execution_count="35">
+<div id="a358322e" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 연산자 메소드1</span></span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co"># midterm + final과 동일한 결과</span></span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(midterm.add(final))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1149,7 +1149,7 @@ Charlie      NaN  166.0      NaN
 David        NaN    NaN      NaN</code></pre>
 </div>
 </div>
-<div id="c4ff7345" class="cell" data-execution_count="36">
+<div id="735f0947" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 연산자 메소드2</span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 하나의 데이터프레임에만 값이 있는 경우 0으로 처리하고, 둘 다 값이 없으면 NaN 반환</span></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(midterm.add(final, fill_value <span class="op">=</span> <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1191,7 +1191,7 @@ David       88.0   82.0      NaN</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="9d9c6907" class="cell" data-execution_count="37">
+<div id="e131fb1b" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'product'</span>: [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>, <span class="st">'E'</span>],</span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'price'</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">150</span>, <span class="dv">300</span>, <span class="dv">250</span>],</span>
@@ -1207,7 +1207,7 @@ David       88.0   82.0      NaN</code></pre>
 4       E    250         6</code></pre>
 </div>
 </div>
-<div id="7835cc20" class="cell" data-execution_count="38">
+<div id="7932c868" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 새로운 열 생성1: 기본 할당</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 기본 할당은 데이터를 직접 수정하므로, 권장하지 않음</span></span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_price'</span>] <span class="op">=</span> df[<span class="st">'price'</span>] <span class="op">*</span> df[<span class="st">'quantity'</span>]</span>
@@ -1221,7 +1221,7 @@ David       88.0   82.0      NaN</code></pre>
 4       E    250         6         1500</code></pre>
 </div>
 </div>
-<div id="cb4fcb33" class="cell" data-execution_count="39">
+<div id="5855f236" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 새로운 열 생성2: assign() 사용</span></span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.assign(total_price <span class="op">=</span> df[<span class="st">'price'</span>] <span class="op">*</span> df[<span class="st">'quantity'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1233,7 +1233,7 @@ David       88.0   82.0      NaN</code></pre>
 4       E    250         6         1500</code></pre>
 </div>
 </div>
-<div id="3b663937" class="cell" data-execution_count="40">
+<div id="e2846237" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 새로운 열 생성3: eval() 사용</span></span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="co"># inplace=True: 기존 데이터프레임에 직접 적용(새 객체를 반환하지 않음)</span></span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>df.<span class="bu">eval</span>(<span class="st">'total_price = price * quantity'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
@@ -1247,7 +1247,7 @@ David       88.0   82.0      NaN</code></pre>
 4       E    250         6         1500</code></pre>
 </div>
 </div>
-<div id="e2eed5c5" class="cell" data-execution_count="41">
+<div id="5f714ffa" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 새로운 열 생성4: where() 사용</span></span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 가격이 200 이상이면 'Expensive', 아니면 'Affordable'로 구분</span></span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'price_category'</span>] <span class="op">=</span> np.where(df[<span class="st">'price'</span>] <span class="op">&gt;=</span> <span class="dv">200</span>, <span class="st">'Expensive'</span>, <span class="st">'Affordable'</span>)</span>
@@ -1315,12 +1315,12 @@ David       88.0   82.0      NaN</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="bddaa367" class="cell" data-execution_count="42">
+<div id="130a3384" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 실습 데이터 : tips 데이터셋</span></span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">'tips'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="47581368" class="cell" data-execution_count="43">
+<div id="50722d9c" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># total_bill: 식사 금액</span></span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tip: 팁 금액</span></span>
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="co"># sex: 성별</span></span>
@@ -1347,7 +1347,7 @@ memory usage: 7.4 KB
 None</code></pre>
 </div>
 </div>
-<div id="6c21ce1b" class="cell" data-execution_count="44">
+<div id="0669468a" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   total_bill   tip     sex smoker  day    time  size
@@ -1358,7 +1358,7 @@ None</code></pre>
 4       24.59  3.61  Female     No  Sun  Dinner     4</code></pre>
 </div>
 </div>
-<div id="8763265a" class="cell" data-execution_count="45">
+<div id="79e2c6eb" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       total_bill         tip        size
@@ -1372,7 +1372,7 @@ min      3.070000    1.000000    1.000000
 max     50.810000   10.000000    6.000000</code></pre>
 </div>
 </div>
-<div id="d0997e8a" class="cell" data-execution_count="46">
+<div id="cf8217bc" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 각 열의 유효한 데이터 수 (NaN 제외)</span></span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.count())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1386,7 +1386,7 @@ size          244
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="137f77fc" class="cell" data-execution_count="47">
+<div id="63e9c9f4" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 식사 시간별 주문 수</span></span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.value_counts(<span class="st">'time'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1396,7 +1396,7 @@ Lunch      68
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="c2b5e943" class="cell" data-execution_count="48">
+<div id="0c40a890" class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 전체(합계) 식사 금액, 팁 금액, 식사 인원 수</span></span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips[[<span class="st">'total_bill'</span>, <span class="st">'tip'</span>, <span class="st">'size'</span>]].<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1406,21 +1406,21 @@ size           627.00
 dtype: float64</code></pre>
 </div>
 </div>
-<div id="4c86ea91" class="cell" data-execution_count="49">
+<div id="65446a7e" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 고객 1인당 평균 식사 금액</span></span>
 <span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((tips[<span class="st">'total_bill'</span>] <span class="op">/</span> tips[<span class="st">'size'</span>]).mean())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>7.888229508196722</code></pre>
 </div>
 </div>
-<div id="88d73bcd" class="cell" data-execution_count="50">
+<div id="eb356618" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 고객 1인당 평균 팁 금액</span></span>
 <span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((tips[<span class="st">'tip'</span>] <span class="op">/</span> tips[<span class="st">'size'</span>]).mean())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1.2127616120218578</code></pre>
 </div>
 </div>
-<div id="fae5ff9f" class="cell" data-execution_count="51">
+<div id="0e1de938" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 전체 식사 금액에서 팁이 차지하는 비율</span></span>
 <span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips[<span class="st">'tip'</span>] <span class="op">/</span> tips[<span class="st">'total_bill'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1438,7 +1438,7 @@ dtype: float64</code></pre>
 Length: 244, dtype: float64</code></pre>
 </div>
 </div>
-<div id="4bd31a1a" class="cell" data-execution_count="52">
+<div id="9040219c" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 전체 식사 금액에서 팁이 차지하는 비율에 대한 요약 통계량</span></span>
 <span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((tips[<span class="st">'tip'</span>] <span class="op">/</span> tips[<span class="st">'total_bill'</span>]).describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1453,7 +1453,7 @@ max        0.710345
 dtype: float64</code></pre>
 </div>
 </div>
-<div id="a5a01bd2" class="cell" data-execution_count="53">
+<div id="08bd12e0" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 전체 식사 금액에서 팁이 차지하는 비율이 50% 이상인 경우</span></span>
 <span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips[tips[<span class="st">'tip'</span>] <span class="op">/</span> tips[<span class="st">'total_bill'</span>] <span class="op">&gt;=</span> <span class="fl">0.5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1502,11 +1502,11 @@ dtype: float64</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="b3bc19d7" class="cell" data-execution_count="54">
+<div id="7939607f" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  실습 데이터 : tips 데이터셋</span></span>
 <span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">'tips'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="08a3f2d7" class="cell" data-execution_count="55">
+<div id="f3a4a045" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 요일별 평균 식사 금액</span></span>
 <span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="co"># observed=False: 모든 범주 포함, 실제 데이터가 없으면 NaN</span></span>
 <span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.groupby(<span class="st">'day'</span>, observed<span class="op">=</span><span class="va">False</span>)[<span class="st">'total_bill'</span>].mean())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1519,7 +1519,7 @@ Sun     21.410000
 Name: total_bill, dtype: float64</code></pre>
 </div>
 </div>
-<div id="0aad8a48" class="cell" data-execution_count="56">
+<div id="8abe5f91" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 식사 시간별 식사 금액, 팁 금액의 평균 및 표준편차</span></span>
 <span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.groupby(<span class="st">'time'</span>, observed<span class="op">=</span><span class="va">False</span>)[[<span class="st">'total_bill'</span>, <span class="st">'tip'</span>]].agg([<span class="st">'mean'</span>, <span class="st">'std'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1530,7 +1530,7 @@ Lunch   17.168676  7.713882  2.728088  1.205345
 Dinner  20.797159  9.142029  3.102670  1.436243</code></pre>
 </div>
 </div>
-<div id="2be58ce2" class="cell" data-execution_count="57">
+<div id="7fe9e9bd" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb100"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 식사 시간별 식사 금액의 최대값, 팁 금액의 최소값: 딕셔너리 사용</span></span>
 <span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.groupby(<span class="st">'time'</span>, observed<span class="op">=</span><span class="va">False</span>).agg({<span class="st">'total_bill'</span>: <span class="st">'max'</span>, <span class="st">'tip'</span>: <span class="st">'min'</span>}).reset_index())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1539,7 +1539,7 @@ Dinner  20.797159  9.142029  3.102670  1.436243</code></pre>
 1  Dinner       50.81  1.00</code></pre>
 </div>
 </div>
-<div id="8d0b8ecc" class="cell" data-execution_count="58">
+<div id="8a0da0c2" class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 식사 시간별 식사 금액의 최대값, 팁 금액의 최소값: 튜플 사용, named aggregation 문법</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.groupby(<span class="st">'time'</span>, observed<span class="op">=</span><span class="va">False</span>).agg(total_bill_max <span class="op">=</span> (<span class="st">'total_bill'</span>, <span class="st">'max'</span>), tip_min <span class="op">=</span> (<span class="st">'tip'</span>, <span class="st">'min'</span>)).reset_index())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1558,7 +1558,7 @@ Dinner  20.797159  9.142029  3.102670  1.436243</code></pre>
 <li><code>apply()</code>, <code>filter()</code> 등 함수의 인수로 전달할 때 유용하게 활용</li>
 </ul></li>
 </ul>
-<div id="54a1e1fe" class="cell" data-execution_count="59">
+<div id="d3395fed" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb104"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 함수 정의</span></span>
 <span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, y):</span>
 <span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> y</span>
@@ -1567,14 +1567,14 @@ Dinner  20.797159  9.142029  3.102670  1.436243</code></pre>
 <pre><code>5</code></pre>
 </div>
 </div>
-<div id="1188c621" class="cell" data-execution_count="60">
+<div id="97003dbc" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb106"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 람다 함수</span></span>
 <span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">lambda</span> x, y: x <span class="op">+</span> y)(<span class="dv">1</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
 <pre><code>5</code></pre>
 </div>
 </div>
-<div id="078c0991" class="cell" data-execution_count="61">
+<div id="bdf1a52f" class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb108"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 팀 금액 평균이 3달러 이상인 요일 데이터 필터링: 함수 정의</span></span>
 <span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> filter_tip_avg(x):</span>
 <span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x[<span class="st">'tip'</span>].mean() <span class="op">&gt;=</span> <span class="dv">3</span></span>
@@ -1597,7 +1597,7 @@ Dinner  20.797159  9.142029  3.102670  1.436243</code></pre>
 [76 rows x 7 columns]</code></pre>
 </div>
 </div>
-<div id="97e6d77d" class="cell" data-execution_count="62">
+<div id="6c902d0d" class="cell" data-execution_count="62">
 <div class="sourceCode cell-code" id="cb110"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 팀 금액 평균이 3달러 이상인 요일 데이터 필터링: 람다 함수 사용</span></span>
 <span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.groupby(<span class="st">'day'</span>, observed<span class="op">=</span><span class="va">False</span>).<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">'tip'</span>].mean() <span class="op">&gt;=</span> <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1617,7 +1617,7 @@ Dinner  20.797159  9.142029  3.102670  1.436243</code></pre>
 [76 rows x 7 columns]</code></pre>
 </div>
 </div>
-<div id="340ef1ac" class="cell" data-execution_count="63">
+<div id="9d9550f2" class="cell" data-execution_count="63">
 <div class="sourceCode cell-code" id="cb112"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 성별 팁 금액의 편차</span></span>
 <span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">'tip_dev'</span>] <span class="op">=</span> tips.groupby(<span class="st">'sex'</span>, observed<span class="op">=</span><span class="va">False</span>)[<span class="st">'tip'</span>].transform(<span class="kw">lambda</span> x: x <span class="op">-</span> x.mean())</span>
 <span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips[[<span class="st">'sex'</span>, <span class="st">'tip'</span>, <span class="st">'tip_dev'</span>]].head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1630,7 +1630,7 @@ Dinner  20.797159  9.142029  3.102670  1.436243</code></pre>
 4  Female  3.61  0.776552</code></pre>
 </div>
 </div>
-<div id="6c9bdba3" class="cell" data-execution_count="64">
+<div id="d708e130" class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb114"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 식사 시간별 팁 금액의 사분위수범위: 함수 정의</span></span>
 <span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> iqr(x):</span>
 <span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x.quantile(<span class="fl">0.75</span>) <span class="op">-</span> x.quantile(<span class="fl">0.25</span>)</span>
@@ -1643,7 +1643,7 @@ Dinner    1.6875
 Name: tip, dtype: float64</code></pre>
 </div>
 </div>
-<div id="083aa6e0" class="cell" data-execution_count="65">
+<div id="b8cdd402" class="cell" data-execution_count="65">
 <div class="sourceCode cell-code" id="cb116"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 식사 시간별 팁 금액의 사분위수범위: 람다 함수 사용</span></span>
 <span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.groupby(<span class="st">'time'</span>, observed<span class="op">=</span><span class="va">False</span>)[<span class="st">'tip'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.quantile(<span class="fl">0.75</span>) <span class="op">-</span> x.quantile(<span class="fl">0.25</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1687,11 +1687,11 @@ Name: tip, dtype: float64</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="2d142db2" class="cell" data-execution_count="66">
+<div id="17f16f7d" class="cell" data-execution_count="66">
 <div class="sourceCode cell-code" id="cb118"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  실습 데이터 : tips 데이터셋</span></span>
 <span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">'tips'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cfc15087" class="cell" data-execution_count="67">
+<div id="a894ddb0" class="cell" data-execution_count="67">
 <div class="sourceCode cell-code" id="cb119"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 기존 열 연산: 식사 금액에서 세금 10%를 제외한 실수령 금액</span></span>
 <span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.<span class="bu">eval</span>(<span class="st">'total_bill = total_bill * 0.9'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1711,7 +1711,7 @@ Name: tip, dtype: float64</code></pre>
 [244 rows x 7 columns]</code></pre>
 </div>
 </div>
-<div id="144c6280" class="cell" data-execution_count="68">
+<div id="6620aa0f" class="cell" data-execution_count="68">
 <div class="sourceCode cell-code" id="cb121"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 새로운 열 생성: 전체 식사 금액 대비 팁 금액 비율</span></span>
 <span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="co"># inplace=True: 기존 데이터프레임에 직접 적용(새 객체를 반환하지 않음)</span></span>
 <span id="cb121-3"><a href="#cb121-3" aria-hidden="true" tabindex="-1"></a>tips.<span class="bu">eval</span>(<span class="st">'tip_rate = tip / total_bill'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
@@ -1733,7 +1733,7 @@ Name: tip, dtype: float64</code></pre>
 [244 rows x 8 columns]</code></pre>
 </div>
 </div>
-<div id="175b3b1f" class="cell" data-execution_count="69">
+<div id="96f7c7c5" class="cell" data-execution_count="69">
 <div class="sourceCode cell-code" id="cb123"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 외부 변수 사용: 전체 식사 금액에 따른 기본(최소) 팁 금액</span></span>
 <span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>tip_percentage <span class="op">=</span> <span class="fl">0.15</span></span>
 <span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a>tips.<span class="bu">eval</span>(<span class="st">'min_tip = total_bill * @tip_percentage'</span>, inplace <span class="op">=</span> <span class="va">True</span>)</span>
@@ -1755,7 +1755,7 @@ Name: tip, dtype: float64</code></pre>
 [244 rows x 9 columns]</code></pre>
 </div>
 </div>
-<div id="7e4ba101" class="cell" data-execution_count="70">
+<div id="ef2e09bd" class="cell" data-execution_count="70">
 <div class="sourceCode cell-code" id="cb125"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 기본(최소) 팁 금액보다 적게 준 경우 'Below', 많거나 같은 경우 'Above'로 구분</span></span>
 <span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 기본(최소) 팁 금액보다 적게 준 경우는 108팀임</span></span>
 <span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">'tip_group'</span>] <span class="op">=</span> np.where(tips[<span class="st">'tip'</span>] <span class="op">&lt;</span> tips[<span class="st">'min_tip'</span>], <span class="st">'Below'</span>, <span class="st">'Above'</span>)</span>
@@ -1767,7 +1767,7 @@ Below    108
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="b9c3fc9f" class="cell" data-execution_count="71">
+<div id="58ec9a86" class="cell" data-execution_count="71">
 <div class="sourceCode cell-code" id="cb127"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 단일 조건 필터링: 식사 금액이 20달러 이상인 경우</span></span>
 <span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.query(<span class="st">'total_bill &gt;= 20'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1800,7 +1800,7 @@ Name: count, dtype: int64</code></pre>
 [97 rows x 10 columns]</code></pre>
 </div>
 </div>
-<div id="e21883c0" class="cell" data-execution_count="72">
+<div id="b82104d3" class="cell" data-execution_count="72">
 <div class="sourceCode cell-code" id="cb129"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 다중 조건 필터링: 식사 인원 수가 3명 이상이고, 목요일에 방문한 경우</span></span>
 <span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="co">#print(tips.query('size &gt;= 3 and day == "Thur"'))           # 권장하지 않음, 조건이 복잡할 경우 오류가 발생할 수 있음</span></span>
 <span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.query(<span class="st">'(size &gt;= 3) &amp; (day == "Thur")'</span>))          <span class="co"># 권장 방식: 괄호로 각 조건을 명확히 구분</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1836,7 +1836,7 @@ Name: count, dtype: int64</code></pre>
 205     Above  </code></pre>
 </div>
 </div>
-<div id="139f49f9" class="cell" data-execution_count="73">
+<div id="cd803493" class="cell" data-execution_count="73">
 <div class="sourceCode cell-code" id="cb131"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 외부 변수 사용: 기준 팁 금액 미만인 경우</span></span>
 <span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a>min_tip_required <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.query(<span class="st">'tip &lt; @min_tip_required'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1870,7 +1870,7 @@ Name: count, dtype: int64</code></pre>
 [216 rows x 10 columns]</code></pre>
 </div>
 </div>
-<div id="0699f636" class="cell" data-execution_count="74">
+<div id="f7e3f0e9" class="cell" data-execution_count="74">
 <div class="sourceCode cell-code" id="cb133"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 기준 팁 금액보다 적게 준 경우는 216팀임</span></span>
 <span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tips.query(<span class="st">'tip &lt; @min_tip_required'</span>).shape[<span class="dv">0</span>])</span>
 <span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(tips.query(<span class="st">'tip &lt; @min_tip_required'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1926,7 +1926,7 @@ Name: count, dtype: int64</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="91e44412" class="cell" data-execution_count="75">
+<div id="13fed652" class="cell" data-execution_count="75">
 <div class="sourceCode cell-code" id="cb135"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.Timestamp(<span class="st">'2025-03-02 09:00'</span>))      <span class="co"># 타임스탬프</span></span>
 <span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.Period(<span class="st">'2025-03'</span>, freq<span class="op">=</span><span class="st">'M'</span>))        <span class="co"># 시간 기간</span></span>
 <span id="cb135-3"><a href="#cb135-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.Timedelta(days<span class="op">=</span><span class="dv">2</span>, hours<span class="op">=</span><span class="dv">5</span>))         <span class="co"># 시간 델타</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2005,28 +2005,28 @@ Name: count, dtype: int64</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="e37c8f1b" class="cell" data-execution_count="76">
+<div id="463737dc" class="cell" data-execution_count="76">
 <div class="sourceCode cell-code" id="cb137"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Timestampe1: 문자열 리스트 사용</span></span>
 <span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a>pd.to_datetime([<span class="st">'2025-03-02'</span>, <span class="st">'2025-03-03'</span>, <span class="st">'2025-03-04'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="76">
 <pre><code>DatetimeIndex(['2025-03-02', '2025-03-03', '2025-03-04'], dtype='datetime64[ns]', freq=None)</code></pre>
 </div>
 </div>
-<div id="0b3f39ed" class="cell" data-execution_count="77">
+<div id="67fc11c7" class="cell" data-execution_count="77">
 <div class="sourceCode cell-code" id="cb139"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Timestampe2: 명시적 형식 지정</span></span>
 <span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a>pd.to_datetime([<span class="st">'March 2, 2025'</span>, <span class="st">'March 3, 2025'</span>, <span class="st">'March 4, 2025'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%B </span><span class="sc">%d</span><span class="st">, %Y'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="77">
 <pre><code>DatetimeIndex(['2025-03-02', '2025-03-03', '2025-03-04'], dtype='datetime64[ns]', freq=None)</code></pre>
 </div>
 </div>
-<div id="961eab69" class="cell" data-execution_count="78">
+<div id="a1e1ac28" class="cell" data-execution_count="78">
 <div class="sourceCode cell-code" id="cb141"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Timestampe3: 오류 발생 시 NaT 처리</span></span>
 <span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>pd.to_datetime([<span class="st">"2025-03-02"</span>, <span class="st">"not a date"</span>], errors<span class="op">=</span><span class="st">"coerce"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="78">
 <pre><code>DatetimeIndex(['2025-03-02', 'NaT'], dtype='datetime64[ns]', freq=None)</code></pre>
 </div>
 </div>
-<div id="80aaa4ac" class="cell" data-execution_count="79">
+<div id="47864ac1" class="cell" data-execution_count="79">
 <div class="sourceCode cell-code" id="cb143"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Timestampe4: 정수 데이터프레임 사용(각 행을 날짜로 변환)</span></span>
 <span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb143-3"><a href="#cb143-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"year"</span>: [<span class="dv">2025</span>, <span class="dv">2025</span>],</span>
@@ -2040,14 +2040,14 @@ Name: count, dtype: int64</code></pre>
 dtype: datetime64[ns]</code></pre>
 </div>
 </div>
-<div id="ea17712b" class="cell" data-execution_count="80">
+<div id="34533570" class="cell" data-execution_count="80">
 <div class="sourceCode cell-code" id="cb145"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Period: 2025년 3월 1일 ~ 31일(한 달)</span></span>
 <span id="cb145-2"><a href="#cb145-2" aria-hidden="true" tabindex="-1"></a>pd.to_datetime(<span class="st">'2025-03'</span>, <span class="bu">format</span><span class="op">=</span><span class="st">'%Y-%m'</span>).to_period(<span class="st">'M'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="80">
 <pre><code>Period('2025-03', 'M')</code></pre>
 </div>
 </div>
-<div id="5cb9e106" class="cell" data-execution_count="81">
+<div id="b8e7b57f" class="cell" data-execution_count="81">
 <div class="sourceCode cell-code" id="cb147"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Timedelta</span></span>
 <span id="cb147-2"><a href="#cb147-2" aria-hidden="true" tabindex="-1"></a>pd.to_datetime(<span class="st">'2025-05-13'</span>) <span class="op">-</span> pd.to_datetime(<span class="st">'2025-03-02'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="81">
@@ -2107,7 +2107,7 @@ dtype: datetime64[ns]</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="e5ea1ba5" class="cell" data-execution_count="82">
+<div id="ab5102bb" class="cell" data-execution_count="82">
 <div class="sourceCode cell-code" id="cb149"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pd.date_range(): 하루씩 증가하는 날짜 시퀀스</span></span>
 <span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a>pd.date_range(<span class="st">'2025-03-02'</span>, periods<span class="op">=</span><span class="dv">5</span>, freq<span class="op">=</span><span class="st">'D'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="82">
@@ -2116,7 +2116,7 @@ dtype: datetime64[ns]</code></pre>
               dtype='datetime64[ns]', freq='D')</code></pre>
 </div>
 </div>
-<div id="5367b9d0" class="cell" data-execution_count="83">
+<div id="354b0c0e" class="cell" data-execution_count="83">
 <div class="sourceCode cell-code" id="cb151"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pd.date_range(): 일주일씩 증가하는 날짜 시퀀스(일요일 기준)</span></span>
 <span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>pd.date_range(<span class="st">'2025-05-13'</span>, periods<span class="op">=</span><span class="dv">5</span>, freq<span class="op">=</span><span class="st">'W'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="83">
@@ -2125,14 +2125,14 @@ dtype: datetime64[ns]</code></pre>
               dtype='datetime64[ns]', freq='W-SUN')</code></pre>
 </div>
 </div>
-<div id="d6f66f74" class="cell" data-execution_count="84">
+<div id="9cc79488" class="cell" data-execution_count="84">
 <div class="sourceCode cell-code" id="cb153"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pd.period_range(): 2025년 3월부터 시작하여 3개월 동안의 기간</span></span>
 <span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a>pd.period_range(<span class="st">'2025-03'</span>, periods<span class="op">=</span><span class="dv">3</span>, freq<span class="op">=</span><span class="st">'M'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="84">
 <pre><code>PeriodIndex(['2025-03', '2025-04', '2025-05'], dtype='period[M]')</code></pre>
 </div>
 </div>
-<div id="bf49ae29" class="cell" data-execution_count="85">
+<div id="7800f7e5" class="cell" data-execution_count="85">
 <div class="sourceCode cell-code" id="cb155"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pd.timedelta_range(): 1시간 간격의 시간 델타 시퀀스</span></span>
 <span id="cb155-2"><a href="#cb155-2" aria-hidden="true" tabindex="-1"></a>pd.timedelta_range(start<span class="op">=</span><span class="st">'0s'</span>, periods<span class="op">=</span><span class="dv">5</span>, freq<span class="op">=</span><span class="st">'h'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="85">
@@ -2158,81 +2158,81 @@ dtype: datetime64[ns]</code></pre>
 </ul></li>
 <li><code>sort_index()</code> 메소드를 통해 날짜 인덱스를 기준으로 정렬 가능</li>
 </ul>
-<div id="7cd70d8f" class="cell" data-execution_count="86">
+<div id="ce3d0611" class="cell" data-execution_count="86">
 <div class="sourceCode cell-code" id="cb157"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 시계열 데이터 인덱스 설정</span></span>
 <span id="cb157-2"><a href="#cb157-2" aria-hidden="true" tabindex="-1"></a>date_rng <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">'2024-12-20'</span>, end<span class="op">=</span><span class="st">'2025-01-10'</span>, freq<span class="op">=</span><span class="st">'D'</span>)</span>
 <span id="cb157-3"><a href="#cb157-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'value'</span>: np.random.randint(<span class="dv">0</span>, <span class="dv">100</span>, size<span class="op">=</span><span class="bu">len</span>(date_rng))}, index<span class="op">=</span>date_rng)</span>
 <span id="cb157-4"><a href="#cb157-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            value
-2024-12-20     27
-2024-12-21     87
-2024-12-22     16
-2024-12-23     78
-2024-12-24     72
-2024-12-25      3
-2024-12-26     72
-2024-12-27     65
-2024-12-28     93
-2024-12-29     35
-2024-12-30     40
-2024-12-31     99
-2025-01-01     93
-2025-01-02      6
-2025-01-03     43
-2025-01-04     92
-2025-01-05     46
-2025-01-06     79
-2025-01-07     18
-2025-01-08     22
-2025-01-09     10
-2025-01-10     65</code></pre>
+2024-12-20     92
+2024-12-21     69
+2024-12-22     19
+2024-12-23     38
+2024-12-24     66
+2024-12-25     31
+2024-12-26     76
+2024-12-27     42
+2024-12-28     46
+2024-12-29     53
+2024-12-30     51
+2024-12-31     17
+2025-01-01     37
+2025-01-02     48
+2025-01-03     14
+2025-01-04     64
+2025-01-05     24
+2025-01-06      0
+2025-01-07     54
+2025-01-08     19
+2025-01-09     16
+2025-01-10     95</code></pre>
 </div>
 </div>
-<div id="323a43e0" class="cell" data-execution_count="87">
+<div id="c236fe2c" class="cell" data-execution_count="87">
 <div class="sourceCode cell-code" id="cb159"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 날짜 기반 필터링1: 특정 연도 데이터</span></span>
 <span id="cb159-2"><a href="#cb159-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.loc[<span class="st">'2025'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            value
-2025-01-01     93
-2025-01-02      6
-2025-01-03     43
-2025-01-04     92
-2025-01-05     46
-2025-01-06     79
-2025-01-07     18
-2025-01-08     22
-2025-01-09     10
-2025-01-10     65</code></pre>
+2025-01-01     37
+2025-01-02     48
+2025-01-03     14
+2025-01-04     64
+2025-01-05     24
+2025-01-06      0
+2025-01-07     54
+2025-01-08     19
+2025-01-09     16
+2025-01-10     95</code></pre>
 </div>
 </div>
-<div id="0478d3ba" class="cell" data-execution_count="88">
+<div id="58357ab1" class="cell" data-execution_count="88">
 <div class="sourceCode cell-code" id="cb161"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 날짜 기반 필터링2: 특정 날짜 이후 데이터</span></span>
 <span id="cb161-2"><a href="#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.loc[<span class="st">'2025-01-07'</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            value
-2025-01-07     18
-2025-01-08     22
-2025-01-09     10
-2025-01-10     65</code></pre>
+2025-01-07     54
+2025-01-08     19
+2025-01-09     16
+2025-01-10     95</code></pre>
 </div>
 </div>
-<div id="a284fab1" class="cell" data-execution_count="89">
+<div id="3c3b6ebd" class="cell" data-execution_count="89">
 <div class="sourceCode cell-code" id="cb163"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 날짜 기반 필터링2: 특정 날짜 범위 데이터</span></span>
 <span id="cb163-2"><a href="#cb163-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.loc[<span class="st">'2024-12-24'</span>:<span class="st">'2024-12-31'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            value
-2024-12-24     72
-2024-12-25      3
-2024-12-26     72
-2024-12-27     65
-2024-12-28     93
-2024-12-29     35
-2024-12-30     40
-2024-12-31     99</code></pre>
+2024-12-24     66
+2024-12-25     31
+2024-12-26     76
+2024-12-27     42
+2024-12-28     46
+2024-12-29     53
+2024-12-30     51
+2024-12-31     17</code></pre>
 </div>
 </div>
-<div id="41389a7b" class="cell" data-execution_count="90">
+<div id="3798e8e0" class="cell" data-execution_count="90">
 <div class="sourceCode cell-code" id="cb165"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DatetimeIndex 속성1: 월(month)</span></span>
 <span id="cb165-2"><a href="#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.index.month)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2241,7 +2241,7 @@ dtype: datetime64[ns]</code></pre>
       dtype='int32')</code></pre>
 </div>
 </div>
-<div id="94679113" class="cell" data-execution_count="91">
+<div id="393cb0b6" class="cell" data-execution_count="91">
 <div class="sourceCode cell-code" id="cb167"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb167-1"><a href="#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DatetimeIndex 속성2: 요일 이름</span></span>
 <span id="cb167-2"><a href="#cb167-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.index.day_name())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2252,33 +2252,33 @@ dtype: datetime64[ns]</code></pre>
       dtype='object')</code></pre>
 </div>
 </div>
-<div id="d146b3a9" class="cell" data-execution_count="92">
+<div id="92f5f22a" class="cell" data-execution_count="92">
 <div class="sourceCode cell-code" id="cb169"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb169-1"><a href="#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 날짜 인덱스 정렬: 내림차순</span></span>
 <span id="cb169-2"><a href="#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.sort_index(ascending<span class="op">=</span><span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            value
-2025-01-10     65
-2025-01-09     10
-2025-01-08     22
-2025-01-07     18
-2025-01-06     79
-2025-01-05     46
-2025-01-04     92
-2025-01-03     43
-2025-01-02      6
-2025-01-01     93
-2024-12-31     99
-2024-12-30     40
-2024-12-29     35
-2024-12-28     93
-2024-12-27     65
-2024-12-26     72
-2024-12-25      3
-2024-12-24     72
-2024-12-23     78
-2024-12-22     16
-2024-12-21     87
-2024-12-20     27</code></pre>
+2025-01-10     95
+2025-01-09     16
+2025-01-08     19
+2025-01-07     54
+2025-01-06      0
+2025-01-05     24
+2025-01-04     64
+2025-01-03     14
+2025-01-02     48
+2025-01-01     37
+2024-12-31     17
+2024-12-30     51
+2024-12-29     53
+2024-12-28     46
+2024-12-27     42
+2024-12-26     76
+2024-12-25     31
+2024-12-24     66
+2024-12-23     38
+2024-12-22     19
+2024-12-21     69
+2024-12-20     92</code></pre>
 </div>
 </div>
 <p><br></p>
@@ -2290,11 +2290,11 @@ dtype: datetime64[ns]</code></pre>
 <li>시간 이동(time-shift) : 시계열 데이터를 시간 축을 기준으로 이동시키는 방법으로, 이전 시점의 데이터와 비교할 때 유용함</li>
 <li>롤링 윈도우(rolling windows): 일정한 기간을 기준으로 이동 평균 등을 방법으로, 주기적인 변동성을 관할할 때 유용함</li>
 </ul>
-<div id="5cd87deb" class="cell" data-execution_count="93">
+<div id="79caa62a" class="cell" data-execution_count="93">
 <div class="sourceCode cell-code" id="cb171"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 실습 데이터 : flights 데이터셋</span></span>
 <span id="cb171-2"><a href="#cb171-2" aria-hidden="true" tabindex="-1"></a>flights <span class="op">=</span> sns.load_dataset(<span class="st">"flights"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="9ef37ff1" class="cell" data-execution_count="94">
+<div id="0629da15" class="cell" data-execution_count="94">
 <div class="sourceCode cell-code" id="cb172"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(flights.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -2310,7 +2310,7 @@ memory usage: 2.9 KB
 None</code></pre>
 </div>
 </div>
-<div id="534d995f" class="cell" data-execution_count="95">
+<div id="4a174701" class="cell" data-execution_count="95">
 <div class="sourceCode cell-code" id="cb174"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb174-1"><a href="#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(flights.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   year month  passengers
@@ -2321,7 +2321,7 @@ None</code></pre>
 4  1949   May         121</code></pre>
 </div>
 </div>
-<div id="785a2a84" class="cell" data-execution_count="96">
+<div id="9a70354f" class="cell" data-execution_count="96">
 <div class="sourceCode cell-code" id="cb176"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb176-1"><a href="#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 시계열 데이터 인덱스 설정</span></span>
 <span id="cb176-2"><a href="#cb176-2" aria-hidden="true" tabindex="-1"></a>flights[<span class="st">'date'</span>] <span class="op">=</span> pd.to_datetime(flights[<span class="st">'year'</span>].astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">'-'</span> <span class="op">+</span> flights[<span class="st">'month'</span>].astype(<span class="bu">str</span>), <span class="bu">format</span><span class="op">=</span><span class="st">'%Y-%b'</span>)</span>
 <span id="cb176-3"><a href="#cb176-3" aria-hidden="true" tabindex="-1"></a>flights.set_index(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
@@ -2337,7 +2337,7 @@ date
 1949-05-01         121</code></pre>
 </div>
 </div>
-<div id="e23843b7" class="cell" data-execution_count="97">
+<div id="f4d38b40" class="cell" data-execution_count="97">
 <div class="sourceCode cell-code" id="cb178"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb178-1"><a href="#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 리샘플링: 월별 데이터 → 연간 데이터(연도별 총합)</span></span>
 <span id="cb178-2"><a href="#cb178-2" aria-hidden="true" tabindex="-1"></a>annual_passengers <span class="op">=</span> flights.resample(<span class="st">'YE'</span>).<span class="bu">sum</span>()</span>
 <span id="cb178-3"><a href="#cb178-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(annual_passengers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2358,10 +2358,10 @@ date
 1960-12-31        5714</code></pre>
 </div>
 </div>
-<div id="27cc93d6" class="cell" data-execution_count="98">
+<div id="1505df90" class="cell" data-execution_count="98">
 <div class="sourceCode cell-code" id="cb180"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b0c217ff" class="cell" data-execution_count="99">
+<div id="9c012dce" class="cell" data-execution_count="99">
 <div class="sourceCode cell-code" id="cb181"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 리샘플링: 연간 데이터 시각화</span></span>
 <span id="cb181-2"><a href="#cb181-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">3</span>))</span>
 <span id="cb181-3"><a href="#cb181-3" aria-hidden="true" tabindex="-1"></a>plt.plot(annual_passengers[<span class="st">'passengers'</span>])</span>
@@ -2378,7 +2378,7 @@ date
 </div>
 </div>
 </div>
-<div id="8bdd0f5b" class="cell" data-execution_count="100">
+<div id="07922c10" class="cell" data-execution_count="100">
 <div class="sourceCode cell-code" id="cb182"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 시간 이동: 직전 분기 대비 승객 수 증감률(%)</span></span>
 <span id="cb182-2"><a href="#cb182-2" aria-hidden="true" tabindex="-1"></a>quarterly <span class="op">=</span> flights[<span class="st">'passengers'</span>].resample(<span class="st">'QE'</span>).<span class="bu">sum</span>()</span>
 <span id="cb182-3"><a href="#cb182-3" aria-hidden="true" tabindex="-1"></a>previous_quarter <span class="op">=</span> quarterly.shift(<span class="dv">1</span>)</span>
@@ -2442,7 +2442,7 @@ date
 1960-12-31                  1283   -26.094470</code></pre>
 </div>
 </div>
-<div id="37c9cf68" class="cell" data-execution_count="101">
+<div id="24e2d448" class="cell" data-execution_count="101">
 <div class="sourceCode cell-code" id="cb184"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb184-1"><a href="#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 시프팅: 직전 분기 대비 승객 수 증감률(%) 시각화</span></span>
 <span id="cb184-2"><a href="#cb184-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">3</span>))</span>
 <span id="cb184-3"><a href="#cb184-3" aria-hidden="true" tabindex="-1"></a>plt.plot(quarterly_df[<span class="st">'change_rate'</span>])</span>
@@ -2459,7 +2459,7 @@ date
 </div>
 </div>
 </div>
-<div id="56c4845b" class="cell" data-execution_count="102">
+<div id="1d3649dc" class="cell" data-execution_count="102">
 <div class="sourceCode cell-code" id="cb185"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb185-1"><a href="#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 롤링 윈도우: 12개월 단순이동평균</span></span>
 <span id="cb185-2"><a href="#cb185-2" aria-hidden="true" tabindex="-1"></a>flights[<span class="st">'moving_avg_12months'</span>] <span class="op">=</span> flights[<span class="st">'passengers'</span>].rolling(window<span class="op">=</span><span class="dv">12</span>).mean()</span>
 <span id="cb185-3"><a href="#cb185-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2481,7 +2481,7 @@ date
 [144 rows x 2 columns]</code></pre>
 </div>
 </div>
-<div id="e34167d8" class="cell" data-execution_count="103">
+<div id="a32c7f0a" class="cell" data-execution_count="103">
 <div class="sourceCode cell-code" id="cb187"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb187-1"><a href="#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 롤링 윈도우: 12개월 단순이동평균 시각화</span></span>
 <span id="cb187-2"><a href="#cb187-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">3</span>))</span>
 <span id="cb187-3"><a href="#cb187-3" aria-hidden="true" tabindex="-1"></a>plt.plot(flights[<span class="st">'passengers'</span>], label<span class="op">=</span><span class="st">'Original Data'</span>)</span>
@@ -2517,11 +2517,11 @@ date
 <li>문제5. 종가(<code>Close</code>)에 대해 5일 이동평균과 10일 이동평균을 각각 계산한 후 시각화하라.</li>
 </ul></li>
 </ul>
-<div id="d6bdcf51" class="cell" data-execution_count="104">
+<div id="a95a1733" class="cell" data-execution_count="104">
 <div class="sourceCode cell-code" id="cb188"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb188-1"><a href="#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="co"># air_quality_no2_long.csv</span></span>
 <span id="cb188-2"><a href="#cb188-2" aria-hidden="true" tabindex="-1"></a>air <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/air_quality_no2_long.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3e7709dc" class="cell" data-execution_count="105">
+<div id="01c79e78" class="cell" data-execution_count="105">
 <div class="sourceCode cell-code" id="cb189"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2023년 Apple 일별 주가 데이터</span></span>
 <span id="cb189-2"><a href="#cb189-2" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install yfinance</span></span>
 <span id="cb189-3"><a href="#cb189-3" aria-hidden="true" tabindex="-1"></a><span class="co"># import yfinance as yf</span></span>

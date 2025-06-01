@@ -41,13 +41,13 @@ air_quality = pd.read_csv("https://raw.githubusercontent.com/pandas-dev/pandas/m
 ```
 
 ```{python}
-# city: 측정 도시
-# country: 측정 국가
-# date.utc: 측정 일시(UTC)
-# location: 측정 위치
-# parameter: 측정 항목
-# value: 측정 값
-# unit: 측정 단위
+# city : 측정 도시
+# country : 측정 국가
+# date.utc : 측정 일시(UTC)
+# location : 측정 위치
+# parameter : 측정 항목
+# value : 측정 값
+# unit : 측정 단위
 print(air_quality.info())
 ```
 
