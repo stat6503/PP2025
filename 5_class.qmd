@@ -452,7 +452,7 @@ print("가장 첫 번째 계좌 소유주:", accounts[0].owner)
 
 ```{python}
 # 계좌 번호가 123-03인 계좌 리스트
-my_acc = [acc for acc in accounts if acc.account_number == "123-01"]
+my_acc = [acc for acc in accounts if acc.account_number == "123-03"]
 my_acc
 ```
 
